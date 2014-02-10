@@ -1,0 +1,201 @@
+﻿[enlgish lang]
+bLogin.Caption=Login to CVN
+bRegist.Caption=Regist
+labInfomation.Caption=Welcom to ConVnet
+checkAutoLogin.Caption=Auto Login
+cCloseNTFW.Caption=Close windows firewall for ConVnet 
+bAddFriend.Caption=Add friend
+bJoinGroup.Caption=Join group
+bCreateGroup.Caption=Create group
+bEditMyProf.Caption=Edit my profile
+bSetautoconnection.Caption=Autoconnect,Right click to connect all users
+bSetnetwork.Caption=Network
+bLogOut.Caption=Logout
+[添加自动连接主机]
+addautouser.Caption=Add auto connection
+laddAutoHostInfo.Caption=Add auto connection
+addautouserTip.Caption=This password can be blank
+lSelectAUser.Caption=Choose user:
+lSetPassword.Caption=Set Password:
+bSure.Caption=Sure
+bCancel.Caption=Cancel
+[fAutoconnection]
+fAutoconnection.Caption=Set auto connection
+lSetAutoConCaption.Caption=Auto Connection
+lSetAutoConCaptionTip.Caption=Press 'Add' button to add auto connection user
+bDel.Caption=Delete
+bAddAutoConUser.Caption=Add
+bClose.Caption=Close
+[chat]
+bSendChatText.Caption=Send
+[fcreategroup]
+fcreategroup.Caption=Create Group
+lGroupName.Caption=Group Name:
+lGroupDesc.Caption=Group Desc:
+lGroupPass.Caption=Group pass：
+LGroupPassdesc.Caption=   Set pass to join this group without confirm
+lCreateGroup.Caption=Create group
+[findGroup]
+findGroup.Caption=Find Group
+lFindGroup.Caption=Find Group
+rFindGroupByDesc.Caption=By groupdesc
+rFindGroupByName.Caption=By groupname
+bFind.Caption=Find
+bJoinGroup.Caption=Order join
+[findUser]
+findUser.Caption=Find User
+lFindUser.Caption=Find User
+rFindUserNickName.Caption=Nick name
+rFindUserName.Caption=User name
+rFindUserDesc.Caption=User desc
+bOrderAddFriend.Caption=Order friend
+[CVNMSG]
+CVNMSG.Caption=hint
+[FModifyGroup]
+FModifyGroup.Caption=Modify group
+lGroupName.Caption=Group Name:
+lGroupDesc.Caption=Group Desc:
+[fNeedPass]
+fNeedPass.Caption=Need passowrd
+lNeedpass.Caption=Need password
+[fPeerOrd]
+fPeerOrd.Caption=Order info
+bSureAdd.Caption=Yes,I'm
+bRefusejoin.Caption=Refuse
+[bRefusejoin]
+
+fPrivateSetup.Caption=User info
+bRefusejoin.Caption=User info
+lPrivateInfo.Caption=User info
+lNickname.Caption=NickName:
+lPrivPass.Caption=Password:
+lPrivSurePass.Caption=Confirm Pass:
+lPrivDesc.Caption=Description:
+lPrivPass1.Caption=Authorize pass 1:
+lPrivPass2.Caption=Authorize pass 2:
+lPrivPass3.Caption=Use this words be my friend:
+lPrivDosPass.Caption=Telnet DOS password
+lAlert.Caption=   Aletr:DOS password is Remote control entry
+[fRegist]
+fRegist.Caption=Regist User
+lRegisthint.Caption=Regist User
+lRegUserName.Caption=Username(Mail):
+lRegNickName.Caption=Nickname:
+lRegPass.Caption=Password:
+lRegRePass.Caption=Confirm pass：
+lRegDesc.Caption=Description：
+bRegSubmit.Caption=Regist
+[FrmMain]
+FrmMain.Caption=Network
+lNetWork.Caption=NetWork tools
+lblConnection.Caption=Connection info:
+lblDevice.Caption=Drivice:
+lblMedia.Caption=Media:
+lblStatus.Caption=Status:
+lblShared.Caption=Share this network:
+lblFarewall.Caption=Open firewall:
+[fUserinfo]
+fUserinfo.Caption=User info
+lUserinfo.Caption=User info
+lShowUserName.Caption=Username:
+lShowIP.Caption=User IP:
+lShowDesc.Caption=User desc:
+[strres]
+JOINGROUP_ORDER_HAS_BEEN_SENT=Order has been sent
+JOINFRIEND_ORDER_HAS_BEEN_SENT=Order has been sent
+NOT_FOUND_USER=User not found
+PASS_NOTMACH=Password not march
+ORDER_JOIN_USERGROUP=Order Join usergroup
+ORDER_JOIN_USERGROUP_SURE=申请加入用户组-确认
+ORDER_JOIN_USERGROUP_REFUSE=申请加入用户组-拒绝
+ORDER_REFUSE=-refuse
+ORDER_SURE=-sure
+
+MSG_NEEDETHER=Click "YES" to install ether,"NO" for cancel
+MSG_CLOSECVN=Close CVN will lost all vpn connection
+MSG_USEMAIL=You couldn't get password back without mail regist,Are you sure.
+SEND_TEXT=Send:
+RECV_TEXT=Recv:
+CONNUM_TEXT=ConNum:
+CONFLICT_ETHERIP_TEXT=IP conflict
+DHCP_MESSAGE_ERROR=DHCP message error
+EXECUTE_FAIL_TEXT=Execute fail
+DELETE_FRIEND_TEXT=Delete friend
+DROP_GROUP_USER=Drop group user
+CANT_CONNECT_TO_SERVER_TEXT=Cant connect to server,please confirm server ip
+LOGIN_OUT_TEXT=Quit
+LOGIN_SUCCESS=Login Success
+CONFIM_NETWORK_TYPE=Check network type
+CHECK_NETWORK=Check network type...
+CHECK_NETWORK_FINISH=Finish Check network type 
+ETHER_NOT_FOUND=Ether not installed ,please install ether first
+LOGINFAIL_PASSERROR=User pass not match,login fail
+LOGINFAIL_RELOGIN_BAN=User login at other machine...
+LOGINFAIL_SERVER_BAN=Server refuse login
+GROUP_NAME_HAS_EXIST=This Group has exists,retype a new
+GROUP_CREATE_SUCCESS=Create gourp success
+GROUP_NAME_MODIFY_SUCCESS=Modify group info success
+QUIT_SURE=Sure quit?
+RELOGIN_TIME_TEXT=Try auto login 
+USER_TEXT=User:
+USER_LOGIN_START=Start Login
+SEND_SIZE=Send
+RECV_SIZE=Recive
+SERVER_ALLOCATION_IP=Server Allocation IP
+MSG_DISMISS_GROUP=This operation will dismiss all user from group
+DELETE_USER_SURE_TEXT=Are you sure delete :
+TCP_DIRECT=TCP direct connect:
+PORT=prot
+TCP_UPNP_FAIL=TCP_Upnp can't start
+UDP_DISABLED=UDP disabled
+UDP_TYPE=UDP type:
+UDP_DIRECT=UDP direct:
+LOCAL_NETWORK=Local network:
+IP_OUTSIDE=Current out IP:
+ARE_YOU_SURE=Knock from
+KNOCK_OUT= user:
+SEND_MESSAGE=Send message
+DISCONNECT=Disconnect
+CONNECT=Connect
+TRY_CONNECT=Try Connect to
+CONNECT_TYPE=Connect Type:
+TUNNELINFO_TEXT=>>>>>>>>>>Tunnel info<<<<<<<<<<
+REMOTE_TUNNELINFO=Remote tunnel info:
+LOCAL_TUNNELINFO=Local tunnel info:
+SERVERTRANS=~Server Trans~
+RENEW_MY_INFO_SUCCESS=Renew infomation success.
+RM_SU_NOTALLOW_NOTFRIEND=*rm:You are not in friend list
+RM_SU_NOTALLOW=*rm: Can't allow
+RM_SU_SUCCESS=*rm: SU success
+RM_NEEDSU=*rm: Not allow please use './su' command first.
+USER_NEED_AUTHORIZE_PASS_TEXT= User Need authorize pass
+USER_NEED_AUTHORIZE_INPUT=Pass please:
+SERVER_LIST=====ServerList====
+CLIENT_HAS_RUN=Client already running
+MESSAGE_CANT_SENT=Message can't be sent
+SAY=Say
+SEND_TO=Sent to
+CHATING= chating
+USERNAME=Username
+NICKNAME=Nickname
+ORDER_FRIEND_TEXT=Hello_I_want_be_your_friend : )
+ORDER_GROUP_TEXT=Hello_I_want_to_join_this group
+FROM_NOT_FINISH=Check your name,pass,nickname
+USER_NAME_EXIST=Username has registed
+REG_SUCCESS=Regist success.
+N12.Caption=SendMessage(&S)
+N2.Caption=Connect(&C)
+N9.Caption=Disconnect(&D)
+N19.Caption=Transf
+ping1.Caption=Ping user(&P)
+N5.Caption=Mstsc(&M)
+N4.Caption=View share(&V)
+N1.Caption=Delete user(&D)
+N111.Caption=Who is(&I)
+N18.Caption=Modify group
+N16.Caption=Delete group
+N11.Caption=Quit group
+N8.Caption=Knock out
+dasd1.Caption=Quit Convnet
+N3.Caption=Connect All
+SERVERMSG=Server:

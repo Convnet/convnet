@@ -1,0 +1,25 @@
+*.rar
+*.exe
+*.dcu
+*.~*
+*.local
+*.identcache
+__history
+*.drc
+*.map
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.so
+*.apk
+*/bin/*
+*/out/*
+FastMM492/*
+addons/*
+cvnEtherdll/*
+tools & other/*
+comservice/*
+cvnmain indy/*
+CVN_ComClient/FastMM492/*
+upnp/*

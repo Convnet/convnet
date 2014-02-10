@@ -1,0 +1,1169 @@
+EurekaLog 6.0.11
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Mon, 6 Oct 2008 20:25:31 +0800
+  1.2 Name/Description: IpTest.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 21 Feb 2008 21:47:38 +0800
+  1.6 Up Time         : 58 seconds
+
+Exception:
+------------------------------------------------------
+  2.1 Date          : Mon, 6 Oct 2008 20:26:30 +0800
+  2.2 Address       : 00410369
+  2.3 Module Name   : IpTest.exe
+  2.4 Module Version: 
+  2.5 Type          : EOSError
+  2.6 Message       : A call to an OS function failed.
+  2.7 ID            : D3F8
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : yuyuhaso
+  3.2 Name      : ty
+  3.3 Email     : 
+  3.4 Company   : nju
+  3.5 Privileges: SeChangeNotifyPrivilege         - ON
+                  SeSecurityPrivilege             - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeLoadDriverPrivilege           - ON
+                  SeCreatePagefilePrivilege       - OFF
+                  SeIncreaseQuotaPrivilege        - OFF
+                  SeUndockPrivilege               - ON
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+
+Active Controls:
+---------------------------------------
+  4.1 Form Class   : TFmIpTest
+  4.2 Form Text    : Test IP Helper API
+  4.3 Control Class: TButton
+  4.4 Control Text : GetAdapterIndex
+
+Computer:
+--------------------------------------------------------------------------
+  5.1 Name          : P2P
+  5.2 Total Memory  : 2047 Mb
+  5.3 Free Memory   : 1429 Mb
+  5.4 Total Disk    : 27.93 Gb
+  5.5 Free Disk     : 1.38 Gb
+  5.6 System Up Time: 1 hour, 17 minutes, 35 seconds
+  5.7 Processor     : AMD Athlon(tm) 64 X2 Dual Core Processor 4200+
+  5.8 Display Mode  : 1440 x 900, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : NVIDIA GeForce 7600 GS (driver 9.1.4.7 - RAM 128 MB)
+  5.11 Printer      : Star CR-3240 (driver 6.0.6001.22116)
+
+Operating System:
+------------------------------------
+  6.1 Type    : Microsoft Windows XP
+  6.2 Build # : 2600
+  6.3 Update  : Service Pack 3
+  6.4 Language: Chinese
+  6.5 Charset : 134
+
+Network:
+---------------------------------------------------
+  7.1 IP Address: 000.000.000.000 - 192.168.001.002
+  7.2 Submask   : 000.000.000.000 - 255.255.255.000
+  7.3 Gateway   : 000.000.000.000 - 192.168.001.001
+  7.4 DNS 1     : 000.000.000.000 - 218.002.135.001
+  7.5 DNS 2     : 000.000.000.000 - 061.147.037.001
+  7.6 DHCP      : ON              - ON             
+
+Call Stack Information:
+-------------------------------------------------------------------------------------
+|Address |Module      |Unit           |Class    |Procedure/Method            |Line  |
+-------------------------------------------------------------------------------------
+|Running Thread: ID=3076; Priority=0; Class=; [Main]                                |
+|-----------------------------------------------------------------------------------|
+|004B0382|IpTest.exe  |IpFunctions.pas|         |IpHlpError                  |186[9]|
+|004B02C0|IpTest.exe  |IpFunctions.pas|         |IpHlpError                  |177[0]|
+|004B0773|IpTest.exe  |IpFunctions.pas|         |VVGetAdapterIndex           |272[5]|
+|004B070C|IpTest.exe  |IpFunctions.pas|         |VVGetAdapterIndex           |267[0]|
+|004B3DDF|IpTest.exe  |IpUnit1.pas    |TFmIpTest|BtGetAdapterIndexClick      |325[8]|
+|7C92EC9A|ntdll.dll   |               |         |RtlMultiByteToUnicodeN      |      |
+|7C92EB74|ntdll.dll   |               |         |RtlAnsiStringToUnicodeString|      |
+|7C92D30A|ntdll.dll   |               |         |NtFindAtom                  |      |
+|77D29719|user32.dll  |               |         |PtInRect                    |      |
+|77D2F94F|user32.dll  |               |         |DrawFocusRect               |      |
+|7C9210E0|ntdll.dll   |               |         |RtlLeaveCriticalSection     |      |
+|77D292DE|user32.dll  |               |         |SendMessageW                |      |
+|77D2929A|user32.dll  |               |         |SendMessageW                |      |
+|77D2A993|user32.dll  |               |         |CallWindowProcA             |      |
+|77D2A97D|user32.dll  |               |         |CallWindowProcA             |      |
+|7C802550|kernel32.dll|               |         |WaitForSingleObjectEx       |      |
+|7C80253D|kernel32.dll|               |         |WaitForSingleObject         |      |
+|77D194DA|user32.dll  |               |         |GetCapture                  |      |
+|77D196C2|user32.dll  |               |         |DispatchMessageA            |      |
+|77D196B8|user32.dll  |               |         |DispatchMessageA            |      |
+|004B9017|IpTest.exe  |IpTest.dpr     |         |                            |50[3] |
+|7C92DC9A|ntdll.dll   |               |         |NtSetInformationThread      |      |
+-------------------------------------------------------------------------------------
+
+Modules Information:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name        |Description                                     |Version        |Size   |Modified           |Path                                                                                                |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|IpTest.exe  |                                                |               |880640 |2008-02-21 21:47:40|D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo                                            |
+|10000000|safemon.dll |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                         |4.2.0.1005     |169472 |2008-07-10 17:42:44|C:\Program Files\360safe\safemon                                                                    |
+|5ADC0000|uxtheme.dll |Microsoft UxTheme Library                       |6.0.2900.5512  |216064 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|5D170000|comctl32.dll|Common Controls Library                         |5.82.2900.5512 |617472 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|5FDD0000|NETAPI32.dll|Net Win32 API DLL                               |5.1.2600.5512  |337408 |2008-04-13 19:13:46|C:\WINDOWS\system32                                                                                 |
+|62C20000|LPK.DLL     |Language Pack                                   |5.1.2600.5512  |22016  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|71A10000|WS2HELP.dll |Windows Socket 2.0 Helper for Windows NT        |5.1.2600.5512  |19968  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A20000|WS2_32.dll  |Windows Socket 2.0 32-Bit DLL                   |5.1.2600.5512  |82432  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A40000|wsock32.dll |Windows Socket 32-Bit DLL                       |5.1.2600.5512  |28672  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71B70000|SAMLIB.dll  |SAM Library DLL                                 |5.1.2600.5512  |64000  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|72F70000|winspool.drv|Windows Spooler Driver                          |5.1.2600.5512  |145920 |2008-04-13 19:14:20|C:\WINDOWS\system32                                                                                 |
+|73640000|msctfime.ime|Microsoft Text Frame Work Service IME           |5.1.2600.5512  |177152 |2008-04-13 19:12:38|C:\WINDOWS\system32                                                                                 |
+|73FA0000|USP10.dll   |Uniscribe Unicode script processor              |1.420.2600.5512|406016 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|74680000|MSCTF.dll   |MSCTF Server DLL                                |5.1.2600.5512  |296960 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76060000|SETUPAPI.dll|Windows Setup API                               |5.1.2600.5512  |1389568|2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76300000|IMM32.DLL   |Windows XP IMM32 API Client DLL                 |5.1.2600.5512  |110080 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76990000|ole32.dll   |Microsoft OLE for Windows                       |5.1.2600.5512  |1287168|2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76AF0000|ATL.DLL     |ATL Module for Windows XP (Unicode)             |3.5.2284.1     |58880  |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76BC0000|PSAPI.DLL   |Process Status Helper                           |5.1.2600.5512  |23040  |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76D10000|MPRAPI.dll  |Windows NT MP Router Administration DLL         |5.1.2600.5512  |87040  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76D30000|iphlpapi.dll|IP Helper API                                   |5.1.2600.5512  |94208  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76DE0000|adsldpc.dll |ADs LDAP Provider C DLL                         |5.1.2600.5512  |143360 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76E50000|rtutils.dll |Routing Utilities                               |5.1.2600.5512  |44032  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76F30000|WLDAP32.dll |Win32 LDAP API DLL                              |5.1.2600.5512  |170496 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|770F0000|oleaut32.dll|                                                |5.1.2600.5512  |551936 |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|77180000|comctl32.dll|User Experience Controls Library                |6.0.2900.5512  |1054208|2008-04-13 19:11:58|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83|
+|77BD0000|version.dll |Version Checking and File Installation Libraries|5.1.2600.5512  |18944  |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|77BE0000|msvcrt.dll  |Windows NT CRT DLL                              |7.0.2600.5512  |343040 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|77C90000|ACTIVEDS.dll|ADs Router Layer DLL                            |5.1.2600.5512  |192000 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77D10000|user32.dll  |Windows XP USER API Client DLL                  |5.1.2600.5512  |574976 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77DA0000|advapi32.dll|Advanced Windows 32 Base API                    |5.1.2600.5512  |674816 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77E50000|RPCRT4.dll  |Remote Procedure Call Runtime                   |5.1.2600.5512  |584704 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77EF0000|GDI32.dll   |GDI Client DLL                                  |5.1.2600.5512  |285184 |2008-04-13 19:13:42|C:\WINDOWS\system32                                                                                 |
+|77F40000|SHLWAPI.dll |Shell Light-weight Utility Library              |6.0.2900.5512  |473088 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77FC0000|Secur32.dll |Security Support Provider Interface             |5.1.2600.5512  |56320  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|7C800000|kernel32.dll|Windows NT BASE API Client DLL                  |5.1.2600.5512  |1150464|2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|7C920000|ntdll.dll   |NT Layer DLL                                    |5.1.2600.5512  |589312 |2008-04-13 19:13:28|C:\WINDOWS\system32                                                                                 |
+|7D590000|shell32.dll |Windows Shell Common Dll                        |6.0.2900.5622  |8318976|2008-06-18 03:00:42|C:\WINDOWS\system32                                                                                 |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                 |Version      |Memory  |Priority|Threads|Path                                                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|4   |System                   |                                            |             |327680  |Normal  |83     |                                                        |
+|184 |IpTest.exe               |                                            |             |7331840 |Normal  |2      |D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo|
+|244 |spoolsv.exe              |Spooler SubSystem App                       |5.1.2600.5512|6356992 |Normal  |12     |C:\WINDOWS\system32                                     |
+|996 |avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |3452928 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|1012|WPService.exe            |WebProtect                                  |1.0.0.1      |5697536 |Normal  |3      |C:\Program Files\CMBCHINA\WebProtect                    |
+|1060|TIMPlatform.exe          |TIMPlatform                                 |0.3.1.8      |2236416 |Normal  |2      |F:\QQ                                                   |
+|1112|smss.exe                 |                                            |             |471040  |Normal  |3      |\SystemRoot\System32                                    |
+|1152|inetinfo.exe             |Internet ÐÅÏ¢·þÎñ                           |5.1.2600.5512|11616256|Normal  |25     |C:\WINDOWS\system32\inetsrv                             |
+|1184|nvsvc32.exe              |NVIDIA Driver Helper Service, Version 91.47 |6.14.10.9147 |4444160 |Normal  |3      |C:\WINDOWS\system32                                     |
+|1216|winlogon.exe             |                                            |             |9031680 |High    |21     |C:\WINDOWS\system32                                     |
+|1260|services.exe             |Services and Controller app                 |5.1.2600.5512|4268032 |Normal  |15     |C:\WINDOWS\system32                                     |
+|1272|lsass.exe                |LSA Shell (Export Version)                  |5.1.2600.5512|1073152 |Normal  |20     |C:\WINDOWS\system32                                     |
+|1448|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|5959680 |Normal  |19     |C:\WINDOWS\system32                                     |
+|1668|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|38322176|Normal  |80     |C:\WINDOWS\System32                                     |
+|1784|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|4968448 |Normal  |6      |C:\WINDOWS\system32                                     |
+|2216|QQ.exe                   |QQ                                          |7.1.644.1777 |37502976|Normal  |14     |f:\QQ                                                   |
+|2652|Explorer.EXE             |Windows Explorer                            |6.0.2900.5512|30908416|Normal  |13     |C:\WINDOWS                                              |
+|2716|usnsvc.exe               |Messenger Sharing USN Journal Reader Service|8.1.178.0    |2949120 |Normal  |5      |C:\Program Files\MSN Messenger                          |
+|2972|RTHDCPL.EXE              |Realtek HD Audio Control Panel              |2.0.9.1      |23449600|Normal  |4      |C:\WINDOWS                                              |
+|3204|RUNDLL32.EXE             |Run a DLL as an App                         |5.1.2600.5512|3948544 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3220|360tray.exe              |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                     |5.0.0.1002   |2154496 |Normal  |5      |C:\Program Files\360safe\safemon                        |
+|3236|avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |4972544 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|3268|daemon.exe               |Virtual DAEMON Manager                      |3.47.0.0     |4456448 |Normal  |2      |C:\Program Files\D-Tools                                |
+|3292|ctfmon.exe               |CTF Loader                                  |5.1.2600.5512|3600384 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3320|GoogleToolbarNotifier.exe|GoogleToolbarNotifier                       |2.0.301.1654 |3112960 |Normal  |4      |C:\Program Files\Google\GoogleToolbarNotifier           |
+|3392|msmsgs.exe               |Windows Messenger                           |4.7.0.3001   |2392064 |Normal  |2      |C:\Program Files\Messenger                              |
+|3420|msnmsgr.exe              |Messenger                                   |8.1.178.0    |14508032|Normal  |29     |C:\Program Files\MSN Messenger                          |
+|3456|ppsap.exe                |PPS ÍøÂç¼ÓËÙÆ÷                              |1.0.11.139   |10637312|Normal  |17     |C:\Program Files\PPStream                               |
+|3484|IEXPLORE.EXE             |Internet Explorer                           |6.0.2900.5512|29921280|Normal  |11     |C:\Program Files\Internet Explorer                      |
+|3560|Wifiusb.exe              |Wireless LAN Configuration Utility          |2.8.4.2003   |7389184 |Normal  |2      |C:\Program Files\DT\Sinus 1054 data                     |
+|3620|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|3829760 |Normal  |8      |C:\WINDOWS\System32                                     |
+|3992|delphi32.exe             |Delphi-32 Development Environment           |7.0.4.453    |93859840|Normal  |5      |D:\Program Files\Borland\Delphi7\Bin                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+------------------------------------------------------------------------------------------
+; SysUtils.RaiseLastOSError (Line=0 - Offset=0)
+; ---------------------------------------------
+00410347  call    SysUtils.Exception.CreateResFmt
+0041034C  mov     edx, eax
+0041034E  jmp     SysUtils.RaiseLastOSError
+00410350  mov     ecx, [$4C12FC]
+00410356  mov     dl, $01
+00410358  mov     eax, dword ptr [EOSError]
+0041035D  call    SysUtils.Exception.CreateRes
+00410362  mov     edx, eax
+00410364  mov     [edx+$0C], ebx
+00410367  mov     eax, edx
+00410369  call    System._RaiseExcept              ; <-- EXCEPTION
+0041036E  xor     eax, eax
+00410370  pop     edx
+00410371  pop     ecx
+00410372  pop     ecx
+00410373  mov     fs:[eax], edx
+00410376  push    $0041038B                        ; '[‹å]Ãè_ÿÿÿÃ‹ÀS‹Ø…Ûu.èPÿÿÿ‹Ã[ÃS°.'...
+0041037B  lea     eax, [ebp-$14]
+0041037E  call    System._LStrClr
+00410383  ret
+
+Registers:
+-----------------------------
+EAX: 00ADC280   EDI: 0012F7DC
+EBX: 00000000   ESI: 00488F34
+ECX: 00000000   ESP: 0012F5B4
+EDX: 0041036E   EIP: 00410369
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012F5B4: 0012F5E4   00410369: E8 E6 3D FF FF 33 C0 5A 59 59 64 89 10 68 8B 03  ..=..3.ZYYd..h..
+0012F5B8: 00404088   00410379: 41 00 8D 45 EC E8 39 44 FF FF C3 E9 CF 3C FF FF  A..E..9D.....<..
+0012F5BC: 0012F5D8   00410389: EB F0 5B 8B E5 5D C3 E8 5F FF FF FF C3 8B C0 53  ..[..].._......S
+0012F5C0: 004B07A4   00410399: 8B D8 85 DB 75 05 E8 50 FF FF FF 8B C3 5B C3 53  ....u..P.....[.S
+0012F5C4: 00000000   004103A9: B0 01 8B 1D 28 A3 4B 00 EB 05 FF 53 04 8B 1B 84  ....(.K....S....
+0012F5C8: 0012F610   004103B9: C0 74 04 85 DB 75 F3 5B C3 8B C0 53 BB 28 A3 4B  .t...u.[...S.(.K
+0012F5CC: 7C92E900   004103C9: 00 EB 10 8B 03 8B 10 89 13 BA 08 00 00 00 E8 78  ...............x
+0012F5D0: 7C930040   004103D9: 23 FF FF 83 3B 00 75 EB 5B C3 90 53 68 1C 04 41  #...;.u.[..Sh..A
+0012F5D4: FFFFFFFF   004103E9: 00 E8 01 6A FF FF 8B D8 85 DB 74 10 68 2C 04 41  ...j......t.h,.A
+0012F5D8: 0012F608   004103F9: 00 53 E8 08 6A FF FF A3 4C A1 4B 00 83 3D 4C A1  .S..j...L.K..=L.
+0012F5DC: 00410395   00410409: 4B 00 00 75 0A B8 C8 B7 40 00 A3 4C A1 4B 00 5B  K..u....@..L.K.[
+0012F5E0: 004B0387   00410419: C3 00 00 6B 65 72 6E 65 6C 33 32 2E 64 6C 6C 00  ...kernel32.dll.
+0012F5E4: 0012F610   00410429: 00 00 00 47 65 74 44 69 73 6B 46 72 65 65 53 70  ...GetDiskFreeSp
+0012F5E8: 00404088   00410439: 61 63 65 45 78 41 00 BA 01 00 00 00 92 F0 0F C1  aceExA..........
+0012F5EC: 0012F608   00410449: 02 40 C3 BA FF FF FF FF 92 F0 0F C1 02 48 C3 87  .@...........H..
+0012F5F0: 00AE8CBC   00410459: 10 89 D0 C3 8D 40 00 92 F0 0F C1 02 C3 8B C0 53  .....@.........S
+
+
+
+EurekaLog 6.0.11
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Mon, 6 Oct 2008 20:25:31 +0800
+  1.2 Name/Description: IpTest.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 21 Feb 2008 21:47:38 +0800
+  1.6 Up Time         : 1 minute, 27 seconds
+
+Exception:
+----------------------------------------------------
+  2.1 Date          : Mon, 6 Oct 2008 20:26:59 +0800
+  2.2 Address       : 00410369
+  2.3 Module Name   : IpTest.exe
+  2.4 Module Version: 
+  2.5 Type          : EOSError
+  2.6 Message       : System Error.  Code:_87.
+                      ²ÎÊý²»ÕýÈ·¡£.
+  2.7 ID            : 6EDA
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : yuyuhaso
+  3.2 Name      : ty
+  3.3 Email     : 
+  3.4 Company   : nju
+  3.5 Privileges: SeChangeNotifyPrivilege         - ON
+                  SeSecurityPrivilege             - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeLoadDriverPrivilege           - ON
+                  SeCreatePagefilePrivilege       - OFF
+                  SeIncreaseQuotaPrivilege        - OFF
+                  SeUndockPrivilege               - ON
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+
+Active Controls:
+---------------------------------------
+  4.1 Form Class   : TFmIpTest
+  4.2 Form Text    : Test IP Helper API
+  4.3 Control Class: TButton
+  4.4 Control Text : UnenableRouter
+
+Computer:
+--------------------------------------------------------------------------
+  5.1 Name          : P2P
+  5.2 Total Memory  : 2047 Mb
+  5.3 Free Memory   : 1424 Mb
+  5.4 Total Disk    : 27.93 Gb
+  5.5 Free Disk     : 1.38 Gb
+  5.6 System Up Time: 1 hour, 18 minutes, 3 seconds
+  5.7 Processor     : AMD Athlon(tm) 64 X2 Dual Core Processor 4200+
+  5.8 Display Mode  : 1440 x 900, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : NVIDIA GeForce 7600 GS (driver 9.1.4.7 - RAM 128 MB)
+  5.11 Printer      : Star CR-3240 (driver 6.0.6001.22116)
+
+Operating System:
+------------------------------------
+  6.1 Type    : Microsoft Windows XP
+  6.2 Build # : 2600
+  6.3 Update  : Service Pack 3
+  6.4 Language: Chinese
+  6.5 Charset : 134
+
+Network:
+---------------------------------------------------
+  7.1 IP Address: 000.000.000.000 - 192.168.001.002
+  7.2 Submask   : 000.000.000.000 - 255.255.255.000
+  7.3 Gateway   : 000.000.000.000 - 192.168.001.001
+  7.4 DNS 1     : 000.000.000.000 - 218.002.135.001
+  7.5 DNS 2     : 000.000.000.000 - 061.147.037.001
+  7.6 DHCP      : ON              - ON             
+
+Call Stack Information:
+-----------------------------------------------------------------------------------------
+|Address |Module    |Unit           |Class         |Procedure/Method            |Line   |
+-----------------------------------------------------------------------------------------
+|*Exception Thread: ID=3076; Priority=0; Class=; [Main]                                 |
+|---------------------------------------------------------------------------------------|
+|00410369|IpTest.exe|SysUtils       |              |RaiseLastOSError            |       |
+|004102F4|IpTest.exe|SysUtils       |              |RaiseLastOSError            |       |
+|00410390|IpTest.exe|SysUtils       |              |RaiseLastWin32Error         |       |
+|004B227C|IpTest.exe|IpFunctions.pas|              |VVUnenableRouter            |770[5] |
+|004B221C|IpTest.exe|IpFunctions.pas|              |VVUnenableRouter            |765[0] |
+|004B8B50|IpTest.exe|IpUnit1.pas    |TFmIpTest     |BtUnenableRouterClick       |1179[2]|
+|00490990|IpTest.exe|Controls       |TControl      |Click                       |       |
+|0049092C|IpTest.exe|Controls       |TControl      |Click                       |       |
+|00488F50|IpTest.exe|StdCtrls       |TButton       |Click                       |       |
+|00403B00|IpTest.exe|System         |              |_CallDynaInst               |       |
+|00489044|IpTest.exe|StdCtrls       |TButton       |CNCommand                   |       |
+|004907F8|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|77D299D3|user32.dll|               |              |NotifyWinEvent              |       |
+|7C92EC9A|ntdll.dll |               |              |RtlMultiByteToUnicodeN      |       |
+|7C92EB74|ntdll.dll |               |              |RtlAnsiStringToUnicodeString|       |
+|7C92D30A|ntdll.dll |               |              |NtFindAtom                  |       |
+|00490670|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|00493743|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|004935EC|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|00488E14|IpTest.exe|StdCtrls       |TButtonControl|WndProc                     |       |
+|004905C8|IpTest.exe|Controls       |TControl      |Perform                     |       |
+|004905A4|IpTest.exe|Controls       |TControl      |Perform                     |       |
+|0049387B|IpTest.exe|Controls       |              |DoControlMsg                |       |
+|00493858|IpTest.exe|Controls       |              |DoControlMsg                |       |
+|00493ED3|IpTest.exe|Controls       |TWinControl   |WMCommand                   |       |
+|004907F8|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|00476ECC|IpTest.exe|Graphics       |              |FreeMemoryContexts          |       |
+|004933D5|IpTest.exe|Controls       |TWinControl   |MainWndProc                 |       |
+|0041EB1C|IpTest.exe|Classes        |              |StdWndProc                  |       |
+|77D29719|user32.dll|               |              |PtInRect                    |       |
+|00490670|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|00493743|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|7C9210E0|ntdll.dll |               |              |RtlLeaveCriticalSection     |       |
+|00417D30|IpTest.exe|Classes        |TThreadList   |UnlockList                  |       |
+|00417D2C|IpTest.exe|Classes        |TThreadList   |UnlockList                  |       |
+|00476F64|IpTest.exe|Graphics       |              |FreeMemoryContexts          |       |
+|004933C0|IpTest.exe|Controls       |TWinControl   |MainWndProc                 |       |
+|00490670|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|00493743|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|004933C0|IpTest.exe|Controls       |TWinControl   |MainWndProc                 |       |
+|0041EB1C|IpTest.exe|Classes        |              |StdWndProc                  |       |
+|77D292DE|user32.dll|               |              |SendMessageW                |       |
+|77D2929A|user32.dll|               |              |SendMessageW                |       |
+|77D2A993|user32.dll|               |              |CallWindowProcA             |       |
+|77D2A97D|user32.dll|               |              |CallWindowProcA             |       |
+|00493827|IpTest.exe|Controls       |TWinControl   |DefaultHandler              |       |
+|00490D98|IpTest.exe|Controls       |TControl      |WMLButtonUp                 |       |
+|004907F8|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|77D194DA|user32.dll|               |              |GetCapture                  |       |
+|0049356B|IpTest.exe|Controls       |TWinControl   |IsControlMouseMsg           |       |
+|00490670|IpTest.exe|Controls       |TControl      |WndProc                     |       |
+|00493743|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|004935EC|IpTest.exe|Controls       |TWinControl   |WndProc                     |       |
+|00488E14|IpTest.exe|StdCtrls       |TButtonControl|WndProc                     |       |
+|004933C0|IpTest.exe|Controls       |TWinControl   |MainWndProc                 |       |
+|0041EB1C|IpTest.exe|Classes        |              |StdWndProc                  |       |
+|77D196C2|user32.dll|               |              |DispatchMessageA            |       |
+|77D196B8|user32.dll|               |              |DispatchMessageA            |       |
+|004AE95F|IpTest.exe|Forms          |TApplication  |ProcessMessage              |       |
+|004AE8DC|IpTest.exe|Forms          |TApplication  |ProcessMessage              |       |
+|004AE97E|IpTest.exe|Forms          |TApplication  |HandleMessage               |       |
+|004AE974|IpTest.exe|Forms          |TApplication  |HandleMessage               |       |
+|004AEB9E|IpTest.exe|Forms          |TApplication  |Run                         |       |
+|004AEB08|IpTest.exe|Forms          |TApplication  |Run                         |       |
+|004B9017|IpTest.exe|IpTest.dpr     |              |                            |50[3]  |
+|7C92DC9A|ntdll.dll |               |              |NtSetInformationThread      |       |
+-----------------------------------------------------------------------------------------
+
+Modules Information:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name        |Description                                     |Version        |Size   |Modified           |Path                                                                                                |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|IpTest.exe  |                                                |               |880640 |2008-02-21 21:47:40|D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo                                            |
+|10000000|safemon.dll |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                         |4.2.0.1005     |169472 |2008-07-10 17:42:44|C:\Program Files\360safe\safemon                                                                    |
+|30480000|fssync.dll  |FSSYNC.DLL                                      |7.0.5.325      |48656  |2008-02-08 18:37:42|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|305E0000|miscr3.dll  |Kaspersky Anti-Virus Ring 3 Hooker Helper       |7.0.1.325      |88592  |2008-02-08 18:37:48|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|5ADC0000|uxtheme.dll |Microsoft UxTheme Library                       |6.0.2900.5512  |216064 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|5D170000|comctl32.dll|Common Controls Library                         |5.82.2900.5512 |617472 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|5FDD0000|NETAPI32.dll|Net Win32 API DLL                               |5.1.2600.5512  |337408 |2008-04-13 19:13:46|C:\WINDOWS\system32                                                                                 |
+|62C20000|LPK.DLL     |Language Pack                                   |5.1.2600.5512  |22016  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|71A10000|WS2HELP.dll |Windows Socket 2.0 Helper for Windows NT        |5.1.2600.5512  |19968  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A20000|WS2_32.dll  |Windows Socket 2.0 32-Bit DLL                   |5.1.2600.5512  |82432  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A40000|wsock32.dll |Windows Socket 32-Bit DLL                       |5.1.2600.5512  |28672  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71B70000|SAMLIB.dll  |SAM Library DLL                                 |5.1.2600.5512  |64000  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|72F70000|winspool.drv|Windows Spooler Driver                          |5.1.2600.5512  |145920 |2008-04-13 19:14:20|C:\WINDOWS\system32                                                                                 |
+|73640000|msctfime.ime|Microsoft Text Frame Work Service IME           |5.1.2600.5512  |177152 |2008-04-13 19:12:38|C:\WINDOWS\system32                                                                                 |
+|73FA0000|USP10.dll   |Uniscribe Unicode script processor              |1.420.2600.5512|406016 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|74680000|MSCTF.dll   |MSCTF Server DLL                                |5.1.2600.5512  |296960 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|759D0000|USERENV.dll |Userenv                                         |5.1.2600.5512  |708608 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76060000|SETUPAPI.dll|Windows Setup API                               |5.1.2600.5512  |1389568|2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76300000|IMM32.DLL   |Windows XP IMM32 API Client DLL                 |5.1.2600.5512  |110080 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76990000|ole32.dll   |Microsoft OLE for Windows                       |5.1.2600.5512  |1287168|2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76AF0000|ATL.DLL     |ATL Module for Windows XP (Unicode)             |3.5.2284.1     |58880  |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76BC0000|PSAPI.DLL   |Process Status Helper                           |5.1.2600.5512  |23040  |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76D10000|MPRAPI.dll  |Windows NT MP Router Administration DLL         |5.1.2600.5512  |87040  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76D30000|iphlpapi.dll|IP Helper API                                   |5.1.2600.5512  |94208  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76DE0000|adsldpc.dll |ADs LDAP Provider C DLL                         |5.1.2600.5512  |143360 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76E50000|rtutils.dll |Routing Utilities                               |5.1.2600.5512  |44032  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76F30000|WLDAP32.dll |Win32 LDAP API DLL                              |5.1.2600.5512  |170496 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|770F0000|oleaut32.dll|                                                |5.1.2600.5512  |551936 |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|77180000|comctl32.dll|User Experience Controls Library                |6.0.2900.5512  |1054208|2008-04-13 19:11:58|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83|
+|77BD0000|version.dll |Version Checking and File Installation Libraries|5.1.2600.5512  |18944  |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|77BE0000|msvcrt.dll  |Windows NT CRT DLL                              |7.0.2600.5512  |343040 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|77C90000|ACTIVEDS.dll|ADs Router Layer DLL                            |5.1.2600.5512  |192000 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77D10000|user32.dll  |Windows XP USER API Client DLL                  |5.1.2600.5512  |574976 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77DA0000|advapi32.dll|Advanced Windows 32 Base API                    |5.1.2600.5512  |674816 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77E50000|RPCRT4.dll  |Remote Procedure Call Runtime                   |5.1.2600.5512  |584704 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77EF0000|GDI32.dll   |GDI Client DLL                                  |5.1.2600.5512  |285184 |2008-04-13 19:13:42|C:\WINDOWS\system32                                                                                 |
+|77F40000|SHLWAPI.dll |Shell Light-weight Utility Library              |6.0.2900.5512  |473088 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77FC0000|Secur32.dll |Security Support Provider Interface             |5.1.2600.5512  |56320  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|78130000|MSVCR80.dll |Microsoft? C Runtime Library                    |8.0.50727.762  |626688 |2007-08-23 00:18:08|C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700               |
+|7C800000|kernel32.dll|Windows NT BASE API Client DLL                  |5.1.2600.5512  |1150464|2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|7C920000|ntdll.dll   |NT Layer DLL                                    |5.1.2600.5512  |589312 |2008-04-13 19:13:28|C:\WINDOWS\system32                                                                                 |
+|7D590000|shell32.dll |Windows Shell Common Dll                        |6.0.2900.5622  |8318976|2008-06-18 03:00:42|C:\WINDOWS\system32                                                                                 |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                 |Version      |Memory  |Priority|Threads|Path                                                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|4   |System                   |                                            |             |327680  |Normal  |83     |                                                        |
+|184 |IpTest.exe               |                                            |             |8962048 |Normal  |2      |D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo|
+|244 |spoolsv.exe              |Spooler SubSystem App                       |5.1.2600.5512|6373376 |Normal  |13     |C:\WINDOWS\system32                                     |
+|996 |avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |8298496 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|1012|WPService.exe            |WebProtect                                  |1.0.0.1      |5697536 |Normal  |3      |C:\Program Files\CMBCHINA\WebProtect                    |
+|1060|TIMPlatform.exe          |TIMPlatform                                 |0.3.1.8      |2236416 |Normal  |2      |F:\QQ                                                   |
+|1112|smss.exe                 |                                            |             |471040  |Normal  |3      |\SystemRoot\System32                                    |
+|1152|inetinfo.exe             |Internet ÐÅÏ¢·þÎñ                           |5.1.2600.5512|11616256|Normal  |25     |C:\WINDOWS\system32\inetsrv                             |
+|1184|nvsvc32.exe              |NVIDIA Driver Helper Service, Version 91.47 |6.14.10.9147 |4444160 |Normal  |3      |C:\WINDOWS\system32                                     |
+|1216|winlogon.exe             |                                            |             |9023488 |High    |21     |C:\WINDOWS\system32                                     |
+|1260|services.exe             |Services and Controller app                 |5.1.2600.5512|4268032 |Normal  |15     |C:\WINDOWS\system32                                     |
+|1272|lsass.exe                |LSA Shell (Export Version)                  |5.1.2600.5512|1347584 |Normal  |21     |C:\WINDOWS\system32                                     |
+|1448|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|5959680 |Normal  |19     |C:\WINDOWS\system32                                     |
+|1668|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|38322176|Normal  |80     |C:\WINDOWS\System32                                     |
+|1784|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|4968448 |Normal  |6      |C:\WINDOWS\system32                                     |
+|2216|QQ.exe                   |QQ                                          |7.1.644.1777 |37502976|Normal  |14     |f:\QQ                                                   |
+|2652|Explorer.EXE             |Windows Explorer                            |6.0.2900.5512|31404032|Normal  |13     |C:\WINDOWS                                              |
+|2716|usnsvc.exe               |Messenger Sharing USN Journal Reader Service|8.1.178.0    |2949120 |Normal  |5      |C:\Program Files\MSN Messenger                          |
+|2972|RTHDCPL.EXE              |Realtek HD Audio Control Panel              |2.0.9.1      |23449600|Normal  |4      |C:\WINDOWS                                              |
+|3204|RUNDLL32.EXE             |Run a DLL as an App                         |5.1.2600.5512|3948544 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3220|360tray.exe              |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                     |5.0.0.1002   |1519616 |Normal  |5      |C:\Program Files\360safe\safemon                        |
+|3236|avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |4972544 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|3268|daemon.exe               |Virtual DAEMON Manager                      |3.47.0.0     |4456448 |Normal  |2      |C:\Program Files\D-Tools                                |
+|3292|ctfmon.exe               |CTF Loader                                  |5.1.2600.5512|3600384 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3320|GoogleToolbarNotifier.exe|GoogleToolbarNotifier                       |2.0.301.1654 |3112960 |Normal  |4      |C:\Program Files\Google\GoogleToolbarNotifier           |
+|3392|msmsgs.exe               |Windows Messenger                           |4.7.0.3001   |2392064 |Normal  |2      |C:\Program Files\Messenger                              |
+|3420|msnmsgr.exe              |Messenger                                   |8.1.178.0    |14508032|Normal  |29     |C:\Program Files\MSN Messenger                          |
+|3456|ppsap.exe                |PPS ÍøÂç¼ÓËÙÆ÷                              |1.0.11.139   |10637312|Normal  |17     |C:\Program Files\PPStream                               |
+|3484|IEXPLORE.EXE             |Internet Explorer                           |6.0.2900.5512|29921280|Normal  |11     |C:\Program Files\Internet Explorer                      |
+|3560|Wifiusb.exe              |Wireless LAN Configuration Utility          |2.8.4.2003   |7389184 |Normal  |2      |C:\Program Files\DT\Sinus 1054 data                     |
+|3620|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|3829760 |Normal  |8      |C:\WINDOWS\System32                                     |
+|3992|delphi32.exe             |Delphi-32 Development Environment           |7.0.4.453    |93859840|Normal  |5      |D:\Program Files\Borland\Delphi7\Bin                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+------------------------------------------------------------------------------------------
+; SysUtils.RaiseLastOSError (Line=0 - Offset=0)
+; ---------------------------------------------
+00410347  call    SysUtils.Exception.CreateResFmt
+0041034C  mov     edx, eax
+0041034E  jmp     SysUtils.RaiseLastOSError
+00410350  mov     ecx, [$4C12FC]
+00410356  mov     dl, $01
+00410358  mov     eax, dword ptr [EOSError]
+0041035D  call    SysUtils.Exception.CreateRes
+00410362  mov     edx, eax
+00410364  mov     [edx+$0C], ebx
+00410367  mov     eax, edx
+00410369  call    System._RaiseExcept              ; <-- EXCEPTION
+0041036E  xor     eax, eax
+00410370  pop     edx
+00410371  pop     ecx
+00410372  pop     ecx
+00410373  mov     fs:[eax], edx
+00410376  push    $0041038B                        ; '[‹å]Ãè_ÿÿÿÃ‹ÀS‹Ø…Ûu.èPÿÿÿ‹Ã[ÃS°.'...
+0041037B  lea     eax, [ebp-$14]
+0041037E  call    System._LStrClr
+00410383  ret
+
+Registers:
+-----------------------------
+EAX: 00B8A250   EDI: 0012F7DC
+EBX: 00000057   ESI: 00488F34
+ECX: 00000000   ESP: 0012F5F4
+EDX: 0041036E   EIP: 00410369
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012F5F4: 0012F624   00410369: E8 E6 3D FF FF 33 C0 5A 59 59 64 89 10 68 8B 03  ..=..3.ZYYd..h..
+0012F5F8: 00404088   00410379: 41 00 8D 45 EC E8 39 44 FF FF C3 E9 CF 3C FF FF  A..E..9D.....<..
+0012F5FC: 0012F618   00410389: EB F0 5B 8B E5 5D C3 E8 5F FF FF FF C3 8B C0 53  ..[..].._......S
+0012F600: 00B0D548   00410399: 8B D8 85 DB 75 05 E8 50 FF FF FF 8B C3 5B C3 53  ....u..P.....[.S
+0012F604: 00000000   004103A9: B0 01 8B 1D 28 A3 4B 00 EB 05 FF 53 04 8B 1B 84  ....(.K....S....
+0012F608: 00000057   004103B9: C0 74 04 85 DB 75 F3 5B C3 8B C0 53 BB 28 A3 4B  .t...u.[...S.(.K
+0012F60C: 00488F00   004103C9: 00 EB 10 8B 03 8B 10 89 13 BA 08 00 00 00 E8 78  ...............x
+0012F610: 00ADBBDC   004103D9: 23 FF FF 83 3B 00 75 EB 5B C3 90 53 68 1C 04 41  #...;.u.[..Sh..A
+0012F614: 0012F60B   004103E9: 00 E8 01 6A FF FF 8B D8 85 DB 74 10 68 2C 04 41  ...j......t.h,.A
+0012F618: 0012F63C   004103F9: 00 53 E8 08 6A FF FF A3 4C A1 4B 00 83 3D 4C A1  .S..j...L.K..=L.
+0012F61C: 00410395   00410409: 4B 00 00 75 0A B8 C8 B7 40 00 A3 4C A1 4B 00 5B  K..u....@..L.K.[
+0012F620: 004B2281   00410419: C3 00 00 6B 65 72 6E 65 6C 33 32 2E 64 6C 6C 00  ...kernel32.dll.
+0012F624: 0012F644   00410429: 00 00 00 47 65 74 44 69 73 6B 46 72 65 65 53 70  ...GetDiskFreeSp
+0012F628: 00404088   00410439: 61 63 65 45 78 41 00 BA 01 00 00 00 92 F0 0F C1  aceExA..........
+0012F62C: 0012F63C   00410449: 02 40 C3 BA FF FF FF FF 92 F0 0F C1 02 48 C3 87  .@...........H..
+0012F630: 00000000   00410459: 10 89 D0 C3 8D 40 00 92 F0 0F C1 02 C3 8B C0 53  .....@.........S
+
+
+
+EurekaLog 6.0.11
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Mon, 6 Oct 2008 20:25:31 +0800
+  1.2 Name/Description: IpTest.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 21 Feb 2008 21:47:38 +0800
+  1.6 Up Time         : 3 minutes, 14 seconds
+
+Exception:
+------------------------------------------------------
+  2.1 Date          : Mon, 6 Oct 2008 20:28:45 +0800
+  2.2 Address       : 00410369
+  2.3 Module Name   : IpTest.exe
+  2.4 Module Version: 
+  2.5 Type          : EOSError
+  2.6 Message       : A call to an OS function failed.
+  2.7 ID            : 80E7
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : yuyuhaso
+  3.2 Name      : ty
+  3.3 Email     : 
+  3.4 Company   : nju
+  3.5 Privileges: SeChangeNotifyPrivilege         - ON
+                  SeSecurityPrivilege             - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeLoadDriverPrivilege           - ON
+                  SeCreatePagefilePrivilege       - OFF
+                  SeIncreaseQuotaPrivilege        - OFF
+                  SeUndockPrivilege               - ON
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+
+Active Controls:
+---------------------------------------
+  4.1 Form Class   : TFmIpTest
+  4.2 Form Text    : Test IP Helper API
+  4.3 Control Class: TButton
+  4.4 Control Text : SendARP
+
+Computer:
+--------------------------------------------------------------------------
+  5.1 Name          : P2P
+  5.2 Total Memory  : 2047 Mb
+  5.3 Free Memory   : 1422 Mb
+  5.4 Total Disk    : 27.93 Gb
+  5.5 Free Disk     : 1.38 Gb
+  5.6 System Up Time: 1 hour, 19 minutes, 50 seconds
+  5.7 Processor     : AMD Athlon(tm) 64 X2 Dual Core Processor 4200+
+  5.8 Display Mode  : 1440 x 900, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : NVIDIA GeForce 7600 GS (driver 9.1.4.7 - RAM 128 MB)
+  5.11 Printer      : Star CR-3240 (driver 6.0.6001.22116)
+
+Operating System:
+------------------------------------
+  6.1 Type    : Microsoft Windows XP
+  6.2 Build # : 2600
+  6.3 Update  : Service Pack 3
+  6.4 Language: Chinese
+  6.5 Charset : 134
+
+Network:
+---------------------------------------------------
+  7.1 IP Address: 000.000.000.000 - 192.168.001.002
+  7.2 Submask   : 000.000.000.000 - 255.255.255.000
+  7.3 Gateway   : 000.000.000.000 - 192.168.001.001
+  7.4 DNS 1     : 000.000.000.000 - 218.002.135.001
+  7.5 DNS 2     : 000.000.000.000 - 061.147.037.001
+  7.6 DHCP      : ON              - ON             
+
+Call Stack Information:
+------------------------------------------------------------------------------------------
+|Address |Module      |Unit           |Class         |Procedure/Method            |Line  |
+------------------------------------------------------------------------------------------
+|*Exception Thread: ID=3076; Priority=0; Class=; [Main]                                  |
+|----------------------------------------------------------------------------------------|
+|00410369|IpTest.exe  |SysUtils       |              |RaiseLastOSError            |      |
+|004102F4|IpTest.exe  |SysUtils       |              |RaiseLastOSError            |      |
+|00410390|IpTest.exe  |SysUtils       |              |RaiseLastWin32Error         |      |
+|004B0382|IpTest.exe  |IpFunctions.pas|              |IpHlpError                  |186[9]|
+|004B02C0|IpTest.exe  |IpFunctions.pas|              |IpHlpError                  |177[0]|
+|004B1529|IpTest.exe  |IpFunctions.pas|              |VVSendARP                   |517[5]|
+|004B14BC|IpTest.exe  |IpFunctions.pas|              |VVSendARP                   |512[0]|
+|004B5CC3|IpTest.exe  |IpUnit1.pas    |TFmIpTest     |BtSendARPClick              |736[8]|
+|00403B30|IpTest.exe  |System         |TObject       |InheritsFrom                |      |
+|00403A9E|IpTest.exe  |System         |              |_IsClass                    |      |
+|00490990|IpTest.exe  |Controls       |TControl      |Click                       |      |
+|0049092C|IpTest.exe  |Controls       |TControl      |Click                       |      |
+|00488F50|IpTest.exe  |StdCtrls       |TButton       |Click                       |      |
+|00403B00|IpTest.exe  |System         |              |_CallDynaInst               |      |
+|00489044|IpTest.exe  |StdCtrls       |TButton       |CNCommand                   |      |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|7C92EC9A|ntdll.dll   |               |              |RtlMultiByteToUnicodeN      |      |
+|7C92EB74|ntdll.dll   |               |              |RtlAnsiStringToUnicodeString|      |
+|7C92D30A|ntdll.dll   |               |              |NtFindAtom                  |      |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|004935EC|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|00488E14|IpTest.exe  |StdCtrls       |TButtonControl|WndProc                     |      |
+|004905C8|IpTest.exe  |Controls       |TControl      |Perform                     |      |
+|004905A4|IpTest.exe  |Controls       |TControl      |Perform                     |      |
+|0049387B|IpTest.exe  |Controls       |              |DoControlMsg                |      |
+|00493858|IpTest.exe  |Controls       |              |DoControlMsg                |      |
+|00493ED3|IpTest.exe  |Controls       |TWinControl   |WMCommand                   |      |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|73FBE4E5|USP10.dll   |               |              |UspFreeMem                  |      |
+|73FB42B3|USP10.dll   |               |              |ScriptStringFree            |      |
+|77D2FD65|user32.dll  |               |              |DrawEdge                    |      |
+|77D29719|user32.dll  |               |              |PtInRect                    |      |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|7C9210E0|ntdll.dll   |               |              |RtlLeaveCriticalSection     |      |
+|00417D30|IpTest.exe  |Classes        |TThreadList   |UnlockList                  |      |
+|00417D2C|IpTest.exe  |Classes        |TThreadList   |UnlockList                  |      |
+|00476F64|IpTest.exe  |Graphics       |              |FreeMemoryContexts          |      |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                 |      |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                 |      |
+|0041EB1C|IpTest.exe  |Classes        |              |StdWndProc                  |      |
+|77D292DE|user32.dll  |               |              |SendMessageW                |      |
+|77D2929A|user32.dll  |               |              |SendMessageW                |      |
+|77D2A993|user32.dll  |               |              |CallWindowProcA             |      |
+|77D2A97D|user32.dll  |               |              |CallWindowProcA             |      |
+|00493827|IpTest.exe  |Controls       |TWinControl   |DefaultHandler              |      |
+|00490D98|IpTest.exe  |Controls       |TControl      |WMLButtonUp                 |      |
+|7C802550|kernel32.dll|               |              |WaitForSingleObjectEx       |      |
+|7C80253D|kernel32.dll|               |              |WaitForSingleObject         |      |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|77D194DA|user32.dll  |               |              |GetCapture                  |      |
+|0049356B|IpTest.exe  |Controls       |TWinControl   |IsControlMouseMsg           |      |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                     |      |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|004935EC|IpTest.exe  |Controls       |TWinControl   |WndProc                     |      |
+|00488E14|IpTest.exe  |StdCtrls       |TButtonControl|WndProc                     |      |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                 |      |
+|0041EB1C|IpTest.exe  |Classes        |              |StdWndProc                  |      |
+|77D196C2|user32.dll  |               |              |DispatchMessageA            |      |
+|77D196B8|user32.dll  |               |              |DispatchMessageA            |      |
+|004AE95F|IpTest.exe  |Forms          |TApplication  |ProcessMessage              |      |
+|004AE8DC|IpTest.exe  |Forms          |TApplication  |ProcessMessage              |      |
+|004AE97E|IpTest.exe  |Forms          |TApplication  |HandleMessage               |      |
+|004AE974|IpTest.exe  |Forms          |TApplication  |HandleMessage               |      |
+|004AEB9E|IpTest.exe  |Forms          |TApplication  |Run                         |      |
+|004AEB08|IpTest.exe  |Forms          |TApplication  |Run                         |      |
+|004B9017|IpTest.exe  |IpTest.dpr     |              |                            |50[3] |
+|7C92DC9A|ntdll.dll   |               |              |NtSetInformationThread      |      |
+------------------------------------------------------------------------------------------
+
+Modules Information:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name        |Description                                     |Version        |Size   |Modified           |Path                                                                                                |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|IpTest.exe  |                                                |               |880640 |2008-02-21 21:47:40|D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo                                            |
+|10000000|safemon.dll |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                         |4.2.0.1005     |169472 |2008-07-10 17:42:44|C:\Program Files\360safe\safemon                                                                    |
+|30480000|fssync.dll  |FSSYNC.DLL                                      |7.0.5.325      |48656  |2008-02-08 18:37:42|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|305E0000|miscr3.dll  |Kaspersky Anti-Virus Ring 3 Hooker Helper       |7.0.1.325      |88592  |2008-02-08 18:37:48|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|5ADC0000|uxtheme.dll |Microsoft UxTheme Library                       |6.0.2900.5512  |216064 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|5D170000|comctl32.dll|Common Controls Library                         |5.82.2900.5512 |617472 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|5FDD0000|NETAPI32.dll|Net Win32 API DLL                               |5.1.2600.5512  |337408 |2008-04-13 19:13:46|C:\WINDOWS\system32                                                                                 |
+|62C20000|LPK.DLL     |Language Pack                                   |5.1.2600.5512  |22016  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|71A10000|WS2HELP.dll |Windows Socket 2.0 Helper for Windows NT        |5.1.2600.5512  |19968  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A20000|WS2_32.dll  |Windows Socket 2.0 32-Bit DLL                   |5.1.2600.5512  |82432  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A40000|wsock32.dll |Windows Socket 32-Bit DLL                       |5.1.2600.5512  |28672  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71B70000|SAMLIB.dll  |SAM Library DLL                                 |5.1.2600.5512  |64000  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|72F70000|winspool.drv|Windows Spooler Driver                          |5.1.2600.5512  |145920 |2008-04-13 19:14:20|C:\WINDOWS\system32                                                                                 |
+|73640000|msctfime.ime|Microsoft Text Frame Work Service IME           |5.1.2600.5512  |177152 |2008-04-13 19:12:38|C:\WINDOWS\system32                                                                                 |
+|73FA0000|USP10.dll   |Uniscribe Unicode script processor              |1.420.2600.5512|406016 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|74680000|MSCTF.dll   |MSCTF Server DLL                                |5.1.2600.5512  |296960 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|759D0000|USERENV.dll |Userenv                                         |5.1.2600.5512  |708608 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76060000|SETUPAPI.dll|Windows Setup API                               |5.1.2600.5512  |1389568|2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76300000|IMM32.DLL   |Windows XP IMM32 API Client DLL                 |5.1.2600.5512  |110080 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76990000|ole32.dll   |Microsoft OLE for Windows                       |5.1.2600.5512  |1287168|2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76AF0000|ATL.DLL     |ATL Module for Windows XP (Unicode)             |3.5.2284.1     |58880  |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76BC0000|PSAPI.DLL   |Process Status Helper                           |5.1.2600.5512  |23040  |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76D10000|MPRAPI.dll  |Windows NT MP Router Administration DLL         |5.1.2600.5512  |87040  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76D30000|iphlpapi.dll|IP Helper API                                   |5.1.2600.5512  |94208  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76DE0000|adsldpc.dll |ADs LDAP Provider C DLL                         |5.1.2600.5512  |143360 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76E50000|rtutils.dll |Routing Utilities                               |5.1.2600.5512  |44032  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76F30000|WLDAP32.dll |Win32 LDAP API DLL                              |5.1.2600.5512  |170496 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|770F0000|oleaut32.dll|                                                |5.1.2600.5512  |551936 |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|77180000|comctl32.dll|User Experience Controls Library                |6.0.2900.5512  |1054208|2008-04-13 19:11:58|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83|
+|77BD0000|version.dll |Version Checking and File Installation Libraries|5.1.2600.5512  |18944  |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|77BE0000|msvcrt.dll  |Windows NT CRT DLL                              |7.0.2600.5512  |343040 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|77C90000|ACTIVEDS.dll|ADs Router Layer DLL                            |5.1.2600.5512  |192000 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77D10000|user32.dll  |Windows XP USER API Client DLL                  |5.1.2600.5512  |574976 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77DA0000|advapi32.dll|Advanced Windows 32 Base API                    |5.1.2600.5512  |674816 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77E50000|RPCRT4.dll  |Remote Procedure Call Runtime                   |5.1.2600.5512  |584704 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77EF0000|GDI32.dll   |GDI Client DLL                                  |5.1.2600.5512  |285184 |2008-04-13 19:13:42|C:\WINDOWS\system32                                                                                 |
+|77F40000|SHLWAPI.dll |Shell Light-weight Utility Library              |6.0.2900.5512  |473088 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77FC0000|Secur32.dll |Security Support Provider Interface             |5.1.2600.5512  |56320  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|78130000|MSVCR80.dll |Microsoft? C Runtime Library                    |8.0.50727.762  |626688 |2007-08-23 00:18:08|C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700               |
+|7C800000|kernel32.dll|Windows NT BASE API Client DLL                  |5.1.2600.5512  |1150464|2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|7C920000|ntdll.dll   |NT Layer DLL                                    |5.1.2600.5512  |589312 |2008-04-13 19:13:28|C:\WINDOWS\system32                                                                                 |
+|7D590000|shell32.dll |Windows Shell Common Dll                        |6.0.2900.5622  |8318976|2008-06-18 03:00:42|C:\WINDOWS\system32                                                                                 |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                 |Version      |Memory  |Priority|Threads|Path                                                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|4   |System                   |                                            |             |327680  |Normal  |83     |                                                        |
+|184 |IpTest.exe               |                                            |             |9076736 |Normal  |2      |D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo|
+|244 |spoolsv.exe              |Spooler SubSystem App                       |5.1.2600.5512|6373376 |Normal  |13     |C:\WINDOWS\system32                                     |
+|996 |avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |9691136 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|1012|WPService.exe            |WebProtect                                  |1.0.0.1      |5697536 |Normal  |3      |C:\Program Files\CMBCHINA\WebProtect                    |
+|1060|TIMPlatform.exe          |TIMPlatform                                 |0.3.1.8      |2236416 |Normal  |2      |F:\QQ                                                   |
+|1112|smss.exe                 |                                            |             |471040  |Normal  |3      |\SystemRoot\System32                                    |
+|1152|inetinfo.exe             |Internet ÐÅÏ¢·þÎñ                           |5.1.2600.5512|11616256|Normal  |25     |C:\WINDOWS\system32\inetsrv                             |
+|1184|nvsvc32.exe              |NVIDIA Driver Helper Service, Version 91.47 |6.14.10.9147 |4444160 |Normal  |3      |C:\WINDOWS\system32                                     |
+|1216|winlogon.exe             |                                            |             |9388032 |High    |21     |C:\WINDOWS\system32                                     |
+|1260|services.exe             |Services and Controller app                 |5.1.2600.5512|4268032 |Normal  |15     |C:\WINDOWS\system32                                     |
+|1272|lsass.exe                |LSA Shell (Export Version)                  |5.1.2600.5512|827392  |Normal  |19     |C:\WINDOWS\system32                                     |
+|1448|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|5959680 |Normal  |19     |C:\WINDOWS\system32                                     |
+|1668|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|38338560|Normal  |81     |C:\WINDOWS\System32                                     |
+|1784|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|4968448 |Normal  |6      |C:\WINDOWS\system32                                     |
+|2216|QQ.exe                   |QQ                                          |7.1.644.1777 |37576704|Normal  |13     |f:\QQ                                                   |
+|2652|Explorer.EXE             |Windows Explorer                            |6.0.2900.5512|31404032|Normal  |13     |C:\WINDOWS                                              |
+|2716|usnsvc.exe               |Messenger Sharing USN Journal Reader Service|8.1.178.0    |2940928 |Normal  |4      |C:\Program Files\MSN Messenger                          |
+|2972|RTHDCPL.EXE              |Realtek HD Audio Control Panel              |2.0.9.1      |23449600|Normal  |4      |C:\WINDOWS                                              |
+|3204|RUNDLL32.EXE             |Run a DLL as an App                         |5.1.2600.5512|3948544 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3220|360tray.exe              |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                     |5.0.0.1002   |2158592 |Normal  |5      |C:\Program Files\360safe\safemon                        |
+|3236|avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |4972544 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|3268|daemon.exe               |Virtual DAEMON Manager                      |3.47.0.0     |4456448 |Normal  |2      |C:\Program Files\D-Tools                                |
+|3292|ctfmon.exe               |CTF Loader                                  |5.1.2600.5512|3600384 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3320|GoogleToolbarNotifier.exe|GoogleToolbarNotifier                       |2.0.301.1654 |3112960 |Normal  |4      |C:\Program Files\Google\GoogleToolbarNotifier           |
+|3392|msmsgs.exe               |Windows Messenger                           |4.7.0.3001   |2392064 |Normal  |2      |C:\Program Files\Messenger                              |
+|3420|msnmsgr.exe              |Messenger                                   |8.1.178.0    |14508032|Normal  |29     |C:\Program Files\MSN Messenger                          |
+|3456|ppsap.exe                |PPS ÍøÂç¼ÓËÙÆ÷                              |1.0.11.139   |10633216|Normal  |17     |C:\Program Files\PPStream                               |
+|3484|IEXPLORE.EXE             |Internet Explorer                           |6.0.2900.5512|29921280|Normal  |11     |C:\Program Files\Internet Explorer                      |
+|3560|Wifiusb.exe              |Wireless LAN Configuration Utility          |2.8.4.2003   |7389184 |Normal  |2      |C:\Program Files\DT\Sinus 1054 data                     |
+|3620|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|3829760 |Normal  |8      |C:\WINDOWS\System32                                     |
+|3992|delphi32.exe             |Delphi-32 Development Environment           |7.0.4.453    |93859840|Normal  |5      |D:\Program Files\Borland\Delphi7\Bin                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+------------------------------------------------------------------------------------------
+; SysUtils.RaiseLastOSError (Line=0 - Offset=0)
+; ---------------------------------------------
+00410347  call    SysUtils.Exception.CreateResFmt
+0041034C  mov     edx, eax
+0041034E  jmp     SysUtils.RaiseLastOSError
+00410350  mov     ecx, [$4C12FC]
+00410356  mov     dl, $01
+00410358  mov     eax, dword ptr [EOSError]
+0041035D  call    SysUtils.Exception.CreateRes
+00410362  mov     edx, eax
+00410364  mov     [edx+$0C], ebx
+00410367  mov     eax, edx
+00410369  call    System._RaiseExcept              ; <-- EXCEPTION
+0041036E  xor     eax, eax
+00410370  pop     edx
+00410371  pop     ecx
+00410372  pop     ecx
+00410373  mov     fs:[eax], edx
+00410376  push    $0041038B                        ; '[‹å]Ãè_ÿÿÿÃ‹ÀS‹Ø…Ûu.èPÿÿÿ‹Ã[ÃS°.'...
+0041037B  lea     eax, [ebp-$14]
+0041037E  call    System._LStrClr
+00410383  ret
+
+Registers:
+-----------------------------
+EAX: 00AEE130   EDI: 00B0D548
+EBX: 00000000   ESI: 00000000
+ECX: 00000000   ESP: 0012F5B0
+EDX: 0041036E   EIP: 00410369
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012F5B0: 0012F5E0   00410369: E8 E6 3D FF FF 33 C0 5A 59 59 64 89 10 68 8B 03  ..=..3.ZYYd..h..
+0012F5B4: 00404088   00410379: 41 00 8D 45 EC E8 39 44 FF FF C3 E9 CF 3C FF FF  A..E..9D.....<..
+0012F5B8: 0012F5D4   00410389: EB F0 5B 8B E5 5D C3 E8 5F FF FF FF C3 8B C0 53  ..[..].._......S
+0012F5BC: 004B155C   00410399: 8B D8 85 DB 75 05 E8 50 FF FF FF 8B C3 5B C3 53  ....u..P.....[.S
+0012F5C0: 00000000   004103A9: B0 01 8B 1D 28 A3 4B 00 EB 05 FF 53 04 8B 1B 84  ....(.K....S....
+0012F5C4: 0012F5F4   004103B9: C0 74 04 85 DB 75 F3 5B C3 8B C0 53 BB 28 A3 4B  .t...u.[...S.(.K
+0012F5C8: 76D3CEA4   004103C9: 00 EB 10 8B 03 8B 10 89 13 BA 08 00 00 00 E8 78  ...............x
+0012F5CC: 0000004C   004103D9: 23 FF FF 83 3B 00 75 EB 5B C3 90 53 68 1C 04 41  #...;.u.[..Sh..A
+0012F5D0: 0012003C   004103E9: 00 E8 01 6A FF FF 8B D8 85 DB 74 10 68 2C 04 41  ...j......t.h,.A
+0012F5D4: 0012F604   004103F9: 00 53 E8 08 6A FF FF A3 4C A1 4B 00 83 3D 4C A1  .S..j...L.K..=L.
+0012F5D8: 00410395   00410409: 4B 00 00 75 0A B8 C8 B7 40 00 A3 4C A1 4B 00 5B  K..u....@..L.K.[
+0012F5DC: 004B0387   00410419: C3 00 00 6B 65 72 6E 65 6C 33 32 2E 64 6C 6C 00  ...kernel32.dll.
+0012F5E0: 0012F60C   00410429: 00 00 00 47 65 74 44 69 73 6B 46 72 65 65 53 70  ...GetDiskFreeSp
+0012F5E4: 00404088   00410439: 61 63 65 45 78 41 00 BA 01 00 00 00 92 F0 0F C1  aceExA..........
+0012F5E8: 0012F604   00410449: 02 40 C3 BA FF FF FF FF 92 F0 0F C1 02 48 C3 87  .@...........H..
+0012F5EC: 0012F65C   00410459: 10 89 D0 C3 8D 40 00 92 F0 0F C1 02 C3 8B C0 53  .....@.........S
+
+
+
+EurekaLog 6.0.11
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Mon, 6 Oct 2008 20:25:31 +0800
+  1.2 Name/Description: IpTest.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 21 Feb 2008 21:47:38 +0800
+  1.6 Up Time         : 4 minutes, 10 seconds
+
+Exception:
+------------------------------------------------------
+  2.1 Date          : Mon, 6 Oct 2008 20:29:42 +0800
+  2.2 Address       : 00410369
+  2.3 Module Name   : IpTest.exe
+  2.4 Module Version: 
+  2.5 Type          : EOSError
+  2.6 Message       : A call to an OS function failed.
+  2.7 ID            : 1C26
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : yuyuhaso
+  3.2 Name      : ty
+  3.3 Email     : 
+  3.4 Company   : nju
+  3.5 Privileges: SeChangeNotifyPrivilege         - ON
+                  SeSecurityPrivilege             - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeLoadDriverPrivilege           - ON
+                  SeCreatePagefilePrivilege       - OFF
+                  SeIncreaseQuotaPrivilege        - OFF
+                  SeUndockPrivilege               - ON
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+
+Active Controls:
+-----------------------------------------
+  4.1 Form Class   : TFmIpTest
+  4.2 Form Text    : Test IP Helper API
+  4.3 Control Class: TButton
+  4.4 Control Text : GetUniDirAdapterInfo
+
+Computer:
+--------------------------------------------------------------------------
+  5.1 Name          : P2P
+  5.2 Total Memory  : 2047 Mb
+  5.3 Free Memory   : 1418 Mb
+  5.4 Total Disk    : 27.93 Gb
+  5.5 Free Disk     : 1.38 Gb
+  5.6 System Up Time: 1 hour, 20 minutes, 46 seconds
+  5.7 Processor     : AMD Athlon(tm) 64 X2 Dual Core Processor 4200+
+  5.8 Display Mode  : 1440 x 900, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : NVIDIA GeForce 7600 GS (driver 9.1.4.7 - RAM 128 MB)
+  5.11 Printer      : Star CR-3240 (driver 6.0.6001.22116)
+
+Operating System:
+------------------------------------
+  6.1 Type    : Microsoft Windows XP
+  6.2 Build # : 2600
+  6.3 Update  : Service Pack 3
+  6.4 Language: Chinese
+  6.5 Charset : 134
+
+Network:
+---------------------------------------------------
+  7.1 IP Address: 000.000.000.000 - 192.168.001.002
+  7.2 Submask   : 000.000.000.000 - 255.255.255.000
+  7.3 Gateway   : 000.000.000.000 - 192.168.001.001
+  7.4 DNS 1     : 000.000.000.000 - 218.002.135.001
+  7.5 DNS 2     : 000.000.000.000 - 061.147.037.001
+  7.6 DHCP      : ON              - ON             
+
+Call Stack Information:
+---------------------------------------------------------------------------------------------
+|Address |Module      |Unit           |Class         |Procedure/Method              |Line   |
+---------------------------------------------------------------------------------------------
+|*Exception Thread: ID=3076; Priority=0; Class=; [Main]                                     |
+|-------------------------------------------------------------------------------------------|
+|00410369|IpTest.exe  |SysUtils       |              |RaiseLastOSError              |       |
+|004102F4|IpTest.exe  |SysUtils       |              |RaiseLastOSError              |       |
+|00410390|IpTest.exe  |SysUtils       |              |RaiseLastWin32Error           |       |
+|004B0382|IpTest.exe  |IpFunctions.pas|              |IpHlpError                    |186[9] |
+|004B02C0|IpTest.exe  |IpFunctions.pas|              |IpHlpError                    |177[0] |
+|004B084D|IpTest.exe  |IpFunctions.pas|              |VVGetUniDirectionalAdapterInfo|293[14]|
+|004B07B4|IpTest.exe  |IpFunctions.pas|              |VVGetUniDirectionalAdapterInfo|279[0] |
+|004B3F07|IpTest.exe  |IpUnit1.pas    |TFmIpTest     |BtGetUniDirAdapterInfoClick   |338[2] |
+|00490990|IpTest.exe  |Controls       |TControl      |Click                         |       |
+|0049092C|IpTest.exe  |Controls       |TControl      |Click                         |       |
+|00488F50|IpTest.exe  |StdCtrls       |TButton       |Click                         |       |
+|00403B00|IpTest.exe  |System         |              |_CallDynaInst                 |       |
+|00489044|IpTest.exe  |StdCtrls       |TButton       |CNCommand                     |       |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|7C92EC9A|ntdll.dll   |               |              |RtlMultiByteToUnicodeN        |       |
+|7C92EB74|ntdll.dll   |               |              |RtlAnsiStringToUnicodeString  |       |
+|7C92D30A|ntdll.dll   |               |              |NtFindAtom                    |       |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|004935EC|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|00488E14|IpTest.exe  |StdCtrls       |TButtonControl|WndProc                       |       |
+|004905C8|IpTest.exe  |Controls       |TControl      |Perform                       |       |
+|004905A4|IpTest.exe  |Controls       |TControl      |Perform                       |       |
+|0049387B|IpTest.exe  |Controls       |              |DoControlMsg                  |       |
+|00493858|IpTest.exe  |Controls       |              |DoControlMsg                  |       |
+|00493ED3|IpTest.exe  |Controls       |TWinControl   |WMCommand                     |       |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|73FBE4E5|USP10.dll   |               |              |UspFreeMem                    |       |
+|73FB42B3|USP10.dll   |               |              |ScriptStringFree              |       |
+|77D2FD65|user32.dll  |               |              |DrawEdge                      |       |
+|77D29719|user32.dll  |               |              |PtInRect                      |       |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|7C9210E0|ntdll.dll   |               |              |RtlLeaveCriticalSection       |       |
+|00417D30|IpTest.exe  |Classes        |TThreadList   |UnlockList                    |       |
+|00417D2C|IpTest.exe  |Classes        |TThreadList   |UnlockList                    |       |
+|00476F64|IpTest.exe  |Graphics       |              |FreeMemoryContexts            |       |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                   |       |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                   |       |
+|0041EB1C|IpTest.exe  |Classes        |              |StdWndProc                    |       |
+|77D292DE|user32.dll  |               |              |SendMessageW                  |       |
+|77D2929A|user32.dll  |               |              |SendMessageW                  |       |
+|77D2A993|user32.dll  |               |              |CallWindowProcA               |       |
+|77D2A97D|user32.dll  |               |              |CallWindowProcA               |       |
+|00493827|IpTest.exe  |Controls       |TWinControl   |DefaultHandler                |       |
+|00490D98|IpTest.exe  |Controls       |TControl      |WMLButtonUp                   |       |
+|7C802550|kernel32.dll|               |              |WaitForSingleObjectEx         |       |
+|7C80253D|kernel32.dll|               |              |WaitForSingleObject           |       |
+|004907F8|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|77D194DA|user32.dll  |               |              |GetCapture                    |       |
+|0049356B|IpTest.exe  |Controls       |TWinControl   |IsControlMouseMsg             |       |
+|00490670|IpTest.exe  |Controls       |TControl      |WndProc                       |       |
+|00493743|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|004935EC|IpTest.exe  |Controls       |TWinControl   |WndProc                       |       |
+|00488E14|IpTest.exe  |StdCtrls       |TButtonControl|WndProc                       |       |
+|004933C0|IpTest.exe  |Controls       |TWinControl   |MainWndProc                   |       |
+|0041EB1C|IpTest.exe  |Classes        |              |StdWndProc                    |       |
+|77D196C2|user32.dll  |               |              |DispatchMessageA              |       |
+|77D196B8|user32.dll  |               |              |DispatchMessageA              |       |
+|004AE95F|IpTest.exe  |Forms          |TApplication  |ProcessMessage                |       |
+|004AE8DC|IpTest.exe  |Forms          |TApplication  |ProcessMessage                |       |
+|004AE97E|IpTest.exe  |Forms          |TApplication  |HandleMessage                 |       |
+|004AE974|IpTest.exe  |Forms          |TApplication  |HandleMessage                 |       |
+|004AEB9E|IpTest.exe  |Forms          |TApplication  |Run                           |       |
+|004AEB08|IpTest.exe  |Forms          |TApplication  |Run                           |       |
+|004B9017|IpTest.exe  |IpTest.dpr     |              |                              |50[3]  |
+|7C92DC9A|ntdll.dll   |               |              |NtSetInformationThread        |       |
+---------------------------------------------------------------------------------------------
+
+Modules Information:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name        |Description                                     |Version        |Size   |Modified           |Path                                                                                                |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|IpTest.exe  |                                                |               |880640 |2008-02-21 21:47:40|D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo                                            |
+|10000000|safemon.dll |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                         |4.2.0.1005     |169472 |2008-07-10 17:42:44|C:\Program Files\360safe\safemon                                                                    |
+|30480000|fssync.dll  |FSSYNC.DLL                                      |7.0.5.325      |48656  |2008-02-08 18:37:42|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|305E0000|miscr3.dll  |Kaspersky Anti-Virus Ring 3 Hooker Helper       |7.0.1.325      |88592  |2008-02-08 18:37:48|C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0                                             |
+|5ADC0000|uxtheme.dll |Microsoft UxTheme Library                       |6.0.2900.5512  |216064 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|5D170000|comctl32.dll|Common Controls Library                         |5.82.2900.5512 |617472 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|5FDD0000|NETAPI32.dll|Net Win32 API DLL                               |5.1.2600.5512  |337408 |2008-04-13 19:13:46|C:\WINDOWS\system32                                                                                 |
+|62C20000|LPK.DLL     |Language Pack                                   |5.1.2600.5512  |22016  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|71A10000|WS2HELP.dll |Windows Socket 2.0 Helper for Windows NT        |5.1.2600.5512  |19968  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A20000|WS2_32.dll  |Windows Socket 2.0 32-Bit DLL                   |5.1.2600.5512  |82432  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71A40000|wsock32.dll |Windows Socket 32-Bit DLL                       |5.1.2600.5512  |28672  |2008-04-13 19:13:54|C:\WINDOWS\system32                                                                                 |
+|71B70000|SAMLIB.dll  |SAM Library DLL                                 |5.1.2600.5512  |64000  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|72F70000|winspool.drv|Windows Spooler Driver                          |5.1.2600.5512  |145920 |2008-04-13 19:14:20|C:\WINDOWS\system32                                                                                 |
+|73640000|msctfime.ime|Microsoft Text Frame Work Service IME           |5.1.2600.5512  |177152 |2008-04-13 19:12:38|C:\WINDOWS\system32                                                                                 |
+|73FA0000|USP10.dll   |Uniscribe Unicode script processor              |1.420.2600.5512|406016 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|74680000|MSCTF.dll   |MSCTF Server DLL                                |5.1.2600.5512  |296960 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|759D0000|USERENV.dll |Userenv                                         |5.1.2600.5512  |708608 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76060000|SETUPAPI.dll|Windows Setup API                               |5.1.2600.5512  |1389568|2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76300000|IMM32.DLL   |Windows XP IMM32 API Client DLL                 |5.1.2600.5512  |110080 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76990000|ole32.dll   |Microsoft OLE for Windows                       |5.1.2600.5512  |1287168|2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76AF0000|ATL.DLL     |ATL Module for Windows XP (Unicode)             |3.5.2284.1     |58880  |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76BC0000|PSAPI.DLL   |Process Status Helper                           |5.1.2600.5512  |23040  |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|76D10000|MPRAPI.dll  |Windows NT MP Router Administration DLL         |5.1.2600.5512  |87040  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76D30000|iphlpapi.dll|IP Helper API                                   |5.1.2600.5512  |94208  |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|76DE0000|adsldpc.dll |ADs LDAP Provider C DLL                         |5.1.2600.5512  |143360 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|76E50000|rtutils.dll |Routing Utilities                               |5.1.2600.5512  |44032  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|76F30000|WLDAP32.dll |Win32 LDAP API DLL                              |5.1.2600.5512  |170496 |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|770F0000|oleaut32.dll|                                                |5.1.2600.5512  |551936 |2008-04-13 19:13:48|C:\WINDOWS\system32                                                                                 |
+|77180000|comctl32.dll|User Experience Controls Library                |6.0.2900.5512  |1054208|2008-04-13 19:11:58|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83|
+|77BD0000|version.dll |Version Checking and File Installation Libraries|5.1.2600.5512  |18944  |2008-04-13 19:13:52|C:\WINDOWS\system32                                                                                 |
+|77BE0000|msvcrt.dll  |Windows NT CRT DLL                              |7.0.2600.5512  |343040 |2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|77C90000|ACTIVEDS.dll|ADs Router Layer DLL                            |5.1.2600.5512  |192000 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77D10000|user32.dll  |Windows XP USER API Client DLL                  |5.1.2600.5512  |574976 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77DA0000|advapi32.dll|Advanced Windows 32 Base API                    |5.1.2600.5512  |674816 |2008-04-13 19:13:40|C:\WINDOWS\system32                                                                                 |
+|77E50000|RPCRT4.dll  |Remote Procedure Call Runtime                   |5.1.2600.5512  |584704 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77EF0000|GDI32.dll   |GDI Client DLL                                  |5.1.2600.5512  |285184 |2008-04-13 19:13:42|C:\WINDOWS\system32                                                                                 |
+|77F40000|SHLWAPI.dll |Shell Light-weight Utility Library              |6.0.2900.5512  |473088 |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|77FC0000|Secur32.dll |Security Support Provider Interface             |5.1.2600.5512  |56320  |2008-04-13 19:13:50|C:\WINDOWS\system32                                                                                 |
+|78130000|MSVCR80.dll |Microsoft? C Runtime Library                    |8.0.50727.762  |626688 |2007-08-23 00:18:08|C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700               |
+|7C800000|kernel32.dll|Windows NT BASE API Client DLL                  |5.1.2600.5512  |1150464|2008-04-13 19:13:44|C:\WINDOWS\system32                                                                                 |
+|7C920000|ntdll.dll   |NT Layer DLL                                    |5.1.2600.5512  |589312 |2008-04-13 19:13:28|C:\WINDOWS\system32                                                                                 |
+|7D590000|shell32.dll |Windows Shell Common Dll                        |6.0.2900.5622  |8318976|2008-06-18 03:00:42|C:\WINDOWS\system32                                                                                 |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                 |Version      |Memory  |Priority|Threads|Path                                                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|4   |System                   |                                            |             |327680  |Normal  |83     |                                                        |
+|184 |IpTest.exe               |                                            |             |9142272 |Normal  |2      |D:\Program Files\Borland\vcl\iphelpapi\Demos\IpTest\Demo|
+|244 |spoolsv.exe              |Spooler SubSystem App                       |5.1.2600.5512|6373376 |Normal  |13     |C:\WINDOWS\system32                                     |
+|996 |avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |14221312|Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|1012|WPService.exe            |WebProtect                                  |1.0.0.1      |5697536 |Normal  |3      |C:\Program Files\CMBCHINA\WebProtect                    |
+|1060|TIMPlatform.exe          |TIMPlatform                                 |0.3.1.8      |2236416 |Normal  |2      |F:\QQ                                                   |
+|1112|smss.exe                 |                                            |             |471040  |Normal  |3      |\SystemRoot\System32                                    |
+|1152|inetinfo.exe             |Internet ÐÅÏ¢·þÎñ                           |5.1.2600.5512|11616256|Normal  |25     |C:\WINDOWS\system32\inetsrv                             |
+|1184|nvsvc32.exe              |NVIDIA Driver Helper Service, Version 91.47 |6.14.10.9147 |4444160 |Normal  |3      |C:\WINDOWS\system32                                     |
+|1216|winlogon.exe             |                                            |             |9388032 |High    |21     |C:\WINDOWS\system32                                     |
+|1260|services.exe             |Services and Controller app                 |5.1.2600.5512|4268032 |Normal  |15     |C:\WINDOWS\system32                                     |
+|1272|lsass.exe                |LSA Shell (Export Version)                  |5.1.2600.5512|1507328 |Normal  |21     |C:\WINDOWS\system32                                     |
+|1448|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|5959680 |Normal  |19     |C:\WINDOWS\system32                                     |
+|1668|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|38305792|Normal  |79     |C:\WINDOWS\System32                                     |
+|1784|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|4968448 |Normal  |6      |C:\WINDOWS\system32                                     |
+|2216|QQ.exe                   |QQ                                          |7.1.644.1777 |37576704|Normal  |13     |f:\QQ                                                   |
+|2652|Explorer.EXE             |Windows Explorer                            |6.0.2900.5512|31395840|Normal  |12     |C:\WINDOWS                                              |
+|2716|usnsvc.exe               |Messenger Sharing USN Journal Reader Service|8.1.178.0    |2949120 |Normal  |5      |C:\Program Files\MSN Messenger                          |
+|2972|RTHDCPL.EXE              |Realtek HD Audio Control Panel              |2.0.9.1      |23449600|Normal  |4      |C:\WINDOWS                                              |
+|3204|RUNDLL32.EXE             |Run a DLL as an App                         |5.1.2600.5512|3948544 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3220|360tray.exe              |360°²È«ÎÀÊ¿ÊµÊ±±£»¤Ä£¿é                     |5.0.0.1002   |3846144 |Normal  |7      |C:\Program Files\360safe\safemon                        |
+|3236|avp.exe                  |Kaspersky Anti-Virus                        |7.0.1.325    |4972544 |Normal  |??     |C:\Program Files\Kaspersky Lab\Kaspersky Anti-Virus 7.0 |
+|3268|daemon.exe               |Virtual DAEMON Manager                      |3.47.0.0     |4456448 |Normal  |2      |C:\Program Files\D-Tools                                |
+|3292|ctfmon.exe               |CTF Loader                                  |5.1.2600.5512|3600384 |Normal  |1      |C:\WINDOWS\system32                                     |
+|3320|GoogleToolbarNotifier.exe|GoogleToolbarNotifier                       |2.0.301.1654 |3112960 |Normal  |4      |C:\Program Files\Google\GoogleToolbarNotifier           |
+|3392|msmsgs.exe               |Windows Messenger                           |4.7.0.3001   |2392064 |Normal  |2      |C:\Program Files\Messenger                              |
+|3420|msnmsgr.exe              |Messenger                                   |8.1.178.0    |14508032|Normal  |29     |C:\Program Files\MSN Messenger                          |
+|3456|ppsap.exe                |PPS ÍøÂç¼ÓËÙÆ÷                              |1.0.11.139   |10633216|Normal  |17     |C:\Program Files\PPStream                               |
+|3484|IEXPLORE.EXE             |Internet Explorer                           |6.0.2900.5512|29913088|Normal  |10     |C:\Program Files\Internet Explorer                      |
+|3560|Wifiusb.exe              |Wireless LAN Configuration Utility          |2.8.4.2003   |7389184 |Normal  |2      |C:\Program Files\DT\Sinus 1054 data                     |
+|3620|svchost.exe              |Generic Host Process for Win32 Services     |5.1.2600.5512|3829760 |Normal  |8      |C:\WINDOWS\System32                                     |
+|3992|delphi32.exe             |Delphi-32 Development Environment           |7.0.4.453    |93859840|Normal  |5      |D:\Program Files\Borland\Delphi7\Bin                    |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+------------------------------------------------------------------------------------------
+; SysUtils.RaiseLastOSError (Line=0 - Offset=0)
+; ---------------------------------------------
+00410347  call    SysUtils.Exception.CreateResFmt
+0041034C  mov     edx, eax
+0041034E  jmp     SysUtils.RaiseLastOSError
+00410350  mov     ecx, [$4C12FC]
+00410356  mov     dl, $01
+00410358  mov     eax, dword ptr [EOSError]
+0041035D  call    SysUtils.Exception.CreateRes
+00410362  mov     edx, eax
+00410364  mov     [edx+$0C], ebx
+00410367  mov     eax, edx
+00410369  call    System._RaiseExcept              ; <-- EXCEPTION
+0041036E  xor     eax, eax
+00410370  pop     edx
+00410371  pop     ecx
+00410372  pop     ecx
+00410373  mov     fs:[eax], edx
+00410376  push    $0041038B                        ; '[‹å]Ãè_ÿÿÿÃ‹ÀS‹Ø…Ûu.èPÿÿÿ‹Ã[ÃS°.'...
+0041037B  lea     eax, [ebp-$14]
+0041037E  call    System._LStrClr
+00410383  ret
+
+Registers:
+-----------------------------
+EAX: 00AEE854   EDI: 0012F7DC
+EBX: 00000000   ESI: 0012F658
+ECX: 00000000   ESP: 0012F5BC
+EDX: 0041036E   EIP: 00410369
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012F5BC: 0012F5EC   00410369: E8 E6 3D FF FF 33 C0 5A 59 59 64 89 10 68 8B 03  ..=..3.ZYYd..h..
+0012F5C0: 00404088   00410379: 41 00 8D 45 EC E8 39 44 FF FF C3 E9 CF 3C FF FF  A..E..9D.....<..
+0012F5C4: 0012F5E0   00410389: EB F0 5B 8B E5 5D C3 E8 5F FF FF FF C3 8B C0 53  ..[..].._......S
+0012F5C8: 004B0880   00410399: 8B D8 85 DB 75 05 E8 50 FF FF FF 8B C3 5B C3 53  ....u..P.....[.S
+0012F5CC: 00000000   004103A9: B0 01 8B 1D 28 A3 4B 00 EB 05 FF 53 04 8B 1B 84  ....(.K....S....
+0012F5D0: 0012F658   004103B9: C0 74 04 85 DB 75 F3 5B C3 8B C0 53 BB 28 A3 4B  .t...u.[...S.(.K
+0012F5D4: 0012F65C   004103C9: 00 EB 10 8B 03 8B 10 89 13 BA 08 00 00 00 E8 78  ...............x
+0012F5D8: 80000005   004103D9: 23 FF FF 83 3B 00 75 EB 5B C3 90 53 68 1C 04 41  #...;.u.[..Sh..A
+0012F5DC: 00000000   004103E9: 00 E8 01 6A FF FF 8B D8 85 DB 74 10 68 2C 04 41  ...j......t.h,.A
+0012F5E0: 0012F610   004103F9: 00 53 E8 08 6A FF FF A3 4C A1 4B 00 83 3D 4C A1  .S..j...L.K..=L.
+0012F5E4: 00410395   00410409: 4B 00 00 75 0A B8 C8 B7 40 00 A3 4C A1 4B 00 5B  K..u....@..L.K.[
+0012F5E8: 004B0387   00410419: C3 00 00 6B 65 72 6E 65 6C 33 32 2E 64 6C 6C 00  ...kernel32.dll.
+0012F5EC: 0012F618   00410429: 00 00 00 47 65 74 44 69 73 6B 46 72 65 65 53 70  ...GetDiskFreeSp
+0012F5F0: 00404088   00410439: 61 63 65 45 78 41 00 BA 01 00 00 00 92 F0 0F C1  aceExA..........
+0012F5F4: 0012F610   00410449: 02 40 C3 BA FF FF FF FF 92 F0 0F C1 02 48 C3 87  .@...........H..
+0012F5F8: 0012F65C   00410459: 10 89 D0 C3 8D 40 00 92 F0 0F C1 02 C3 8B C0 53  .....@.........S
+
+
+

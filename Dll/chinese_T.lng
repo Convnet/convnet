@@ -1,0 +1,201 @@
+﻿SetActiveLanguage(self);
+[主界面]
+bLogin.Caption=登  录
+bRegist.Caption=注册
+labInfomation.Caption=欢迎使用ConVnet
+checkAutoLogin.Caption=自动登录
+cCloseNTFW.Caption=关闭ConVnet的Windows网卡防火墙
+bAddFriend.Caption=添加好友
+bJoinGroup.Caption=加入用户组
+bCreateGroup.Caption=创建用户组
+bEditMyProf.Caption=编辑个人信息
+bSetautoconnection.Caption=自动连接，右键可以一键全连
+bSetnetwork.Caption=网络工具
+bLogOut.Caption=注销
+[添加自动连接主机]
+addautouser.Caption=添加自动连接主机
+laddAutoHostInfo.Caption=添加自动连接主机
+addautouserTip.Caption=如用户没有设置访问密码则不需要设置
+lSelectAUser.Caption=选择用户：
+lSetPassword.Caption=连接密码：
+bSure.Caption=确认
+bCancel.Caption=取消
+[fAutoconnection]
+fAutoconnection.Caption=设置自动连接
+lSetAutoConCaption.Caption=自动连接
+lSetAutoConCaptionTip.Caption=点击"添加"按钮添加自动连接的用户
+bDel.Caption=删除
+bAddAutoConUser.Caption=添加
+bClose.Caption=关闭
+[chat]
+bSendChatText.Caption=发送
+[fcreategroup]
+fcreategroup.Caption=创建群组
+lGroupName.Caption=组名称：
+lGroupDesc.Caption=组描述：
+lGroupPass.Caption=入组口令：
+LGroupPassdesc.Caption=      不填写口令则所有用户加入本组都要经过管理员确认。
+lCreateGroup.Caption=创建群组
+[findGroup]
+findGroup.Caption=查找群组
+lFindGroup.Caption=查找群组
+rFindGroupByDesc.Caption=按描述
+rFindGroupByName.Caption=按名称
+bFind.Caption=查找
+bJoinGroup.Caption=请求加入
+[findUser]
+findUser.Caption=查找用户
+lFindUser.Caption=查找用户
+rFindUserNickName.Caption=昵  称
+rFindUserName.Caption=用户名
+rFindUserDesc.Caption=备  注
+bOrderAddFriend.Caption=请求加好友
+[CVNMSG]
+CVNMSG.Caption=提示
+[FModifyGroup]
+FModifyGroup.Caption=修改组
+lGroupName.Caption=组名称：
+lGroupDesc.Caption=备  注：
+[fNeedPass]
+fNeedPass.Caption=需要访问口令
+lNeedpass.Caption=访问口令
+[fPeerOrd]
+fPeerOrd.Caption=申请确认
+bSureAdd.Caption=同意加入
+bRefusejoin.Caption=拒绝请求
+[bRefusejoin]
+fPrivateSetup.Caption=个人设置
+bRefusejoin.Caption=个人设置
+lPrivateInfo.Caption=个人设置
+lNickname.Caption=昵  称：
+lPrivPass.Caption=密  码：
+lPrivSurePass.Caption=再确认：
+lPrivDesc.Caption=备  注：
+lPrivPass1.Caption=访问口令1：
+lPrivPass2.Caption=访问口令2：
+lPrivPass3.Caption=凭此密码加我为好友：
+lPrivDosPass.Caption=远程dos口令
+lAlert.Caption=   安全警告:  DOS口令如非必要用途请不要设置
+[fRegist]
+fRegist.Caption=用户注册
+lRegisthint.Caption=用户注册
+lRegUserName.Caption=用户名(邮箱)：
+lRegNickName.Caption=昵   称：
+lRegPass.Caption=密   码：
+lRegRePass.Caption=重复密码：
+lRegDesc.Caption=备   注：
+bRegSubmit.Caption=注册
+[FrmMain]
+FrmMain.Caption=网络维护工具
+lNetWork.Caption=网络工具
+lblConnection.Caption=连接信息：
+lblDevice.Caption=驱动：
+lblMedia.Caption=介质：
+lblStatus.Caption=状态：
+lblShared.Caption=打开共享：
+lblFarewall.Caption=打开防火墙：
+[fUserinfo]
+fUserinfo.Caption=用户信息
+lUserinfo.Caption=用户信息
+lShowUserName.Caption=用户名：
+lShowIP.Caption=分配IP：
+lShowDesc.Caption=备  注：
+[strres]
+JOINGROUP_ORDER_HAS_BEEN_SENT=已提出申请
+JOINFRIEND_ORDER_HAS_BEEN_SENT=已经提出申请
+NOT_FOUND_USER=没有找到用户
+PASS_NOTMACH=两次输入的密码不匹配
+ORDER_JOIN_USERGROUP=申请加入用户组
+ORDER_JOIN_USERGROUP_SURE=申请加入用户组-确认
+ORDER_JOIN_USERGROUP_REFUSE=申请加入用户组-拒绝
+ORDER_REFUSE=-拒绝
+ORDER_SURE=-确认
+
+MSG_NEEDETHER=点击"YES"安装网卡，点击"NO"不安装但是程序将无法正常工作
+MSG_CLOSECVN=关闭CVN将使基于CVN运行的程序失去连接，确定吗?
+MSG_USEMAIL=不使用邮箱进行注册将无法取回密码，你确定继续么?
+SEND_TEXT=发：
+RECV_TEXT=收：
+CONNUM_TEXT=连接数：
+CONFLICT_ETHERIP_TEXT=网络中存在10.110网段的地址
+DHCP_MESSAGE_ERROR=DHCP消息错误
+EXECUTE_FAIL_TEXT=执行失败
+DELETE_FRIEND_TEXT=删除用户
+DROP_GROUP_USER=踢出用户群
+CANT_CONNECT_TO_SERVER_TEXT=无法连接服务器，请确认服务器地址
+LOGIN_OUT_TEXT=退出登录
+LOGIN_SUCCESS=登录成功
+CONFIM_NETWORK_TYPE=网络类型确认
+CHECK_NETWORK=网络类型检测，请稍候...
+CHECK_NETWORK_FINISH=网络检查完成
+ETHER_NOT_FOUND=网卡未安装，请先执行网卡安装程序...
+LOGINFAIL_PASSERROR=用户名密码不正确,登录失败...
+LOGINFAIL_RELOGIN_BAN=其他地点重复登录...
+LOGINFAIL_SERVER_BAN=服务器拒绝登录，账户被停用
+GROUP_NAME_HAS_EXIST=该组已经存在，请重新输入您的组名称
+GROUP_CREATE_SUCCESS=恭喜你，成功创建用户组
+GROUP_NAME_MODIFY_SUCCESS=成功修改群组信息
+QUIT_SURE=是否确认退出
+RELOGIN_TIME_TEXT=尝试自动登录
+USER_TEXT=用     户：
+USER_LOGIN_START=用户开始登录
+SEND_SIZE=发送数据
+RECV_SIZE=接受数据
+SERVER_ALLOCATION_IP=服务器分配的IP
+MSG_DISMISS_GROUP=解散组之后所有该组用户将从该组解散，是否确认删除
+DELETE_USER_SURE_TEXT=你是否确定删除用户:
+TCP_DIRECT=TCP直连:
+PORT=端口
+TCP_UPNP_FAIL=TCP_Upnp无法启用
+UDP_DISABLED=UDP协议被禁用
+UDP_TYPE=UDP类型:
+UDP_DIRECT=UDP直连:
+LOCAL_NETWORK=本地网络：
+IP_OUTSIDE=当前外网IP：
+ARE_YOU_SURE=你是否确定从
+KNOCK_OUT=中踢出
+SEND_MESSAGE=发送消息
+DISCONNECT=断开
+CONNECT=连接
+TRY_CONNECT=正在尝试连接到
+CONNECT_TYPE=连接方式：
+TUNNELINFO_TEXT=>>>>>>>>>>连接通道信息<<<<<<<<<<
+REMOTE_TUNNELINFO=对接通道：
+LOCAL_TUNNELINFO=本地通道：
+SERVERTRANS=~通过服务器中转~
+RENEW_MY_INFO_SUCCESS=成功更新用户信息
+RM_SU_NOTALLOW_NOTFRIEND=*rm: 您不在对方好友列表中，无法执行远程DOS命令
+RM_SU_NOTALLOW=*rm: 本机不允许执行远程命令
+RM_SU_SUCESS=*rm: 成功提升权限
+RM_NEEDSU=*rm: 权限不足请先试用“./su”命令进行权限提升
+USER_NEED_AUTHORIZE_PASS_TEXT= 设置了访问口令,当前保存的用户口令不匹配
+USER_NEED_AUTHORIZE_INPUT=请输入口令：
+SERVER_LIST=====服务器列表====
+CLIENT_HAS_RUN=本机已有一个CONVNET程序正在运行，程序退出
+MESSAGE_CANT_SENT=信息无法送达:  
+SAY=说
+SEND_TO=发送到
+CHATING=对话中
+USERNAME=用户名
+NICKNAME=昵称
+ORDER_FRIEND_TEXT=你好，我想和你成为朋友
+ORDER_GROUP_TEXT=你好，我想加入这个组
+FROM_NOT_FINISH=用户名、密码、昵称为必填项
+USER_NAME_EXIST=用户名已存在,注册失败
+REG_SUCCESS=恭喜您注册成功！
+N12.Caption=发送消息(&S)
+N2.Caption=请求直连(&C)
+N9.Caption=断开连接(&D)
+N19.Caption=请求中转
+ping1.Caption=Ping用户(&P)
+N5.Caption=微软远程桌面(&M)
+N4.Caption=查看对方共享(&V)
+N1.Caption=删除用户(&D)
+N111.Caption=用户信息(&I)
+N18.Caption=修改组
+N16.Caption=解散组
+N11.Caption=退出组
+N8.Caption=踢出用户?
+dasd1.Caption=退出Convnet
+N3.Caption=一键全连
+SERVERMSG=服务器消息：

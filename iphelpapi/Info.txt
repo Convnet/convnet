@@ -1,0 +1,63 @@
+[API]
+Name=IP Helper
+Version=1.0
+Date=12-30-99
+Originated=Microsoft Platform SDK
+URL=http://msdn.microsoft.com
+Description=Microsoft Internet Protocol Helper API
+[Platform]
+Win31=No
+Win95=No
+Win98=Yes
+WinNT3=No
+WinNT4=Yes
+Win2000=Yes
+[Requirements]
+Req0=Windows 98/NT4/2000 or higher. Note that not all functions are supported on Windows 98/NT4
+[Captain]
+Name=Marcel van Brakel
+Email=brakelm@bart.nl
+HomePage=
+[Converters]
+Converter1="Marcel van Brakel",brakelm@chello.nl,
+Converter2="Jon C. Penman",jcp@craiglockhart.com,
+Converter3="Vladimir Vassiliev",voldemarv@hotpop.com,
+[CONVERSION1]
+FileName=IpExport.pas
+FileDate=17-Dec-2000
+Status=Ready
+Version=1.0
+LastModify=17-Dec-2000
+OriginalFile=ipexport.h
+[CONVERSION2]
+FileName=IpHlpApi.pas
+FileDate=17-Dec-2000
+Status=Ready
+Version=1.0
+LastModify=17-Dec-2000
+OriginalFile=iphlpapi.h
+[CONVERSION3]
+FileName=IpIfConst.pas
+FileDate=17-Dec-2000
+Status=Ready
+Version=1.0
+LastModify=17-Dec-2000
+OriginalFile=ipifconst.h
+[CONVERSION4]
+FileName=IpRtrMib.pas
+FileDate=17-Dec-2000
+Status=Ready
+Version=1.0
+LastModify=17-Dec-2000
+OriginalFile=iprtrmib.h
+[CONVERSION5]
+FileName=IpTypes
+FileDate=17-Dec-2000
+Status=Ready
+Version=1.0
+LastModify=17-Dec-2000
+OriginalFile=iptypes.h
+[CONVERSION]
+MajorVersion=1
+MinorVersion=3
+Number=5

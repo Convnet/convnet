@@ -1,0 +1,79 @@
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+c:\users\zgk\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\WindowsFormsApplication22\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+D:\convnet\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\convnet\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\convnet\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\convnet\c#\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+D:\convnet\demo\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\convnet\demo\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\convnet\demo\c#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\convnet\demo\c#\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\zgk\Desktop\C#\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\code\C#\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\code\C#\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\code\C#\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\code\C#\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\code\C#\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\code\C#\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\code\C#\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\code\C#\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
