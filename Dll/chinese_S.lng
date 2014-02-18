@@ -199,3 +199,5 @@ N8.Caption=踢出用户?
 dasd1.Caption=退出Convnet
 N3.Caption=一键全连
 SERVERMSG=服务器消息:
+GROUP_CREATE_NOPOM=没有建组权限
+GROUP_FRIEND_NOPOM=不能加入组或者添加好友

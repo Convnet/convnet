@@ -68,6 +68,13 @@ var
     i:integer;
     ListItem:tlistItem;
 begin
+  if (s='52,N') then
+  begin
+    FCVNMSG.Label1.Caption:=resinfo('GROUP_FRIEND_NOPOM');
+    FCVNMSG.Show;
+    Close;
+    exit;
+  end;
    //ListView1.AddItem(s,nil);
    tmpstrlist:=tstringlist.Create;
    ListView1.Clear;

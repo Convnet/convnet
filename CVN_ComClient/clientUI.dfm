@@ -777,7 +777,6 @@ object fclientui: Tfclientui
     BevelOuter = bvNone
     Color = 9588998
     TabOrder = 2
-    OnMouseMove = Panel3MouseMove
     object TPanel
       Left = 464
       Top = 0
@@ -1166,7 +1165,7 @@ object fclientui: Tfclientui
       Alignment = taCenter
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'v3.10'
+      Caption = '3.11'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clLime
       Font.Height = -12
@@ -9819,9 +9818,10 @@ object fclientui: Tfclientui
       OnClick = bLoginClick
     end
     object bRegist: TRzBitBtn
-      Left = 184
-      Top = 187
-      Width = 57
+      Left = 175
+      Top = 214
+      Width = 65
+      Height = 23
       FrameColor = 7617536
       Anchors = [akLeft, akTop, akRight, akBottom]
       Caption = #27880#20876
@@ -9863,7 +9863,7 @@ object fclientui: Tfclientui
       TabOrder = 1
       OnClick = checkAutoLoginClick
     end
-    object ComboBox1: TRzComboBox
+    object ServerList: TRzComboBox
       Left = 87
       Top = 161
       Width = 153
@@ -9876,12 +9876,12 @@ object fclientui: Tfclientui
       ParentCtl3D = False
       TabOrder = 4
       Text = '===serverlist==='
-      OnChange = ComboBox1Change
+      OnChange = ServerListChange
     end
     object eUserName: TEdit
       Left = 87
       Top = 216
-      Width = 154
+      Width = 87
       Height = 19
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvLowered
@@ -9894,7 +9894,7 @@ object fclientui: Tfclientui
     object ePassword: TEdit
       Left = 87
       Top = 242
-      Width = 154
+      Width = 87
       Height = 19
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvLowered
@@ -9908,7 +9908,7 @@ object fclientui: Tfclientui
     object eServerIP: TEdit
       Left = 87
       Top = 189
-      Width = 94
+      Width = 152
       Height = 19
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvLowered
@@ -9918,6 +9918,19 @@ object fclientui: Tfclientui
       ParentCtl3D = False
       TabOrder = 7
       Text = 'sh.convnet.net:23'
+    end
+    object RzBitBtn1: TRzBitBtn
+      Left = 175
+      Top = 240
+      Width = 65
+      Height = 22
+      FrameColor = 7617536
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Caption = #25214#22238#23494#30721
+      Color = 15527920
+      HotTrack = True
+      TabOrder = 8
+      OnClick = RzBitBtn1Click
     end
   end
   object mainPanel: TPanel

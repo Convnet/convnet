@@ -83,7 +83,7 @@ type
     bquit: TRzBmpButton;
     CoolTrayIcon1: TCoolTrayIcon;
     bSetnetwork: TRzBmpButton;
-    ComboBox1: TRzComboBox;
+    ServerList: TRzComboBox;
     Label1: TLabel;
     N3: TMenuItem;
     N19: TMenuItem;
@@ -96,6 +96,7 @@ type
     Timer1: TTimer;
     Image1: TImage;
     labInfomation: TLabel;
+    RzBitBtn1: TRzBitBtn;
     procedure bLoginClick(Sender: TObject);
     procedure maintreeBeforeCellPaint(Sender: TBaseVirtualTree;
       TargetCanvas: TCanvas; Node: PVirtualNode; Column: TColumnIndex;
@@ -176,7 +177,8 @@ type
     procedure N11Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure checkAutoLoginClick(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
+    procedure ServerListChange(Sender: TObject);
+    procedure RzBitBtn1Click(Sender: TObject);
   private
     { Private declarations }
     
@@ -1114,7 +1116,7 @@ begin
    If SysLocale.DefaultLCID=CHINESE then
      LanguageName:='chinese_s'
    else if SysLocale.DefaultLCID=TCHINESE then
-     LanguageName:='chinese_t'
+     LanguageName:='chinese_s'
    else
      LanguageName:='english';
 
@@ -1142,13 +1144,14 @@ begin
     begin
       stringlist.LoadFromFile(ExtractFilePath(Application.ExeName) +'server.ini');
 
-      ComboBox1.Clear;
-      ComboBox1.Text:=resinfo('SERVER_LIST');
+      ServerList.Clear;
+      ServerList.Text:=resinfo('SERVER_LIST');
+      
       for i:=0 to stringlist.Count-1 do
       begin
-        if (i mod 2)=0 then
+        if (i mod 3)=0 then
         begin
-          ComboBox1.AddItemValue(utf8decode(stringlist[i]),utf8decode(stringlist[i+1]));
+          ServerList.AddItemValue(utf8decode(stringlist[i]),utf8decode(stringlist[i+1]));
         end;
       end;
     end;
@@ -2173,7 +2176,7 @@ begin
          auAutoUpgrader:=tauAutoUpgrader.Create(self);
          auAutoUpgrader.InfoFileURL:=strlist[2];
          auAutoUpgrader.VersionControl:=byNumber;
-         auAutoUpgrader.VersionNumber:=strlist[1];
+         auAutoUpgrader.VersionNumber:=label1.Caption;
          auAutoUpgrader.CheckUpdate;
        finally
          strlist.Free;
@@ -2243,13 +2246,24 @@ begin
               FCVNMSG.Show;
               fcreategroup.Close;
             end;
+            if tmpstr='N' then
+            begin
+              FCVNMSG.Label1.Caption:=resinfo('GROUP_CREATE_NOPOM');
+              FCVNMSG.Show;
+              fcreategroup.Close;
+            end;
+
             fclientui.Sortuserlist;
         end;
         
       ord(cmdFindUserResp):
       begin
          //message_str:=mmessagestring;
+
+
+
          finduser.Cvn_FindResult(mmessagestring);
+
       end;
       
       ord(cmdFindGroupResp):
@@ -2408,9 +2422,9 @@ begin
    g_Logintoservertime:=LOGIN_DELAY_TIME_SEC;
 end;
 
-procedure Tfclientui.ComboBox1Change(Sender: TObject);
+procedure Tfclientui.ServerListChange(Sender: TObject);
 begin
-  eServerIP.Text:=ComboBox1.Values[ComboBox1.Items.IndexOf(ComboBox1.Text)];
+  eServerIP.Text:=ServerList.Values[Serverlist.Items.IndexOf(serverlist.Text)];
 end;
 
 procedure Tfclientui.installether;
@@ -2443,6 +2457,37 @@ procedure Tfclientui.Commessage;
 begin
 
   fclientui.comEvents.OnCVNMessage(g_ComMessage,g_ComMessageType);
+end;
+
+procedure Tfclientui.RzBitBtn1Click(Sender: TObject);
+var stringlist:tstringlist;
+    i,index:integer;
+begin
+
+  for i:= 0 to serverlist.Count-1 do
+  begin
+      if (ServerList.Values[i]=eserverip.Text) then
+      begin
+        index:=i;
+        break;
+      end;
+
+  end;
+
+
+  if (index<0) then exit;
+  stringlist:=tstringlist.Create;
+  try
+    if FileExists(ExtractFilePath(Application.ExeName) +'server.ini') then
+    begin
+      stringlist.LoadFromFile(ExtractFilePath(Application.ExeName) +'server.ini');
+      ShellExecute(Handle,'open',pchar(stringlist[index*3+2]),'','',SW_SHOWNORMAL);
+
+    end;
+  finally
+    stringlist.Free;
+  end;
+
 end;
 
 end.

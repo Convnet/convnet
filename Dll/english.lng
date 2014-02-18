@@ -199,3 +199,5 @@ N8.Caption=Knock out
 dasd1.Caption=Quit Convnet
 N3.Caption=Connect All
 SERVERMSG=Server:
+GROUP_CREATE_NOPOM=You can't create group
+GROUP_FRIEND_NOPOM=You can't add friend or group
