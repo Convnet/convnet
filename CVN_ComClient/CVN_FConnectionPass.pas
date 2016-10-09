@@ -41,8 +41,7 @@ end;
 procedure TfNeedPass.bSureClick(Sender: TObject);
 begin
   tmpuser.AhthorPassword:=edit1.Text;
-  tmpuser.TryConnect_start;
-  //CVN_ConnectUser(tmpuser.UserID,edit1.Text);
+  tmpuser.TryConnect;
   close;
 end;
 

@@ -5,7 +5,7 @@ unit coConvnet;
 interface
 
 uses
-  ComObj, ActiveX, AxCtrls, Classes, convnet_TLB, StdVcl, CVN_CSYS, SysUtils,
+  ComObj, ActiveX, AxCtrls, Classes, convnet_TLcoB, StdVcl, CVN_CSYS, SysUtils,
   CVN_Protocol;
 
 type
@@ -33,6 +33,7 @@ type
       email: WideString); safecall;
     procedure ShowForm; safecall;
     procedure HiddenForm; safecall;
+    procedure LogOut; safecall;
   end;
 
 implementation
@@ -56,6 +57,11 @@ begin
   else FConnectionPoint := nil;
 end;
 
+
+procedure TcoConvnet.LogOut;
+begin
+  CVN_Logout;
+end;
 
 procedure TcoConvnet.ConnectToServer(const ServerUrl, UserName, PassWord: WideString);
 begin

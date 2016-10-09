@@ -83,7 +83,7 @@ begin
 
   if not hasuser then
   begin
-    FCVNMSG.Label1.Caption:='没有这样的用户，请重新选择';
+    FCVNMSG.Label1.Caption:='没有找到用户，请重新选择';
     FCVNMSG.Show;
     //showmessage('没有这样的用户，请重新选择');
     exit;
@@ -99,7 +99,6 @@ begin
         fAutoconnection.ListView1.Items[i].SubItems[0]:=pass.Text;
         saveautoconninfo;
         fclientui.loadautoconntioninfo;
-        fclientui.StartAutoConnection;
         close;
         exit;
     end;
@@ -109,7 +108,6 @@ begin
   tmpitem.SubItems.Add(pass.Text);
   saveautoconninfo;
   fclientui.loadautoconntioninfo;
-  fclientui.StartAutoConnection;
   close;
 end;
 

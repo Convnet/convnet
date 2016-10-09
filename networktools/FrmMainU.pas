@@ -7,7 +7,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls, ComCtrls, ImgList, NTFireWall, ToolWin,
   {$IFDEF Delphi6} Variants, {$ENDIF}
-  CheckLst, NetConfigLibTlb, FrmPortDetailsU, NetShell, DetectWinOs,cvn_csys;
+  CheckLst, NetConfigLibTlb, FrmPortDetailsU, NetShell, DetectWinOs;
 
 type
   TFrmMain = class(TForm)
@@ -16,6 +16,7 @@ type
     ilConnections: TImageList;
     Splitter1: TSplitter;
     Panel1: TPanel;
+    NTFireWall1: TNTFireWall;
     ToolBar: TToolBar;
     tlbRefresh: TToolButton;
     ilToolbar: TImageList;
@@ -119,7 +120,7 @@ end;
 
 procedure TFrmMain.FormCreate(Sender: TObject);
 begin
-  SetActiveLanguage(self);
+//  SetActiveLanguage(self);
   if not IsWindowsXPOrHigher then ShowMessage('本模块只能运行于XP或者更高版本的WINDOWS中.');
   LoadConnections;
 end;

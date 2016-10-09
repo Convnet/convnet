@@ -1,9 +1,9 @@
 object FCVNMSG: TFCVNMSG
   Left = 518
   Top = 376
-  Width = 326
-  Height = 117
   Caption = #28040#24687
+  ClientHeight = 79
+  ClientWidth = 310
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

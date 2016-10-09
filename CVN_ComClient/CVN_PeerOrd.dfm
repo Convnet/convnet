@@ -11,6 +11,7 @@ object fPeerOrd: TfPeerOrd
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False

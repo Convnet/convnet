@@ -11,6 +11,7 @@ object findUser: TfindUser
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -154,6 +155,7 @@ object findUser: TfindUser
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 1
     object lFindUser: TLabel
       Left = 232

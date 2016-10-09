@@ -1,97 +1,313 @@
-object FModifyGroup: TFModifyGroup
-  Left = 358
-  Top = 429
+object FrmMain: TFrmMain
+  Left = 366
+  Top = 229
   BorderStyle = bsToolWindow
-  Caption = #20462#25913#32452
-  ClientHeight = 177
-  ClientWidth = 365
+  Caption = #32593#32476#32500#25252#24037#20855
+  ClientHeight = 268
+  ClientWidth = 646
   Color = 15329769
   Font.Charset = DEFAULT_CHARSET
-  Font.Color = 5059584
+  Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  FormStyle = fsStayOnTop
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poDesktopCenter
   Scaled = False
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lGroupName: TLabel
-    Left = 8
-    Top = 55
-    Width = 81
-    Height = 13
-    Alignment = taRightJustify
-    AutoSize = False
-    Caption = #32452#21517#31216#65306
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 3614210
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
+  object Splitter1: TSplitter
+    Left = 197
+    Top = 40
+    Height = 228
   end
-  object lGroupDesc: TLabel
-    Left = 0
-    Top = 79
-    Width = 89
+  object Label1: TLabel
+    Left = 13
+    Top = 20
+    Width = 57
     Height = 13
-    Alignment = taRightJustify
-    AutoSize = False
-    Caption = #22791'    '#27880#65306
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 3614210
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
+    Caption = 'Connection:'
   end
   object Label2: TLabel
-    Left = 8
-    Top = 105
-    Width = 81
+    Left = 84
+    Top = 20
+    Width = 113
     Height = 13
-    Alignment = taRightJustify
-    AutoSize = False
-    Caption = #23494'    '#30721#65306
+    Caption = 'Local Area Network'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = 3614210
-    Font.Height = -11
+    Font.Color = clWindowText
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object LGroupPassdesc: TLabel
-    Left = 4
-    Top = 127
-    Width = 361
-    Height = 14
-    AutoSize = False
-    Caption = '   '#19981#22635#20889#26412#23494#30721#21017#25152#26377#29992#25143#21152#20837#26412#32452#37117#35201#32463#36807#30830#35748#12290#13'   '#22635#20889#23494#30721#21017#21487#22312#30003#35831#26102#25552#20379#23494#30721#30452#25509#21152#20837#32452#12290
-    Color = 13565951
-    ParentColor = False
+  object pnlList: TPanel
+    Left = 0
+    Top = 40
+    Width = 197
+    Height = 228
+    Align = alLeft
+    BevelOuter = bvNone
+    Color = 15329769
+    TabOrder = 0
+    object lvConnections: TListView
+      Left = 0
+      Top = 25
+      Width = 197
+      Height = 203
+      Align = alClient
+      Columns = <
+        item
+          Width = 150
+        end>
+      HideSelection = False
+      ReadOnly = True
+      RowSelect = True
+      ShowColumnHeaders = False
+      ShowWorkAreas = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnChange = lvConnectionsChange
+      OnClick = lvConnectionsClick
+    end
+    object ToolBar: TToolBar
+      Left = 0
+      Top = 0
+      Width = 197
+      Height = 25
+      Caption = #32593#32476#36830#25509#65306
+      Flat = True
+      Images = ilToolbar
+      TabOrder = 1
+      object tlbRefresh: TToolButton
+        Left = 0
+        Top = 0
+        Caption = ' '
+        ImageIndex = 0
+        OnClick = tlbRefreshClick
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 200
+    Top = 40
+    Width = 446
+    Height = 228
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 15329769
+    TabOrder = 1
+    object pnlProperties: TPanel
+      Left = 0
+      Top = 0
+      Width = 446
+      Height = 145
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 15329769
+      TabOrder = 0
+      object lblConnection: TLabel
+        Left = 13
+        Top = 3
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #36830#25509#20449#24687#65306
+      end
+      object lblConnectionValue: TLabel
+        Left = 111
+        Top = 3
+        Width = 320
+        Height = 13
+        AutoSize = False
+        Caption = 'Local Area Network'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblDevice: TLabel
+        Left = 13
+        Top = 22
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #39537#21160#65306
+      end
+      object lblDeviceValue: TLabel
+        Left = 111
+        Top = 22
+        Width = 320
+        Height = 13
+        AutoSize = False
+        Caption = 'Intel(R) PRO/100+ MiniPCI'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblMedia: TLabel
+        Left = 13
+        Top = 41
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #20171#36136#65306
+      end
+      object lblMediaValue: TLabel
+        Left = 111
+        Top = 41
+        Width = 320
+        Height = 13
+        AutoSize = False
+        Caption = 'LAN'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblStatus: TLabel
+        Left = 13
+        Top = 60
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #29366#24577#65306
+      end
+      object lblStatusValue: TLabel
+        Left = 111
+        Top = 60
+        Width = 320
+        Height = 13
+        AutoSize = False
+        Caption = 'Disconnected'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblShared: TLabel
+        Left = 13
+        Top = 79
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #25171#24320#32593#32476#20849#20139#65306
+      end
+      object lblFarewall: TLabel
+        Left = 13
+        Top = 99
+        Width = 100
+        Height = 13
+        AutoSize = False
+        Caption = #24320#21551#38450#28779#22681#65306
+      end
+      object chbShared: TCheckBox
+        Left = 111
+        Top = 79
+        Width = 30
+        Height = 17
+        TabOrder = 0
+        OnClick = chbSharedClick
+      end
+      object chbFirewall: TCheckBox
+        Left = 111
+        Top = 99
+        Width = 30
+        Height = 17
+        TabOrder = 1
+        OnClick = chbFirewallClick
+      end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Top = 145
+      Width = 446
+      Height = 83
+      Align = alClient
+      BevelOuter = bvNone
+      Color = 15329769
+      TabOrder = 1
+      Visible = False
+      object clbIPPorts: TCheckListBox
+        Left = 0
+        Top = 0
+        Width = 446
+        Height = 42
+        OnClickCheck = clbIPPortsClickCheck
+        Align = alClient
+        ItemHeight = 13
+        TabOrder = 0
+        Visible = False
+        OnClick = clbIPPortsClick
+      end
+      object pnlButtons: TPanel
+        Left = 0
+        Top = 42
+        Width = 446
+        Height = 41
+        Align = alBottom
+        BevelOuter = bvNone
+        Color = 15329769
+        TabOrder = 1
+        object pnlButtonsRight: TPanel
+          Left = 136
+          Top = 0
+          Width = 310
+          Height = 41
+          Align = alRight
+          BevelOuter = bvNone
+          TabOrder = 0
+          object btnAddPort: TButton
+            Left = 63
+            Top = 10
+            Width = 75
+            Height = 25
+            Caption = #28155#21152#31471#21475
+            TabOrder = 0
+            Visible = False
+            OnClick = btnAddPortClick
+          end
+          object btnDeletePort: TButton
+            Left = 146
+            Top = 10
+            Width = 80
+            Height = 25
+            Caption = #21024#38500#31471#21475
+            TabOrder = 1
+            Visible = False
+            OnClick = btnDeletePortClick
+          end
+        end
+      end
+    end
   end
   object Panel3: TPanel
     Left = 0
     Top = 0
-    Width = 365
+    Width = 646
     Height = 40
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
-    ParentBackground = False
-    TabOrder = 4
-    object Label1: TLabel
-      Left = 183
+    TabOrder = 2
+    object lNetWork: TLabel
+      Left = 400
       Top = 12
-      Width = 169
+      Width = 233
       Height = 20
       Alignment = taRightJustify
       AutoSize = False
-      Caption = #20462#25913#32452
+      Caption = #32593#32476#24037#20855
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -559,60 +775,103 @@ object FModifyGroup: TFModifyGroup
         0D94560D94560D94560D94560D94560D94560D94560D94560D94560D94560D94
         560D}
     end
+    object Button1: TButton
+      Left = -83
+      Top = 8
+      Width = 80
+      Height = 25
+      Cancel = True
+      Caption = #20851#38381
+      ModalResult = 2
+      TabOrder = 0
+      OnClick = Button1Click
+    end
   end
-  object GroupName: TEdit
-    Left = 99
-    Top = 52
-    Width = 253
-    Height = 21
-    Enabled = False
-    ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
-    MaxLength = 20
-    TabOrder = 0
-    OnChange = GroupNameChange
-    OnKeyPress = GroupNameKeyPress
+  object ilConnections: TImageList
+    Left = 72
+    Top = 180
   end
-  object bSure: TButton
-    Left = 101
-    Top = 147
-    Width = 75
-    Height = 25
-    Caption = #30830#35748
-    Default = True
-    TabOrder = 2
-    OnClick = bSureClick
+  object NTFireWall1: TNTFirewall
+    Left = 120
+    Top = 180
   end
-  object bCancel: TButton
-    Left = 205
-    Top = 147
-    Width = 75
-    Height = 25
-    Cancel = True
-    Caption = #21462#28040
-    TabOrder = 3
-    OnClick = bCancelClick
-  end
-  object Groupdesc: TMemo
-    Left = 99
-    Top = 77
-    Width = 253
-    Height = 21
-    ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
-    MaxLength = 40
-    TabOrder = 1
-    OnChange = GroupdescChange
-    OnKeyPress = GroupNameKeyPress
-  end
-  object GroupPass: TEdit
-    Left = 99
-    Top = 100
-    Width = 253
-    Height = 21
-    ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
-    MaxLength = 20
-    PasswordChar = '*'
-    TabOrder = 5
-    OnChange = GroupNameChange
-    OnKeyPress = GroupNameKeyPress
+  object ilToolbar: TImageList
+    Left = 272
+    Top = 4
+    Bitmap = {
+      494C010101000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001001000000000000008
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000104218631863186318631863
+      1863186318631863186318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7F9073FF7F9073
+      80229073FF7F9073FF7F18630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7F9073FF7F90738022
+      8022FF7F9073FF7F907318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7F907380228022
+      8022802280229073FF7F18630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7F9073FF7F90738022
+      8022FF7F90029001907318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7F9073FF7F9073
+      80229073FF7F9001FF7F18630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7F907390019073FF7F
+      9073FF7F90739001907318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7F9001FF7F9073
+      80229073FF7F9073FF7F18630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7F907390019002FF7F
+      802280229073FF7F907318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7F907380228022
+      8022802280229073FF7F18630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7FFF7FFF7FFF7F
+      802280229073FF7F186318630000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7FFF7FFF7FFF7F
+      80229073FF7F0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7FFF7FFF7FFF7F
+      9073FF7F90731042FF7F00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000001042FF7FFF7FFF7FFF7FFF7F
+      FF7FFF7FFF7F1042000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000104210421042104210421042
+      1042104210421042000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF0080030000000000008003000000000000
+      8003000000000000800300000000000080030000000000008003000000000000
+      8003000000000000800300000000000080030000000000008003000000000000
+      8003000000000000800300000000000080030000000000008007000000000000
+      800F000000000000801F00000000000000000000000000000000000000000000
+      000000000000}
   end
 end

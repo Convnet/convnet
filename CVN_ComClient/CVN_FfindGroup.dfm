@@ -2,7 +2,7 @@ object findGroup: TfindGroup
   Left = 370
   Top = 293
   BorderStyle = bsToolWindow
-  Caption = '?'#28420#23406'?'
+  Caption = #26597#25214#32452
   ClientHeight = 327
   ClientWidth = 309
   Color = clBtnFace
@@ -11,6 +11,7 @@ object findGroup: TfindGroup
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -25,6 +26,7 @@ object findGroup: TfindGroup
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 3
     object lFindGroup: TLabel
       Left = 128
@@ -33,7 +35,7 @@ object findGroup: TfindGroup
       Height = 20
       Alignment = taRightJustify
       AutoSize = False
-      Caption = #22747#25814#23406'?'
+      Caption = #26597#25214#32452
       Color = 9721357
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -528,28 +530,28 @@ object findGroup: TfindGroup
       Top = 63
       Width = 75
       Height = 25
-      Caption = '?    '#28420
+      Caption = #26597#25214
       Default = True
       ModalResult = 1
       TabOrder = 4
       OnClick = bFindClick
     end
     object rFindGroupByName: TRadioButton
-      Left = 2
+      Left = 18
       Top = 18
       Width = 100
       Height = 17
-      Caption = '?    '#26596#19991
+      Caption = #32452#21517#31216
       Checked = True
       TabOrder = 0
       TabStop = True
     end
     object rFindGroupByDesc: TRadioButton
-      Left = 2
-      Top = 40
+      Left = 18
+      Top = 41
       Width = 100
       Height = 17
-      Caption = '?    '#25330#19991
+      Caption = #32452#25551#36848
       TabOrder = 2
     end
     object Edit3: TEdit
@@ -591,7 +593,7 @@ object findGroup: TfindGroup
       Top = 7
       Width = 81
       Height = 20
-      Caption = '?'#23214#22747#25814
+      Caption = #21457#20986#30003#35831
       TabOrder = 1
       OnClick = bJoinGroupClick
     end
@@ -600,10 +602,9 @@ object findGroup: TfindGroup
       Top = 5
       Width = 213
       Height = 21
-      ImeName = #25183#22759'?'#22738'?'#25814#26372' 2'
       MaxLength = 30
       TabOrder = 0
-      Text = #24637'?'#22747#25814'??'
+      Text = #25105#24819#21152#20837#32452
       OnChange = Edit1Change
       OnKeyPress = Edit1KeyPress
     end

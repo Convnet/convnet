@@ -382,11 +382,11 @@ interface
     var Fkey:Tkey128=(8,4,7,3,9,2,4,5,7,5,6,7,4,7,6,1);
 
 
-  function EncryptString(const InString : string) : string;  //加密
-  function DecryptString(const InString : string) : string;  //解密
+  function EncryptString(const InString : ansistring) : ansistring;  //加密
+  function DecryptString(const InString : ansistring) : ansistring;  //解密
 
-  
-  function BFEncryptStringEx(const InString:string;const Key:TKey128;Encrypt:Boolean) : string;
+
+  function BFEncryptStringEx(const InString:ansistring;const Key:TKey128;Encrypt:Boolean) : ansistring;
   procedure BFEncryptStream(InStream, OutStream : TStream;
             const Key : TKey128; Encrypt : Boolean);
   procedure LbEncodeBase64(InStream, OutStream : TStream);
@@ -397,7 +397,7 @@ interface
 
 implementation
 
-function EncryptString(const InString : string) : string;
+function EncryptString(const InString : ansistring) : ansistring;
 begin
   if trim(instring)='' then
     result:=''
@@ -405,8 +405,8 @@ begin
     Result := BFEncryptStringEx(InString, Fkey, True);
 end;
 
-function BFEncryptStringEx(const InString : string;
-            const Key : TKey128; Encrypt : Boolean) : string;
+function BFEncryptStringEx(const InString : ansistring;
+            const Key : TKey128; Encrypt : Boolean) : ansistring;
 var
   InStream  : TMemoryStream;
   OutStream : TMemoryStream;
@@ -500,7 +500,7 @@ procedure LbEncodeBase64(InStream, OutStream : TStream);
 var
   I, O, Count : Integer;
   InBuf  : array[1..45] of Byte;
-  OutBuf : array[0..62] of Char;
+  OutBuf : array[0..62] of AnsiChar;
   Temp : Byte;
 begin
   FillChar(OutBuf, Sizeof(OutBuf), #0);
@@ -513,19 +513,19 @@ begin
     while I <= (Count-2) do begin
       { Encode 1st byte }
       Temp := (InBuf[I] shr 2);
-      OutBuf[O] := Char(Lb64Table[Temp and $3F]);
+      OutBuf[O] := AnsiChar(Lb64Table[Temp and $3F]);
 
       { Encode 1st/2nd byte }
       Temp := (InBuf[I] shl 4) or (InBuf[I+1] shr 4);
-      OutBuf[O+1] := Char(Lb64Table[Temp and $3F]);
+      OutBuf[O+1] := AnsiChar(Lb64Table[Temp and $3F]);
 
       { Encode 2nd/3rd byte }
       Temp := (InBuf[I+1] shl 2) or (InBuf[I+2] shr 6);
-      OutBuf[O+2] := Char(Lb64Table[Temp and $3F]);
+      OutBuf[O+2] := AnsiChar(Lb64Table[Temp and $3F]);
 
       { Encode 3rd byte }
       Temp := (InBuf[I+2] and $3F);
-      OutBuf[O+3] := Char(Lb64Table[Temp]);
+      OutBuf[O+3] := AnsiChar(Lb64Table[Temp]);
 
       Inc(I, 3);
       Inc(O, 4);
@@ -534,19 +534,19 @@ begin
     { Are there odd bytes to add? }
     if (I <= Count) then begin
       Temp := (InBuf[I] shr 2);
-      OutBuf[O] := Char(Lb64Table[Temp and $3F]);
+      OutBuf[O] := AnsiChar(Lb64Table[Temp and $3F]);
 
       { One odd byte }
       if I = Count then begin
         Temp := (InBuf[I] shl 4) and $30;
-        OutBuf[O+1] := Char(Lb64Table[Temp and $3F]);
+        OutBuf[O+1] := AnsiChar(Lb64Table[Temp and $3F]);
         OutBuf[O+2] := '=';
       { Two odd bytes }
       end else begin
         Temp := ((InBuf[I] shl 4) and $30) or ((InBuf[I+1] shr 4) and $0F);
-        OutBuf[O+1] := Char(Lb64Table[Temp and $3F]);
+        OutBuf[O+1] := AnsiChar(Lb64Table[Temp and $3F]);
         Temp := (InBuf[I+1] shl 2) and $3C;
-        OutBuf[O+2] := Char(Lb64Table[Temp and $3F]);
+        OutBuf[O+2] := AnsiChar(Lb64Table[Temp and $3F]);
       end;
       { Add padding }
       OutBuf[O+3] := '=';
@@ -698,7 +698,7 @@ begin
   end;
 end;
 
-function DecryptString(const InString : string) : string;
+function DecryptString(const InString : ansistring) : ansistring;
 begin
   if Trim(Instring)='' then
     result:=''

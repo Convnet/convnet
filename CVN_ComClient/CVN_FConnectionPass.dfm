@@ -11,6 +11,7 @@ object fNeedPass: TfNeedPass
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -67,6 +68,7 @@ object fNeedPass: TfNeedPass
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 3
     object lNeedpass: TLabel
       Left = 224

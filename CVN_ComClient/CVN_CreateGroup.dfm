@@ -11,6 +11,7 @@ object fcreategroup: Tfcreategroup
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -18,22 +19,22 @@ object fcreategroup: Tfcreategroup
   PixelsPerInch = 96
   TextHeight = 13
   object lGroupName: TLabel
-    Left = 7
-    Top = 55
+    Left = 8
+    Top = 62
     Width = 80
     Height = 13
     Alignment = taRightJustify
     AutoSize = False
-    Caption = '?'#26596#24487#19991
+    Caption = #32452#21517#31216#65306
   end
   object lGroupDesc: TLabel
-    Left = 7
-    Top = 81
+    Left = 9
+    Top = 83
     Width = 80
     Height = 13
     Alignment = taRightJustify
     AutoSize = False
-    Caption = #26148'    '#24334#19991
+    Caption = #32452#25551#36848#65306
   end
   object lGroupPass: TLabel
     Left = 0
@@ -62,6 +63,7 @@ object fcreategroup: Tfcreategroup
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 4
     object lCreateGroup: TLabel
       Left = 166
@@ -70,7 +72,7 @@ object fcreategroup: Tfcreategroup
       Height = 20
       Alignment = taRightJustify
       AutoSize = False
-      Caption = '?'#23542#23406'?'
+      Caption = #21019#24314#32452
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -555,7 +557,7 @@ object fcreategroup: Tfcreategroup
     Top = 145
     Width = 75
     Height = 25
-    Caption = '??'
+    Caption = #30830#23450
     Default = True
     TabOrder = 2
     OnClick = bSureClick
@@ -566,7 +568,7 @@ object fcreategroup: Tfcreategroup
     Width = 75
     Height = 25
     Cancel = True
-    Caption = #24226#24474
+    Caption = #21462#28040
     TabOrder = 3
     OnClick = bCancelClick
   end

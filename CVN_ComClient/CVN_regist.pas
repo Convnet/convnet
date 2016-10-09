@@ -84,11 +84,11 @@ begin
     inc(i);
     sleep(1);
     application.ProcessMessages;
-    if i>64000 then
+    if i>6000 then
       break;
   end;
 
-  if i<64000 then
+  if i<6000 then
     CVN_SendCmdto(ProtocolToStr(cmdRegistUser)+','+eUserName.Text+','+ePassWord.Text+','+eNickName.Text+',¡¡'+edes.Text+'*')
   else
     showmessage('Can''t connect to server');

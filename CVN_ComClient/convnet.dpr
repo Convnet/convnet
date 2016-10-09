@@ -1,11 +1,11 @@
 program convnet;
 
 
-
 uses
   FastMM4,
-  FastMM4messages,
   Forms,
+  windows,
+  Dialogs,
   clientUI in 'clientUI.pas' {fclientui},
   CVN_Protocol in '..\ConvnetCommfile\CVN_Protocol.pas',
   ClientStruct in 'ClientStruct.pas',
@@ -19,7 +19,7 @@ uses
   CVN_PrivateSetup in 'CVN_PrivateSetup.pas' {FPrivateSetup},
   CVN_ClientMSG in 'CVN_ClientMSG.pas',
   CVN_PeerOrd in 'CVN_PeerOrd.pas' {FPeerOrd},
-  WinSock2 in 'Winsock2.pas',
+  Winsock2 in 'Winsock2.pas',
   CVN_FConnectionPass in 'CVN_FConnectionPass.pas' {FNeedPass},
   CVN_fSnap in 'CVN_fSnap.pas' {FSnap},
   CVN_ViewUserInfo in 'CVN_ViewUserInfo.pas' {fUserinfo},
@@ -29,18 +29,12 @@ uses
   CVN_messageWin in 'CVN_messageWin.pas' {FCVNMSG},
   StdIORedirect in 'StdIORedirect.pas',
   CVN_Remotecomm in 'CVN_Remotecomm.pas' {RmComm},
-  FrmMainU in 'FrmMainU.pas' {FrmMain},
   StrConv in '..\ConvnetCommfile\StrConv.pas',
-  windows,
   CVN_MessageWindow in 'CVN_MessageWindow.pas' {fMSGWIN},
-  Dialogs,
-  convnet_TLB in 'convnet_TLB.pas',
-  coConvnet in 'coConvnet.pas' {coConvnet: CoClass};
-
-{$R *.TLB}
+  CVN_GroupChat in 'CVN_GroupChat.pas' {groupChatForm};
 
 {$R *.res}
-{$R UAC.res}
+{$R UAC.res }
 begin
 
 
@@ -57,8 +51,10 @@ begin
     );
 
   Application.Initialize;
+
   Application.CreateForm(Tfclientui, fclientui);
   SetActiveLanguage(fclientui);
+
   Application.CreateForm(TfMSGWIN, fMSGWIN);
   Application.CreateForm(TfAutoconnection, fAutoconnection);
   Application.CreateForm(TfRegist, fRegist);
@@ -76,13 +72,6 @@ begin
   Application.CreateForm(Taddautouser, addautouser);
   Application.CreateForm(TFCVNMSG, FCVNMSG);
 
-
-  Application.CreateForm(TFrmMain, FrmMain);
-  if fclientui.checkAutoLogin.Checked then
-  begin
-      application.ShowMainForm:=false;
-      fclientui.blogin.Click;
-  end;
 
   Application.Run;
 

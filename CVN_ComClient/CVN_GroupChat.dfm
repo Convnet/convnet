@@ -1,34 +1,45 @@
-object chatform: Tchatform
-  Left = 380
-  Top = 338
+object groupChatForm: TgroupChatForm
+  Left = 0
+  Top = 0
   BorderStyle = bsToolWindow
-  Caption = 'chatform'
-  ClientHeight = 287
-  ClientWidth = 582
+  Caption = 'groupChatForm'
+  ClientHeight = 289
+  ClientWidth = 580
   Color = 16577775
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
   Scaled = False
-  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object StatusBar1: TStatusBar
+  object chattext: TRichEdit
     Left = 0
-    Top = 268
-    Width = 582
-    Height = 19
-    Color = 16112329
-    Panels = <
-      item
-        Width = 50
-      end>
+    Top = 0
+    Width = 580
+    Height = 224
+    Align = alTop
+    BorderStyle = bsNone
+    Color = 16644082
+    Ctl3D = True
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HideScrollBars = False
+    ImeName = '??????? 2'
+    ParentCtl3D = False
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+    Zoom = 100
   end
   object Edit1: TRzRichEdit
     Left = 3
@@ -67,34 +78,22 @@ object chatform: Tchatform
     TabOrder = 2
     OnClick = bSendChatTextClick
   end
-  object chattext: TRichEdit
+  object StatusBar1: TStatusBar
     Left = 0
-    Top = 0
-    Width = 582
-    Height = 224
-    Align = alTop
-    BorderStyle = bsNone
-    Color = 16644082
-    Ctl3D = True
-    Font.Charset = GB2312_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    HideScrollBars = False
-    ImeName = '??????? 2'
-    ParentCtl3D = False
-    ParentFont = False
-    ReadOnly = True
-    ScrollBars = ssVertical
-    TabOrder = 0
-    Zoom = 100
+    Top = 270
+    Width = 580
+    Height = 19
+    Color = 16112329
+    Panels = <
+      item
+        Width = 50
+      end>
   end
   object Timer1: TTimer
     Enabled = False
     Interval = 2000
     OnTimer = Timer1Timer
-    Left = 408
-    Top = 96
+    Left = 520
+    Top = 72
   end
 end

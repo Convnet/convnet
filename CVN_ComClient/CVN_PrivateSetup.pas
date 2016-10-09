@@ -83,8 +83,7 @@ begin
     
     CVN_SendCmdto(protocoltostr(cmdrenewmyinfo)+','+g_NickName+','+g_MyPass+','+g_common+
     ','+g_AllowPass1+','+g_AllowPass2+','+g_AllowPass3+','+g_AllowPass4+'*');
-    fclientui.myserverInfo.Caption:=g_common;
-    fclientui.currentuser.Caption:=resinfo('USER_TEXT')+g_NickName;
+
     close;  
 end;
 

@@ -25,16 +25,17 @@ type TWinVersion = (wvUnknown, wvWin95, wvWin98, wvWin98SE, wvWinNT, wvWinME, wv
       Con_RetryTime:integer;
       Con_send:int64;
       Con_recv:int64;
-      tvUserReconn:integer;
+      tvUserReconn:int64;
       con_AContext:pointer;
       clientDM:pointer;
+      conTimer:pointer;
+      needpassword:boolean;
 
-      procedure TryConnect_start; virtual; abstract;    //尝试连接
+      procedure TryConnect; virtual; abstract;    //尝试连接
       procedure TryTransfConnect_start; virtual; abstract;//尝试服务器转发
       procedure RefInfo_whenConnect(ip:string;port:integer;Mac:string); virtual;abstract;
       procedure DissconnectPeer; virtual; abstract;
-      procedure SendtoPeer(buffer:pchar; buflength:integer);virtual;abstract;//overload;
-      procedure RetryTimer(Sender: TObject); virtual;abstract;
+      procedure SendtoPeer(buffer:pansichar; buflength:integer);virtual;abstract;//overload;
     end;
 
     tConnectionMode=(
@@ -47,14 +48,13 @@ type TWinVersion = (wvUnknown, wvWin95, wvWin98, wvWin98SE, wvWinNT, wvWinME, wv
               );
 
     pPeerGroupInfo = ^TPeerGroupInfo;
-    TPeerGroupInfo = class(Tlist)
+     TPeerGroupInfo = class(Tlist)
       GroupID:integer;
       Creator:integer;
-      GroupName:string[12];
-      GroupDes:string[30];
+      GroupName:string[20];
+      GroupDes:string[250];
       NeedPass:boolean;
     end;
-   const LOGIN_DELAY_TIME_SEC=7;
 
 var ServerIP:string;
   serverhost:string;
@@ -72,12 +72,13 @@ var ServerIP:string;
   g_AllowPass3:string[40];                              //允许访问的密码3
   g_AllowPass4:string[40];                              //允许访问的密码4
 
+  g_newmessage:boolean;
+
   g_ComMessage:widestring;
   g_ComMessageType:integer;
 
   g_peerRetry:integer;//客户端心跳保持包
-  
-  g_Logintoservertime:integer;
+
 
   //g_rechecknattype_count:integer;                       //重新检查计数
   rmoutecommandallowuserlist:tstringlist;
@@ -89,9 +90,12 @@ var ServerIP:string;
   g_UDPserverPortA:integer;
   g_UDPserverPortB:integer;
 
-  g_UserStruct:TList;
-  g_AllUserInfo:TPeerGroupInfo;
+  g_GroupAll:TList;
+
+
+  g_AllUserInfo:tlist;
   g_ChatFormsList:TList;
+  g_GourpChatFormsList:TList;
   
   g_HasUpnpTCPServer:boolean;
   g_HasUpnpUDPServer:boolean;
@@ -112,6 +116,8 @@ var ServerIP:string;
   //message_str:string;               //ID+','+发送的消息\
   g_defaultgeteway:string;
 
+  g_HitInfo:tHitInfo;//鼠标按下的信息
+
 
   g_MYEtherString:string;
 
@@ -130,9 +136,9 @@ var ServerIP:string;
   function ConvertDataToHex(Buffer: pointer; Length: Word): string;
   function formatInttoViewtext(int:int64):string;
 
-  function CVN_GetUserinfo:pchar;StdCall; external 'cvn_main.dll';
+  function CVN_GetUserinfo:pansichar;StdCall; external 'cvn_main.dll';
   procedure CVN_SendCmd(str:pchar);StdCall; external 'cvn_main.dll';
-  procedure CVN_ConnectUser(Userid:integer;password:pchar);stdcall;external 'cvn_main.dll';
+ // procedure CVN_ConnectUser(Userid:integer;password:pchar);stdcall;external 'cvn_main.dll';
   procedure CVN_Login(cvnurl,username,password:pchar);stdcall;external 'cvn_main.dll';
   procedure CVN_Logout;stdcall;external 'cvn_main.dll';
   procedure CVN_closefirewall;stdcall;external 'cvn_main.dll';
@@ -144,8 +150,12 @@ var ServerIP:string;
   //Procedure synapp(App:TApplication);stdcall; external 'Dll/cvn_main.dll';
   Procedure CVN_Message(Aproc:TfarProc);StdCall; external 'cvn_main.dll';
 
-  function CVN_AllUserInfo:TPeerGroupInfo;StdCall; external 'cvn_main.dll';
-  function CVN_GetUserList:TList;StdCall; external 'cvn_main.dll';
+
+  function CVN_GetGroupUserByGroupIndex(group:PPeerGroupInfo;groupIndex:integer):TUserInfo;StdCall;external 'cvn_main.dll';
+  function CVN_GetGroupByIndex(index:integer):TPeerGroupInfo;StdCall; external 'cvn_main.dll';
+  function CVN_GetGroupCount:integer;StdCall; external 'cvn_main.dll';
+  function CVN_GetUserGroup:TList;StdCall; external 'cvn_main.dll';
+  function CVN_GetGroupList:TList;StdCall; external 'cvn_main.dll';
 
   function CVN_getTCPc2cport:integer;stdcall; external 'cvn_main.dll';
   function CVN_getUDPc2cport:integer;stdcall; external 'cvn_main.dll';
@@ -158,13 +168,16 @@ var ServerIP:string;
   function CVN_CountSend:int64;Stdcall; external 'cvn_main.dll';
   function getUserByID(userid:integer):Tuserinfo; stdcall;  external 'cvn_main.dll';
   function getuserByName(userName:pchar):Tuserinfo; stdcall; external 'cvn_main.dll';
-  function getUserByIDex(userid:integer):Puserinfo; stdcall; external 'cvn_main.dll';
   function getUserByMAC(mac:pchar):Tuserinfo; stdcall; external 'cvn_main.dll';
   function getGroupByID(groupid:integer):TPeerGroupInfo; stdcall; external 'cvn_main.dll';
   function getuFriendByID(userid:integer):Tuserinfo; stdcall; external 'cvn_main.dll';
   function diduserinlist(userid:integer):boolean; stdcall; external 'cvn_main.dll';
-  function CVN_GetEtherName():pchar; external 'cvn_main.dll';
-  function CVN_GetEthermac():pchar; external 'cvn_main.dll';
+  function CVN_GetEtherName():pchar;stdcall;  external 'cvn_main.dll';
+
+  function CVN_GetEthermac():pchar;stdcall; external 'cvn_main.dll';
+  function CVN_GetVersion:double; stdCall; external 'cvn_main.dll';
+
+  procedure CVN_GroupChatMsg(groupid:integer;msg:pchar); StdCall;external 'cvn_main.dll';
 
   procedure CVN_SendCmdto(cmd:string);
 
@@ -233,21 +246,39 @@ uses SysUtils, clientUI, IpRtrMib, winsock, IPFunctions;
     end;
   end;
 
-function GetCVNIPByUserID(Userid:Integer):string;
-var ip3,ip4:integer;
-begin
-   { result:=inttostr(htonl($0A080000+UserID));
-    exit;
-            }
-   if Userid<=65500 then
-   begin
-     ip3:=userid div 254;
-     
-     ip4:=userid - (ip3*254) + 1;
-     result:='10.110.'+inttostr(ip3)+'.'+inttostr(ip4);
-   end else
-     result:='';
-end;
+
+
+   function GetCVNIPByUserID(Userid:Integer):string;
+    var tempid:integer;
+             function int2Ip(intIP : Int64) : string;
+              var
+                n : int64;
+              begin
+                Result := '';
+                n := intIP shr 24;
+                intIP := intIP xor (n shl 24);
+                Result := IntToStr(n) + '.';
+
+                n := intIP shr 16;
+                intIP := intIP xor (n shl 16);
+                Result := Result + IntToStr(n) + '.';
+
+                n := intIP shr 8;
+                intIP := intIP xor (n shl 8);
+                Result := Result + IntToStr(n) + '.';
+
+                n := intIP;
+                Result := Result + IntToStr(n);
+              end;
+
+    begin
+
+        tempid:=userid-(userid div 254)*254 +1;
+        tempid:=tempid + (256 * (userid div 254));
+        result:=int2Ip($0A6E0000+tempid);
+    end;
+
+
 
   function IpAddressToString(Addr: DWORD): string;
   var

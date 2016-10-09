@@ -11,6 +11,7 @@ object fRegist: TfRegist
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -25,7 +26,7 @@ object fRegist: TfRegist
     Height = 15
     Alignment = taRightJustify
     AutoSize = False
-    Caption = #12494'?'#59069#58573
+    Caption = #29992#25143#21517#65306
   end
   object lRegPass: TLabel
     Left = 16
@@ -34,7 +35,7 @@ object fRegist: TfRegist
     Height = 15
     Alignment = taRightJustify
     AutoSize = False
-    Caption = #30430'    ?'#58573
+    Caption = #23494#30721#65306
   end
   object lRegRePass: TLabel
     Left = 16
@@ -43,7 +44,7 @@ object fRegist: TfRegist
     Height = 15
     Alignment = taRightJustify
     AutoSize = False
-    Caption = #57636#34635#30430'?'#58573
+    Caption = #37325#22797#23494#30721#65306
   end
   object lRegNickName: TLabel
     Left = 16
@@ -52,7 +53,7 @@ object fRegist: TfRegist
     Height = 15
     Alignment = taRightJustify
     AutoSize = False
-    Caption = #26212'    ?'#58573
+    Caption = #26165#31216#65306
   end
   object lRegDesc: TLabel
     Left = 16
@@ -61,7 +62,7 @@ object fRegist: TfRegist
     Height = 15
     Alignment = taRightJustify
     AutoSize = False
-    Caption = '?    '#29460#58573
+    Caption = #22791#27880#65306
   end
   object Label7: TLabel
     Left = 35
@@ -79,6 +80,7 @@ object fRegist: TfRegist
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 7
     object lRegisthint: TLabel
       Left = 248
@@ -86,7 +88,7 @@ object fRegist: TfRegist
       Width = 73
       Height = 20
       AutoSize = False
-      Caption = #12494'?'#29460'?'
+      Caption = #27880#20876
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -607,7 +609,7 @@ object fRegist: TfRegist
     Height = 27
     Default = True
     FrameColor = 7617536
-    Caption = #30679#12518
+    Caption = #30830#23450
     Color = 15791348
     HotTrack = True
     TabOrder = 5
@@ -619,7 +621,7 @@ object fRegist: TfRegist
     Height = 27
     Cancel = True
     FrameColor = 7617536
-    Caption = #59357#57807
+    Caption = #21462#28040
     Color = 15791348
     HotTrack = True
     TabOrder = 6

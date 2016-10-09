@@ -40,6 +40,7 @@ object addautouser: Taddautouser
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 0
     object laddAutoHostInfo: TLabel
       Left = 128
@@ -523,7 +524,6 @@ object addautouser: Taddautouser
     Width = 217
     Height = 21
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
-    ItemHeight = 13
     TabOrder = 1
   end
   object pass: TEdit

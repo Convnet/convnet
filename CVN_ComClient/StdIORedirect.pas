@@ -226,11 +226,11 @@ fName := PChar(fileName)
 else
 fName := Nil;
 if cmdLine <>''then
-cLine := PChar(cmdLine)
+cLine := pchar(cmdLine)
 else
 cLine := Nil;
 if directory <>''then
-dir := PChar(directory)
+dir := pchar(directory)
 else
 dir := Nil;
 pOK := CreateProcess(fName,cLine,Nil,Nil,true,CREATE_NO_WINDOW,Nil,dir,startupInfo,fProcessInfo);

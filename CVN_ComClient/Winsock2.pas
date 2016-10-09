@@ -450,7 +450,7 @@ const
   FD_QOS          = $40;
   FD_GROUP_QOS    = $80;
   FD_MAX_EVENTS	= 8;
-  FD_ALL_EVENTS	= $100; { AHS - trudno powiedzieæ, ile powinno byæ }
+  FD_ALL_EVENTS	= $100; { AHS - trudno powiedzie? ile powinno by?}
 
 { All Windows Sockets error constants are biased by WSABASEERR from the "normal" }
 

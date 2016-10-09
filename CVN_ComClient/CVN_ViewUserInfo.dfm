@@ -11,6 +11,7 @@ object fUserinfo: TfUserinfo
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -57,6 +58,7 @@ object fUserinfo: TfUserinfo
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 0
     object lUserinfo: TLabel
       Left = 291

@@ -13,6 +13,7 @@ type
     Edit1: TRzRichEdit;
     bSendChatText: TRzBitBtn;
     chattext: TRichEdit;
+
     procedure FormShow(Sender: TObject);
     procedure bSendChatTextClick(Sender: TObject);
     procedure addinfo(msg:string;author:integer);
@@ -22,12 +23,12 @@ type
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure shownewmsg;
   private
     { Private declarations }
-
+    msgisshow:boolean;
   public
     user:Tuserinfo;
-    group:TPeerGroupInfo;
   end;
 
 //var
@@ -54,6 +55,14 @@ begin
   Caption:=user.UserName+RESINFO('CHATING');
   SetForegroundWindow(self.handle);
   SetActiveWindow(self.handle);
+  msgisshow:=true;
+end;
+
+procedure Tchatform.shownewmsg;
+begin
+    if not msgisshow then
+        show();
+    msgisshow:=true;
 end;
 
 procedure Tchatform.bSendChatTextClick(Sender: TObject);
@@ -92,6 +101,10 @@ end;
 
 procedure Tchatform.addinfo(msg:string;author:integer);
 begin
+
+  if not showing then
+     msgisshow:=false;
+
   case author of
   0://系统
   begin
@@ -158,7 +171,7 @@ end;
 procedure Tchatform.addsysinfo(msg: string);
 begin
     try
-    chattext.Lines.Add(msg);
+        chattext.Lines.Add(msg);
     except
     end;
     //将滚动条拖到65535像素处

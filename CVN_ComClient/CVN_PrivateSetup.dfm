@@ -11,6 +11,7 @@ object fPrivateSetup: TfPrivateSetup
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poMainFormCenter
   Scaled = False
@@ -67,8 +68,8 @@ object fPrivateSetup: TfPrivateSetup
     Caption = #22791'    '#27880#65306
   end
   object lPrivPass1: TLabel
-    Left = 31
-    Top = 190
+    Left = 32
+    Top = 247
     Width = 96
     Height = 13
     Alignment = taRightJustify
@@ -76,8 +77,8 @@ object fPrivateSetup: TfPrivateSetup
     Caption = #35775#38382#21475#20196'1'#65306
   end
   object lPrivPass2: TLabel
-    Left = 31
-    Top = 218
+    Left = 32
+    Top = 275
     Width = 96
     Height = 13
     Alignment = taRightJustify
@@ -85,8 +86,8 @@ object fPrivateSetup: TfPrivateSetup
     Caption = #35775#38382#21475#20196'2'#65306
   end
   object lPrivPass3: TLabel
-    Left = 0
-    Top = 245
+    Left = 1
+    Top = 302
     Width = 127
     Height = 13
     Alignment = taRightJustify
@@ -107,14 +108,15 @@ object fPrivateSetup: TfPrivateSetup
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object lAlert: TLabel
-    Left = 18
-    Top = 270
+    Left = 28
+    Top = 218
     Width = 297
     Height = 19
     AutoSize = False
-    Caption = '     '#23433#20840#35686#21578':  DOS'#21475#20196#22914#38750#24517#35201#29992#36884#35831#19981#35201#35373#32622
+    Caption = #35774#32622#35775#38382#21475#20196#21518#26412#26426#23558#19981#33258#21160#36830#25509#20219#20309#29992#25143
     Color = 15329769
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
@@ -132,6 +134,7 @@ object fPrivateSetup: TfPrivateSetup
     Align = alTop
     BevelOuter = bvNone
     Color = 9721357
+    ParentBackground = False
     TabOrder = 10
     object lPrivateInfo: TLabel
       Left = 208
@@ -688,7 +691,7 @@ object fPrivateSetup: TfPrivateSetup
     Left = 131
     Top = 149
     Width = 185
-    Height = 30
+    Height = 52
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
     MaxLength = 40
     TabOrder = 3
@@ -696,8 +699,8 @@ object fPrivateSetup: TfPrivateSetup
     OnKeyPress = Edit1KeyPress
   end
   object allowPass1: TEdit
-    Left = 131
-    Top = 186
+    Left = 132
+    Top = 243
     Width = 185
     Height = 21
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
@@ -707,8 +710,8 @@ object fPrivateSetup: TfPrivateSetup
     OnChange = Edit3Change
   end
   object allowPass2: TEdit
-    Left = 131
-    Top = 213
+    Left = 132
+    Top = 270
     Width = 185
     Height = 21
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
@@ -718,8 +721,8 @@ object fPrivateSetup: TfPrivateSetup
     OnChange = Edit3Change
   end
   object allowPass3: TEdit
-    Left = 131
-    Top = 240
+    Left = 132
+    Top = 297
     Width = 185
     Height = 21
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
@@ -737,6 +740,7 @@ object fPrivateSetup: TfPrivateSetup
     MaxLength = 12
     PasswordChar = '*'
     TabOrder = 7
+    Visible = False
     OnChange = Edit3Change
   end
 end
