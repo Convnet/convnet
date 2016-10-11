@@ -1,17 +1,21 @@
 SetActiveLanguage(self);
 [主界面]
-bLogin.Caption=登  录
-bRegist.Caption=注册
+fclientui.Caption====ConVnet===
+bLogin.Caption=登　　录
+bRegist.Caption=注　　册
 labInfomation.Caption=欢迎使用ConVnet
-checkAutoLogin.Caption=自动登录
-cCloseNTFW.Caption=关闭ConVnet的Windows网卡防火墙
-bAddFriend.Caption=添加好友
-bJoinGroup.Caption=加入用户组
-bCreateGroup.Caption=创建用户组
-bEditMyProf.Caption=编辑个人信息
-bSetautoconnection.Caption=自动连接，右键可以一键全连
-bSetnetwork.Caption=网络工具
-bLogOut.Caption=注销
+checkAutoLogintxt.Caption=自动登录
+cCloseNTFWtxt.Caption=关闭ConVnet的Windows网卡防火墙
+bfriend.caption=好友(&f)
+bgroup.caption=群组(&g)
+bAddFriend.Caption=查找好友(&f)
+bJoinGroup.Caption=加入用户组(&g)
+bCreateGroup.Caption=创建用户组(&c)
+bEditMyProf.Caption=个人信息(&p)
+bSetautoconnection.Caption=好友访问密码(&p)
+bSetnetwork.Caption=网络工具(&t)
+bLogOut.Caption=注销(&q)
+setting.Caption=设置(&s)
 [添加自动连接主机]
 addautouser.Caption=添加自动连接主机
 laddAutoHostInfo.Caption=添加自动连接主机
@@ -75,11 +79,11 @@ lPrivPass1.Caption=访问口令1：
 lPrivPass2.Caption=访问口令2：
 lPrivPass3.Caption=凭此密码加我为好友：
 lPrivDosPass.Caption=远程dos口令
-lAlert.Caption=   安全警告:  DOS口令如非必要用途请不要设置
+lAlert.Caption=   设置访问口令后本机将不自动连接任何用户
 [fRegist]
 fRegist.Caption=用户注册
 lRegisthint.Caption=用户注册
-lRegUserName.Caption=用户名：
+lRegUserName.Caption=用户名(邮箱)：
 lRegNickName.Caption=昵   称：
 lRegPass.Caption=密   码：
 lRegRePass.Caption=重复密码：
@@ -113,6 +117,7 @@ ORDER_SURE=-确认
 
 MSG_NEEDETHER=点击"YES"安装网卡，点击"NO"不安装但是程序将无法正常工作
 MSG_CLOSECVN=关闭CVN将使基于CVN运行的程序失去连接，确定吗?
+MSG_USEMAIL=不使用邮箱进行注册将无法取回密码，你确定继续么?
 SEND_TEXT=发：
 RECV_TEXT=收：
 CONNUM_TEXT=连接数：
@@ -130,6 +135,7 @@ CHECK_NETWORK_FINISH=网络检查完成
 ETHER_NOT_FOUND=网卡未安装，请先执行网卡安装程序...
 LOGINFAIL_PASSERROR=用户名密码不正确,登录失败...
 LOGINFAIL_RELOGIN_BAN=其他地点重复登录...
+LOGINFAIL_SERVER_BAN=服务器拒绝登录，账户被停用
 GROUP_NAME_HAS_EXIST=该组已经存在，请重新输入您的组名称
 GROUP_CREATE_SUCCESS=恭喜你，成功创建用户组
 GROUP_NAME_MODIFY_SUCCESS=成功修改群组信息
@@ -196,3 +202,6 @@ N11.Caption=退出组
 N8.Caption=踢出用户?
 dasd1.Caption=退出Convnet
 N3.Caption=一键全连
+SERVERMSG=服务器消息:
+GROUP_CREATE_NOPOM=没有建组权限
+GROUP_FRIEND_NOPOM=不能加入组或者添加好友

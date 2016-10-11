@@ -1,16 +1,21 @@
 ﻿[enlgish lang]
+fclientui.Caption====ConVnet===
 bLogin.Caption=Login to CVN
 bRegist.Caption=Regist
 labInfomation.Caption=Welcom to ConVnet
-checkAutoLogin.Caption=Auto Login
-cCloseNTFW.Caption=Close windows firewall for ConVnet 
-bAddFriend.Caption=Add friend
-bJoinGroup.Caption=Join group
-bCreateGroup.Caption=Create group
-bEditMyProf.Caption=Edit my profile
-bSetautoconnection.Caption=Autoconnect,Right click to connect all users
-bSetnetwork.Caption=Network
-bLogOut.Caption=Logout
+checkAutoLogintxt.Caption=Auto Login
+cCloseNTFWtxt.Caption=Close windows firewall for ConVnet 
+bfriend.caption=Friends(&f)
+bgroup.caption=Group(&g)
+bAddFriend.Caption=Find Friend(&f)
+bJoinGroup.Caption=Find and Join Group(&g)
+bCreateGroup.Caption=Create Group(&c)
+bEditMyProf.Caption=Edit my profile(&p)
+bSetautoconnection.Caption=Autoconnect Peer Setting(&p)
+bSetnetwork.Caption=Network(&t)
+bLogOut.Caption=Logout(&q)
+setting.Caption=setting(&s)
+
 [添加自动连接主机]
 addautouser.Caption=Add auto connection
 laddAutoHostInfo.Caption=Add auto connection
@@ -75,7 +80,7 @@ lPrivPass1.Caption=Authorize pass 1:
 lPrivPass2.Caption=Authorize pass 2:
 lPrivPass3.Caption=Use this words be my friend:
 lPrivDosPass.Caption=Telnet DOS password
-lAlert.Caption=   Aletr:DOS password is Remote control entry
+lAlert.Caption=If you set any authorize pass, auto connect will disable
 [fRegist]
 fRegist.Caption=Regist User
 lRegisthint.Caption=Regist User

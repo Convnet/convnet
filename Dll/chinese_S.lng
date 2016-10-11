@@ -1,17 +1,21 @@
 ﻿SetActiveLanguage(self);
 [主界面]
-bLogin.Caption=登  录
-bRegist.Caption=注册
+fclientui.Caption====ConVnet===
+bLogin.Caption=登　　录
+bRegist.Caption=注　　册
 labInfomation.Caption=欢迎使用ConVnet
-checkAutoLogin.Caption=自动登录
-cCloseNTFW.Caption=关闭ConVnet的Windows网卡防火墙
-bAddFriend.Caption=添加好友
-bJoinGroup.Caption=加入用户组
-bCreateGroup.Caption=创建用户组
-bEditMyProf.Caption=编辑个人信息
-bSetautoconnection.Caption=自动连接，右键可以一键全连
-bSetnetwork.Caption=网络工具
-bLogOut.Caption=注销
+checkAutoLogintxt.Caption=自动登录
+cCloseNTFWtxt.Caption=关闭ConVnet的Windows网卡防火墙
+bfriend.caption=好友(&f)
+bgroup.caption=群组(&g
+bAddFriend.Caption=查找好友(&f)
+bJoinGroup.Caption=加入用户组(&g)
+bCreateGroup.Caption=创建用户组(&c)
+bEditMyProf.Caption=个人信息(&p)
+bSetautoconnection.Caption=好友访问密码(&p)
+bSetnetwork.Caption=网络工具(&t)
+bLogOut.Caption=注销(&q)
+setting.Caption=设置(&s)
 [添加自动连接主机]
 addautouser.Caption=添加自动连接主机
 laddAutoHostInfo.Caption=添加自动连接主机
@@ -75,7 +79,7 @@ lPrivPass1.Caption=访问口令1：
 lPrivPass2.Caption=访问口令2：
 lPrivPass3.Caption=凭此密码加我为好友：
 lPrivDosPass.Caption=远程dos口令
-lAlert.Caption=   安全警告:  DOS口令如非必要用途请不要设置
+lAlert.Caption=   设置访问口令后本机将不自动连接任何用户
 [fRegist]
 fRegist.Caption=用户注册
 lRegisthint.Caption=用户注册
