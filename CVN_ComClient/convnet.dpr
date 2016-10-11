@@ -73,6 +73,13 @@ begin
   Application.CreateForm(TFCVNMSG, FCVNMSG);
 
 
+  //Application.CreateForm(TFrmMain, FrmMain);
+  if fclientui.checkAutoLogin.Checked then
+  begin
+      application.ShowMainForm:=false;
+      fclientui.blogin.Click;
+  end;
+
   Application.Run;
 
   //สอทลืสิด

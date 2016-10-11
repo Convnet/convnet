@@ -64,7 +64,6 @@ type
     N21: TMenuItem;
     toolBarIcon: TImageList;
     icon: TTimer;
-    Panel1: TPanel;
     loginCenter: TPanel;
     Label1: TLabel;
     labInfomation: TLabel;
@@ -76,13 +75,7 @@ type
     RzLabel2: TRzLabel;
     bRegist: TRzLabel;
     Image3: TImage;
-    tbrMain: TRzToolbar;
     toolbarImage: TImageList;
-    bCreateGroup: TRzToolButton;
-    bEditMyProf: TRzToolButton;
-    bLogOut: TRzToolButton;
-    bJoinGroup: TRzToolButton;
-    bAddFriend: TRzToolButton;
     versionLabel: TLabel;
     Panel2: TPanel;
     labConnections: TRzLabel;
@@ -93,7 +86,18 @@ type
     maintree: TVirtualStringTree;
     auAutoUpgrader: TauAutoUpgrader;
     Image1: TImage;
-    bSetautoconnection: TRzToolButton;
+    checkAutoLogin: TCheckBox;
+    MainMenu1: TMainMenu;
+    bFriend: TMenuItem;
+    bAddFriend: TMenuItem;
+    bgroup: TMenuItem;
+    bCreateGroup: TMenuItem;
+    bJoinGroup: TMenuItem;
+    bSetautoconnection: TMenuItem;
+    bEditMyProf: TMenuItem;
+    bLogOut: TMenuItem;
+    bSetnetwork: TMenuItem;
+    setting: TMenuItem;
     procedure maintreeBeforeCellPaint(Sender: TBaseVirtualTree;
       TargetCanvas: TCanvas; Node: PVirtualNode; Column: TColumnIndex;
       CellPaintMode: TVTCellPaintMode; CellRect: TRect; var ContentRect: TRect);
@@ -130,9 +134,6 @@ type
     procedure N9Click(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure bAddFriendClick(Sender: TObject);
-    procedure bJoinGroupClick(Sender: TObject);
-    procedure bCreateGroupClick(Sender: TObject);
-    procedure bEditMyProfClick(Sender: TObject);
     procedure Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
     procedure CoolTrayIcon1MinimizeToTray(Sender: TObject);
@@ -177,9 +178,14 @@ type
     procedure RzLabel2Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure bLoginClick(Sender: TObject);
-    procedure bLogOutClick(Sender: TObject);
     procedure ListView1DblClick(Sender: TObject);
+    procedure N23Click(Sender: TObject);
+    procedure bCreateGroupClick(Sender: TObject);
+    procedure bJoinGroupClick(Sender: TObject);
     procedure bSetautoconnectionClick(Sender: TObject);
+    procedure bLogOutClick(Sender: TObject);
+    procedure checkAutoLoginClick(Sender: TObject);
+    procedure bEditMyProfClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -259,7 +265,9 @@ begin
   loginPanel.Visible:=false;
   mainPanel.Visible:=true;
   mainPanel.Align:=alClient;
-
+  fclientui.Menu:=mainmenu1;
+  bFriend.Enabled:=true;
+  bgroup.enabled:=true;
   bAddFriend.Enabled:=true;
   bJoinGroup.Enabled:=true;
   bCreateGroup.Enabled:=true;
@@ -600,7 +608,7 @@ begin
          dataUser:=sender.GetNodeData(node);
          dataGroup:=sender.GetNodeData(ParentNode);
          dataUser^:=datagroup.Items[node.Index];
-         outputdebugstring(pchar(inttostr(node.Index)));
+
          //dataUser:=sender.GetNodeData(node);
          //指出MAINTREE中的结点地址
          //dataUser.treeNode:=node;
@@ -676,6 +684,12 @@ begin
   FCVNMSG.Show;
 end;
 
+
+procedure Tfclientui.checkAutoLoginClick(Sender: TObject);
+begin
+        if checkAutoLogin.Checked then
+              bLogin.Click;
+end;
 
 procedure Tfclientui.closeDriverSigningPolicy;
 var reg:TRegistry;
@@ -994,6 +1008,43 @@ begin
   CVN_SendCmdto(protocoltostr(cmdGetUserinfo)+','+inttostr(tmpuser.userid)+'*');
 end;
 
+procedure Tfclientui.N23Click(Sender: TObject);
+begin
+  finduser.Show;
+end;
+
+procedure Tfclientui.bSetautoconnectionClick(Sender: TObject);
+begin
+   fAutoconnection.show;
+end;
+
+procedure Tfclientui.bCreateGroupClick(Sender: TObject);
+begin
+    fCreateGroup.GroupName.Text:='';
+    fCreateGroup.GroupDesc.Text:='';
+    fCreateGroup.bSure.Enabled:=true;
+    fCreateGroup.show;
+end;
+
+procedure Tfclientui.bEditMyProfClick(Sender: TObject);
+begin
+   {if (g_AllowPass1<>'') or (g_AllowPass2<>'') or (g_AllowPass3<>'') or (g_AllowPass4<>'') then
+      fPrivateSetup.CheckBox1.Checked:=true
+   else
+      fPrivateSetup.CheckBox1.Checked:=false; }
+   fPrivateSetup.edit1.Text:=g_NickName;
+   fPrivateSetup.edit2.Text:=g_MyPass;
+   fPrivateSetup.edit3.Text:=g_MyPass;
+   fPrivateSetup.eDes.Text:=g_common;
+   fPrivateSetup.allowPass1.Text := g_AllowPass1;
+   fPrivateSetup.allowPass2.Text:= g_AllowPass2;
+   fPrivateSetup.allowPass3.Text:= g_AllowPass3;
+   fPrivateSetup.allowPass4.Text:= g_AllowPass4;
+
+   fPrivateSetup.Label2.Caption:=eUserName.Text;
+   fPrivateSetup.Show;
+end;
+
 procedure Tfclientui.N2Click(Sender: TObject);
 var tmpuser:puserinfo;
 begin
@@ -1027,37 +1078,9 @@ end;
 
 procedure Tfclientui.bJoinGroupClick(Sender: TObject);
 begin
-
   findgroup.ListView1.Clear;
   findgroup.panel2.Visible:=false;
   findGroup.Show;
-end;
-
-procedure Tfclientui.bCreateGroupClick(Sender: TObject);
-begin
-    fCreateGroup.GroupName.Text:='';
-    fCreateGroup.GroupDesc.Text:='';
-    fCreateGroup.bSure.Enabled:=true;
-    fCreateGroup.show;
-end;
-
-procedure Tfclientui.bEditMyProfClick(Sender: TObject);
-begin
-   {if (g_AllowPass1<>'') or (g_AllowPass2<>'') or (g_AllowPass3<>'') or (g_AllowPass4<>'') then
-      fPrivateSetup.CheckBox1.Checked:=true
-   else
-      fPrivateSetup.CheckBox1.Checked:=false; }
-   fPrivateSetup.edit1.Text:=g_NickName; 
-   fPrivateSetup.edit2.Text:=g_MyPass;
-   fPrivateSetup.edit3.Text:=g_MyPass;
-   fPrivateSetup.eDes.Text:=g_common;
-   fPrivateSetup.allowPass1.Text := g_AllowPass1;
-   fPrivateSetup.allowPass2.Text:= g_AllowPass2;
-   fPrivateSetup.allowPass3.Text:= g_AllowPass3;
-   fPrivateSetup.allowPass4.Text:= g_AllowPass4;
-
-   fPrivateSetup.Label2.Caption:=eUserName.Text;
-   fPrivateSetup.Show;
 end;
 
 procedure Tfclientui.Panel3MouseMove(Sender: TObject; Shift: TShiftState;
@@ -1252,9 +1275,9 @@ Const
 begin
   loadSkin;
 
-  width:=360;
+  width:=300;
 
-  versionLabel.Caption:=floattostr(CVN_GetVersion);
+  versionLabel.Caption:=floattostr(8.4);
   application.ShowHint:=true;
 
   CoolTrayIcon1.IconIndex:=0;
@@ -1326,11 +1349,11 @@ begin
         eServerIP.Text:=inifile.Values['ServerIP'];
         eUserName.Text:=inifile.Values['UserName'];
         ePassword.Text:=DecryptString(inifile.Values['Password']);
-
         globalport_TCP:=0;
         globalport_UDP:=0;
         globalport_TCP:=strtoint(inifile.Values['TCPPort']);//CONVNET的客户端服务端口从80开始尝试
         globalport_UDP:=strtoint(inifile.Values['UDPPort']);//CONVNET的客户端服务端口从80开始尝试
+        checkAutoLogin.Checked:=strtobool(inifile.Values['AutoLogin']);
       except
       end;
     end;
@@ -1482,6 +1505,7 @@ begin
   refui.Enabled:=false;
   bLogin.Enabled:=false;//可以开始登录
   disableUI_WhenLostConnection;
+  fclientui.Menu:=nil;
   loginPanel.Visible:=true;
   mainPanel.Visible:=false;
   loginPanel.Align:=alClient;
@@ -1554,6 +1578,8 @@ begin
     bCreateGroup.Enabled:=false;
     bSetautoconnection.Enabled:=false;
     bEditMyProf.Enabled:=false;
+    bFriend.Enabled:=false;
+    bgroup.enabled:=false;
 
     //自动重连按钮
 
@@ -2155,11 +2181,6 @@ begin
 
 end;
 
-procedure Tfclientui.bSetautoconnectionClick(Sender: TObject);
-begin
-   fAutoconnection.show;
-end;
-
 procedure Tfclientui.bSetautoconnectionMouseUp(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   var i:integer;
@@ -2173,15 +2194,6 @@ end;
 procedure Tfclientui.bSetnetworkClick(Sender: TObject);
 begin
   ShellExecute(self.Handle, nil, pchar(extractFilepath(application.exeName)+'sharenetwork.exe'), nil, nil, SW_NORMAL);
-end;
-
-procedure Tfclientui.bLogOutClick(Sender: TObject);
-begin
- if messagedlg(resinfo('MSG_CLOSECVN'),Mtinformation,[mbyes,mbno],0) = mrYes then
- begin
-    CVN_Logout;
-    ShowUI_logout;
- end;
 end;
 
 procedure Tfclientui.bLoginClick(Sender: TObject);
@@ -2219,7 +2231,7 @@ begin
     inifile.Add('UserName='+eUserName.Text);
 
     inifile.Add('Password='+EncryptString(ePassword.Text));
-
+    inifile.Add('AutoLogin='+booltostr(checkAutoLogin.checked));
     //inifile.Add('NeedVnc='+booltostr(needvnc.checked));
     inifile.Add('TCPPort='+inttostr(globalport_TCP));
     inifile.Add('UDPPort='+inttostr(globalport_UDP));
@@ -2232,6 +2244,15 @@ begin
     end;
     refui.Enabled:=true;
     inifile.Free;
+end;
+
+procedure Tfclientui.bLogOutClick(Sender: TObject);
+begin
+ if messagedlg(resinfo('MSG_CLOSECVN'),Mtinformation,[mbyes,mbno],0) = mrYes then
+ begin
+    CVN_Logout;
+    ShowUI_logout;
+ end;
 end;
 
 procedure Tfclientui.N19Click(Sender: TObject);
