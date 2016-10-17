@@ -140,8 +140,8 @@ type
     procedure RzBmpButton1Click(Sender: TObject);
     procedure N12Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure refuiTimer(Sender: TObject);
-    procedure loadautoconntioninfo;
+    procedure RefuiTimer(Sender: TObject);
+    procedure LoadAutoConntionInfo;
     procedure StartAutoConnection;
     procedure CoolTrayIcon1Click(Sender: TObject);
     procedure ping1Click(Sender: TObject);
@@ -160,7 +160,6 @@ type
       Height: Integer);
     procedure maintreeColumnDblClick(Sender: TBaseVirtualTree;
       Column: TColumnIndex; Shift: TShiftState);
-    procedure dasd1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure bSetautoconnectionMouseUp(Sender: TObject;
@@ -171,7 +170,7 @@ type
     procedure bSetnetworkClick(Sender: TObject);
     procedure N15Click(Sender: TObject);
     procedure CoolTrayIcon1DblClick(Sender: TObject);
-    procedure iconTimer(Sender: TObject);
+    procedure IconTimer(Sender: TObject);
     procedure maintreeMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure bRegistClick(Sender: TObject);
@@ -184,7 +183,7 @@ type
     procedure bJoinGroupClick(Sender: TObject);
     procedure bSetautoconnectionClick(Sender: TObject);
     procedure bLogOutClick(Sender: TObject);
-    procedure checkAutoLoginClick(Sender: TObject);
+    procedure CheckAutoLoginClick(Sender: TObject);
     procedure bEditMyProfClick(Sender: TObject);
 
   private
@@ -203,34 +202,34 @@ type
     procedure ShowUI_logout;
     procedure Sortuserlist;
 
-    procedure showrenewmyinfosucc;
-    procedure rebuildtree;
-    procedure showusermessage(s:string);
+    procedure ShowReNewMyInfoSucc;
+    procedure ReBuildTree;
+    procedure ShowUserMessage(s:string);
     procedure showGroupMessage(s:string);
 
     function Getchatform(userinfo:Tuserinfo):tchatform;
     function GetGroupChatForm(groupInfo:tPeerGroupInfo):tgroupChatForm;
 
-    procedure showusermessage_error(s:string);
-    procedure createGroupResp(tmpstr:string);
+    procedure ShowUserMessage_error(s:string);
+    procedure CreateGroupResp(tmpstr:string);
     procedure RefreshNetStatus;
     procedure ConnectAllUser;
-    procedure needpass(tmpstr:string);
-    procedure showuserinfo(tmpstr:string);
-    procedure disableUI_WhenLostConnection;
-    procedure closeDriverSigningPolicy;
-    procedure installether;
+    procedure Needpass(tmpstr:string);
+    procedure Showuserinfo(tmpstr:string);
+    procedure DisableUI_WhenLostConnection;
+    procedure CloseDriverSigningPolicy;
+    procedure InstallEther;
     procedure WndProc(var nMsg: TMessage); override;
     procedure Commessage;
-    procedure refTreeviewNode(nodeid:string);
-    procedure delTreeviewNode(nodeid:string);
-    function getGroupNode(nodeid:string):PVirtualNode;
+    procedure RefTreeviewNode(nodeid:string);
+    procedure RelTreeviewNode(nodeid:string);
+    function GetGroupNode(nodeid:string):PVirtualNode;
 
   end;
 
 
 
-  procedure closefirewall(isopen:boolean);
+  procedure CloseFirewall(isopen:boolean);
   procedure GetCVNmessage(messagetype:integer;messagestring:string);stdcall;
 
 
@@ -248,10 +247,9 @@ uses CVN_regist,CVN_Protocol, CVN_modifyGroupinfo,
   CVN_FAutoconnection, CVN_faddautouser,  CVN_messageWin,
   shellAPI, CVN_Remotecomm, CommCtrl;
 
-procedure closefirewall(isopen:boolean);
+procedure CloseFirewall(isopen:boolean);
 begin
-
-    CVN_closefirewall;
+    CVN_CloseFirewall;
 end;
 
 procedure Tfclientui.Sortuserlist;
@@ -678,20 +676,20 @@ end;
 
 
 
-procedure Tfclientui.showrenewmyinfosucc;
+procedure Tfclientui.ShowReNewMyInfoSucc;
 begin
   FCVNMSG.Label1.Caption:=RESINFO('RENEW_MY_INFO_SUCCESS');
   FCVNMSG.Show;
 end;
 
 
-procedure Tfclientui.checkAutoLoginClick(Sender: TObject);
+procedure Tfclientui.CheckAutoLoginClick(Sender: TObject);
 begin
         if checkAutoLogin.Checked then
               bLogin.Click;
 end;
 
-procedure Tfclientui.closeDriverSigningPolicy;
+procedure Tfclientui.CloseDriverSigningPolicy;
 var reg:TRegistry;
     buff:array[0..0] of  byte;
 begin
@@ -710,7 +708,7 @@ begin
    end;
 end;
 
-procedure Tfclientui.rebuildtree;
+procedure Tfclientui.ReBuildTree;
 var i:integer;
 begin
   g_GroupAll:=CVN_GetGroupList;
@@ -726,7 +724,7 @@ begin
   fclientui.Sortuserlist;
 end;
 
-procedure Tfclientui.showusermessage(s:string);
+procedure Tfclientui.ShowUserMessage(s:string);
 var
     userinfo:Tuserinfo;
     cmdstr:string;
@@ -930,7 +928,7 @@ begin
 end;
 
 
-procedure Tfclientui.showusermessage_error(s:string);
+procedure Tfclientui.ShowUserMessage_error(s:string);
 var
     userinfo:Tuserinfo;
     cmdstr:string;
@@ -951,7 +949,7 @@ begin
 end;
 
 
-procedure Tfclientui.createGroupResp(tmpstr:string);
+procedure Tfclientui.CreateGroupResp(tmpstr:string);
 begin
   if tmpstr='F' then
   begin
@@ -1169,9 +1167,10 @@ var i:integer;
     chatform:TGroupchatform;
 begin
 
-  for i:=0 to g_GourpChatFormsList.Count-1 do
+  result:=nil;
+  for i:= g_GourpChatFormsList.Count-1 downto 0 do
    begin
-      if TGroupchatform(g_GourpChatFormsList.Items[i]).groupinfo.GroupID = groupInfo.GroupID then
+      if TGroupchatform(g_GourpChatFormsList.Items[i]).GroupID = groupInfo.GroupID then
       begin
           result:=g_GourpChatFormsList.Items[i];
           exit;
@@ -1179,7 +1178,8 @@ begin
    end;
 
    chatform:=TGroupchatform.Create(nil);
-   chatform.groupinfo:= groupInfo;
+   chatform.groupid:= groupInfo.GroupID;
+   chatform.groupname:=groupinfo.GroupName;
    g_GourpChatFormsList.Add(chatform);
    result:=chatform;
 end;
@@ -1246,7 +1246,7 @@ begin
 
 end;
 
-procedure Tfclientui.needpass(tmpstr:string);
+procedure Tfclientui.Needpass(tmpstr:string);
 var
     tmpuser:Tuserinfo;
 begin
@@ -1255,9 +1255,9 @@ begin
  begin
      tmpuser.Con_RetryTime:=9;
      tmpuser.connecting:=false;
-     fNeedPass.tmpuser:=tmpuser;
-     fNeedPass.Label1.Caption:=tmpuser.UserName+resinfo('USER_NEED_AUTHORIZE_PASS_TEXT')+#10#13+resinfo('USER_NEED_AUTHORIZE_INPUT');
-     fNeedPass.Show;
+     fNeedpass.tmpuser:=tmpuser;
+     fNeedpass.Label1.Caption:=tmpuser.UserName+resinfo('USER_NEED_AUTHORIZE_PASS_TEXT')+#10#13+resinfo('USER_NEED_AUTHORIZE_INPUT');
+     fNeedpass.Show;
  end;
 end;
 
@@ -1390,8 +1390,8 @@ begin
       if MessageDlg(resinfo('MSG_NEEDETHER'),
         mtInformation,[mbYes,mbNo],0) = mryes  then
       begin
-        closeDriverSigningPolicy;
-        installether;
+        CloseDriverSigningPolicy;
+        InstallEther;
       end
       else
       begin
@@ -1418,7 +1418,7 @@ begin
 
 end;
 
-function Tfclientui.getGroupNode(nodeid: string): PVirtualNode;
+function Tfclientui.GetGroupNode(nodeid: string): PVirtualNode;
 var i:integer;
     tmpnode:PVirtualNode;
     datauser1:pUserinfo;
@@ -1444,19 +1444,19 @@ begin
       end;
 end;
 
-procedure Tfclientui.delTreeviewNode(nodeid: string);  //删除树节点
+procedure Tfclientui.RelTreeviewNode(nodeid: string);  //删除树节点
 begin
-    if getGroupNode(nodeid)<>nil then
-       mainTree.DeleteNode(getGroupNode(nodeid));
+    if GetGroupNode(nodeid)<>nil then
+       mainTree.DeleteNode(GetGroupNode(nodeid));
 end;
 
-procedure Tfclientui.refTreeviewNode(nodeid: string);   //刷新树节点
+procedure Tfclientui.RefTreeviewNode(nodeid: string);   //刷新树节点
 begin
-    if getGroupNode(nodeid)<>nil then
-      mainTree.ReinitNode(getGroupNode(nodeid),false);
+    if GetGroupNode(nodeid)<>nil then
+      mainTree.ReinitNode(GetGroupNode(nodeid),false);
 end;
 
-procedure Tfclientui.refuiTimer(Sender: TObject);
+procedure Tfclientui.RefuiTimer(Sender: TObject);
   var i,j:integer;
       s:pchar;
 begin
@@ -1492,7 +1492,7 @@ begin
     labConnections.Caption:=resinfo('CONNUM_TEXT')+inttostr(j);
 end;
 
-procedure Tfclientui.showuserinfo(tmpstr:string);
+procedure Tfclientui.Showuserinfo(tmpstr:string);
 begin
   fuserinfo.Label5.Caption:=tmpstr;
   fuserinfo.Edit1.Text:= g_operationingUser.UserName;
@@ -1504,14 +1504,14 @@ procedure Tfclientui.ShowUI_logout;
 begin
   refui.Enabled:=false;
   bLogin.Enabled:=false;//可以开始登录
-  disableUI_WhenLostConnection;
+  DisableUI_WhenLostConnection;
   fclientui.Menu:=nil;
   loginPanel.Visible:=true;
   mainPanel.Visible:=false;
   loginPanel.Align:=alClient;
 end;
 
-procedure Tfclientui.loadautoconntioninfo;
+procedure Tfclientui.LoadAutoConntionInfo;
 var s:tstringlist;
     i:integer;
     tmpitem:TListItem;
@@ -1567,10 +1567,12 @@ begin
   end;
 end;
 
-procedure Tfclientui.disableUI_WhenLostConnection;
+procedure Tfclientui.DisableUI_WhenLostConnection;
+var i:integer;
 begin
   try
     bLogin.Enabled:=true;//可以登录
+
 
     //五个按钮的状态改变
     bAddFriend.Enabled:=false;
@@ -1595,7 +1597,7 @@ begin
     fPrivateSetup.close;
     fMSGWIN.close;
     fPeerOrd.close;
-    fNeedPass.close;
+    fNeedpass.close;
     fUserinfo.close;
     labInfomation.Caption:='退出登录';
   except
@@ -1996,7 +1998,7 @@ begin
           if not assigned(userinfo) then exit;//如果用户不存在则不予理会;
           if not Userinfo.ISOnline then exit;//如果用户不在线则不予理会;
           //请求主窗体创建(打开)聊天窗口
-          getchatform(userinfo^).Show;
+          Getchatform(userinfo^).Show;
         end;
 
         if hitinfo.HitColumn=2 then//点击连接按钮
@@ -2110,7 +2112,7 @@ procedure Tfclientui.maintreeColumnDblClick(Sender: TBaseVirtualTree;
 begin
     if sender.GetNodeLevel(g_currentNode)= 1 then
     begin
-       getchatform(Puserinfo(sender.GetNodeData(g_currentNode))^).Show;
+       Getchatform(Puserinfo(sender.GetNodeData(g_currentNode))^).Show;
     end;
   {  if  sender.GetNodeLevel(g_currentNode)= 0 then
     begin
@@ -2119,12 +2121,6 @@ begin
 
 end;
 
-
-
-procedure Tfclientui.dasd1Click(Sender: TObject);
-begin
-  close;
-end;
 
 
 procedure Tfclientui.FormShow(Sender: TObject);
@@ -2219,7 +2215,7 @@ begin
                     pchar(ePassword.Text));
 
     try
-      closefirewall(true);
+      CloseFirewall(true);
     except
     end;
 
@@ -2302,7 +2298,7 @@ begin
           bLogin.Enabled:=true;
       end;
      1000://服务器断线
-          fclientui.disableUI_WhenLostConnection;
+          fclientui.DisableUI_WhenLostConnection;
      1002://用户连接成功
           fclientui.Sortuserlist;
 
@@ -2314,7 +2310,7 @@ begin
 
 
      1004://连接断开
-          fclientui.disableUI_WhenLostConnection;
+          fclientui.DisableUI_WhenLostConnection;
          
      1005://退出登录结束
         begin
@@ -2327,14 +2323,9 @@ begin
               g_ChatFormsList.Pack;
            end;
 
-           for i := g_GourpChatFormsList.Count-1 downto 0 do
-           begin
-             tgroupChatForm(g_GourpChatFormsList.Items[i]).Free;
-             g_GourpChatFormsList.Delete(i);
-             g_GourpChatFormsList.Pack;
-           end;
 
-           fclientui.disableUI_WhenLostConnection;
+
+           fclientui.DisableUI_WhenLostConnection;
            fclientui.ShowUI_logout;
            //fclientui.labInfomation.Caption:=resinfo('LOGIN_OUT_TEXT');
            fclientui.bLogin.Enabled:=true;
@@ -2343,7 +2334,7 @@ begin
      1006://退出登录开始
         begin
            fclientui.maintree.RootNodeCount:=0;
-           fclientui.disableUI_WhenLostConnection;
+           fclientui.DisableUI_WhenLostConnection;
            application.ProcessMessages;
         end;
      1007://用户重连尝试
@@ -2448,8 +2439,8 @@ begin
 
      1222://arp信息
      begin
-        winexec(pAnsichar(mmessagestring),sw_hide);
-        sleep(10);
+        Winexec(pAnsichar(mmessagestring),sw_hide);
+        Sleep(10);
      end;
 
      ord(cmdOffLinetellResp):
@@ -2482,14 +2473,14 @@ begin
 
      ord(cmdQuitGroupResp):
      begin
-        rebuildtree;
+        ReBuildTree;
      end;
 
      ord(cmdGetGroupInfoResp)://用户组更新信息
         begin
-           rebuildtree;
+           ReBuildTree;
            //获取组信息是确切的用户初始化完成信号。
-           fclientui.loadautoconntioninfo;
+           fclientui.LoadAutoConntionInfo;
         end;
         
      ord(cmdCreateGroupResp):
@@ -2572,7 +2563,7 @@ begin
           tmpstr:=mmessagestring;//copy(mmessagestring,0,length(mmessagestring));//去除pansichar的填充
           tmpstr:=CatStringAfterStar(tmpstr);//截取有用的部分（*号之后的部分）
          // message_str:= tmpstr;
-          fclientui.showuserinfo(tmpstr);
+          fclientui.Showuserinfo(tmpstr);
        end;
 
        //用户申请加为好友的信息
@@ -2586,7 +2577,7 @@ begin
        //组备注的返回信息，刷新组的备注信息
        ord(cmdGetGroupDescresp):
        begin
-          //g_createGroupResp:=mmessagestring;
+          //g_CreateGroupResp:=mmessagestring;
           FModifyGroup.renewGroupinfo(mmessagestring);
           //sendMessage(FModifyGroup.Handle,CVN_groupDescReturn,Integer(@cmdstr),0);
        end;
@@ -2594,7 +2585,7 @@ begin
        //好友确认通知
        ord(cmdPeerSureFriendResp):
        begin
-           rebuildtree;
+           ReBuildTree;
        end;
        
        //修改组返回  刷新组
@@ -2609,14 +2600,14 @@ begin
           FCVNMSG.Show;
        end;
 
-       ord(cmdUserNeedPass):
+       ord(cmdUserNeedpass):
        begin
-           fclientui.needpass(mmessagestring);
+           fclientui.Needpass(mmessagestring);
        end;
 
        ord (cmdRenewMYinforesp):
        begin
-          fclientui.showrenewmyinfosucc;
+          fclientui.ShowReNewMyInfoSucc;
        end;
 
 
@@ -2637,7 +2628,7 @@ begin
        begin
          //message_str:=mmessagestring;//去除pansichar的填充
          //g_chatmessage:=CatStringAfterStar(cmdstr);//截取有用的部分（*号之后的部分）
-         fclientui.showusermessage(mmessagestring);//通知主线程查看消息
+         fclientui.ShowUserMessage(mmessagestring);//通知主线程查看消息
        end;
 
        ord(cmdGroupChatResp):
@@ -2652,7 +2643,7 @@ begin
        begin
          //信息未到达，请求主窗口创建（打开）窗体显示
          //message_str:=mmessagestring;//截取有用的部分（*号之后的部分）
-         fclientui.showusermessage_error(mmessagestring);//通知主线程查看消息
+         fclientui.ShowUserMessage_error(mmessagestring);//通知主线程查看消息
        end;
        ord(cmdRegistUserresp):
        begin
@@ -2673,12 +2664,12 @@ begin
 
        ord (cmdPeerSureJoinGroupresp):
        begin
-          rebuildtree;
+          ReBuildTree;
        end;
 
        ord (cmdGetFriendInfoResp):
        begin
-          rebuildtree;
+          ReBuildTree;
        end;
    end;   
 end;
@@ -2711,7 +2702,7 @@ begin
       CoolTrayIcon1.IconIndex:=0
 end;
 
-procedure Tfclientui.installether;
+procedure Tfclientui.InstallEther;
 var     roomprocess:TProcessInformation;//exe进程信息
   startupInfo :TStartupInfo;
 begin

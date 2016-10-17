@@ -81,7 +81,7 @@ var ServerIP:string;
 
 
   //g_rechecknattype_count:integer;                       //重新检查计数
-  rmoutecommandallowuserlist:tstringlist;
+  rmouteCommandAllowuserlist:tstringlist;
  
 
 
