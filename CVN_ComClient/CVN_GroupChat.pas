@@ -27,7 +27,8 @@ type
   public
     { Public declarations }
 
-    groupinfo:TPeerGroupInfo;
+    groupid:integer;
+    groupname:string;
     procedure addinfo(s:string);
     procedure shownewmsg;
   end;
@@ -83,7 +84,7 @@ begin
     StatusBar1.Panels[0].Text:='';
 
 
-  CVN_GroupChatMsg(groupinfo.GroupID,pchar(Edit1.Text));
+  CVN_GroupChatMsg(groupid,pchar(Edit1.Text));
 
   edit1.Text:='';
   edit1.SetFocus;
@@ -115,7 +116,7 @@ end;
 
 procedure TgroupChatForm.FormShow(Sender: TObject);
 begin
-  Caption:=groupinfo.groupname+'群组对话中';
+  Caption:=groupname+'群组对话中';
   SetForegroundWindow(self.handle);
   SetActiveWindow(self.handle);
   msgisshow:=true;
