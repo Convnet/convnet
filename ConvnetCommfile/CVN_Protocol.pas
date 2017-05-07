@@ -130,12 +130,18 @@ type
        cmdSameipInforesp,
 
        cmdCheckNatType,
-       cmdServerSendToClient
+       cmdServerSendToClient,
+
+       cmdGroupChat,
+       cmdGroupChatResp,
+       cmdGroupChatChatArrive
+
+
        );
     type
     tcmd=record
       cmdhead:string[1];
-      cmdcontext:pchar;
+      cmdcontext:pansichar;
     end;
 
 

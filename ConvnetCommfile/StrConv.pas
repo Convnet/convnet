@@ -22,7 +22,7 @@ implementation
 
 function MinStrConvBufSize(SrcCodepage: DWord; Str: String): DWord;
 begin
-  Result := MultiByteToWideChar(SrcCodepage, 0, PChar(Str), -1, NIL, 0)
+  Result := MultiByteToWideChar(SrcCodepage, 0, PAnsiChar(Str), -1, NIL, 0)
 end;
 
 function MinStrConvBufSize(DestCodepage: DWord; Wide: WideString): DWord;
@@ -35,7 +35,7 @@ begin
   if BufSize = -1 then
     BufSize := MinStrConvBufSize(SrcCodepage, Str);
   SetLength(Result, BufSIze * 2);
-  MultiByteToWideChar(SrcCodepage, 0, PChar(Str), -1, PWideChar(Result), BufSIze);
+  MultiByteToWideChar(SrcCodepage, 0, PAnsiChar(Str), -1, PWideChar(Result), BufSIze);
   SetLength(Result, BufSize - 1)
 end;
 
@@ -44,7 +44,7 @@ begin
   if BufSize = -1 then
     BufSize := MinStrConvBufSize(DestCodepage, Str);
   SetLength(Result, BufSIze);
-  WideCharToMultiByte(DestCodepage, 0, PWideChar(Str), -1, PChar(Result), BufSize, NIL, NIL);
+  WideCharToMultiByte(DestCodepage, 0, PWideChar(Str), -1, PAnsiChar(Result), BufSize, NIL, NIL);
   SetLength(Result, BufSize - 1)
 end;
 
@@ -77,11 +77,11 @@ function IdToCharset(ID: DWord; GetDescription: Boolean = False): String;
 var
   Key: HKEY;
   ValueType, BufSize: DWord;
-  Field: PChar;
+  Field: pchar;
 begin
   Result := '';
 
-  if RegOpenKeyEx(HKEY_CLASSES_ROOT, PChar('MIME\Database\Codepage\' + IntToStr(ID)), 0, KEY_QUERY_VALUE, Key) = ERROR_SUCCESS then
+  if RegOpenKeyEx(HKEY_CLASSES_ROOT, pchar('MIME\Database\Codepage\' + IntToStr(ID)), 0, KEY_QUERY_VALUE, Key) = ERROR_SUCCESS then
     try
       SetLength(Result, 4096);
       BufSize := SizeOf(Result);
