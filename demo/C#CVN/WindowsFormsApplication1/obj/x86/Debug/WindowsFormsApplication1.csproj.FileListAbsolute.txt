@@ -77,3 +77,12 @@ D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplica
 D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources

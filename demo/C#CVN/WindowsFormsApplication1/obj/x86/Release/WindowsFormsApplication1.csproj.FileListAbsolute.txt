@@ -1,0 +1,4 @@
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.config
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Form1.resources
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
