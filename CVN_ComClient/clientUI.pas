@@ -1168,7 +1168,7 @@ begin
 
   width:=300;
 
-  versionLabel.Caption:=floattostr(8.4);
+  versionLabel.Caption:=floattostr(8.5);
   application.ShowHint:=true;
 
   CoolTrayIcon1.IconIndex:=0;
