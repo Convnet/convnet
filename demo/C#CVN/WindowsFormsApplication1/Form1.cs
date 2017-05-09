@@ -165,63 +165,44 @@ namespace WindowsFormsApplication1
         [return: MarshalAs(UnmanagedType.LPWStr)]
         private static extern string CVN_GetUserinfo();
 
+        //好友申请,allpyinfo可做直接入组密码匹配
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ApplyForPeer(int peerid, string allpyinfo);
+        private static extern void CVN_TryAddFriend(int peerid, [MarshalAs(UnmanagedType.LPWStr)] string allpyinfo);
 
+        //入组申请,allpyinfo可做直接入组密码匹配
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ApplyForJoinGroup(int groupid, string allpyinfo);
+        private static extern void CVN_TryJoinGroup(int groupid, [MarshalAs(UnmanagedType.LPWStr)] string allpyinfo);
 
+        //确认好友
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ConfirmJoinPeer(int peerid);
+        private static extern void CVN_FriendConfirm(int peerid);
 
+        //确认入组，管理员有效
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         private static extern void CVN_ConfirmJoinGroup(int userid, int groupid);
 
+        //注册
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_RegistUser(string serverurl, string username, string password, string nick, string desc);
-
+        private static extern void CVN_RegistUser(  [MarshalAs(UnmanagedType.LPWStr)] string serverurl,
+                                                    [MarshalAs(UnmanagedType.LPWStr)] string username,
+                                                    [MarshalAs(UnmanagedType.LPWStr)] string password, 
+                                                    [MarshalAs(UnmanagedType.LPWStr)] string nick, 
+                                                    [MarshalAs(UnmanagedType.LPWStr)] string desc);
+        //退出组
         [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         private static extern void CVN_QuitGroup(int groupid);
 
 
-        //以下函数有问题 各种报错
 
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TUserInfo getuFriendByID(int userid);
 
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TPeerGroupInfo getGroupByID(int groupid);
+         //查询组，querytype 1、名称查询，2备注查询
+        [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
+        private static extern void CVN_QueryGroupByName(int querytype, [MarshalAs(UnmanagedType.LPWStr)] string name);
+        //查询好友 querytype 1、昵称，2、用户名，3、备注
+        [DllImport("cvn_main.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
+        private static extern void CVN_QueryUserByName(int querytype, [MarshalAs(UnmanagedType.LPWStr)] string name);
+        //其他函数调用参考delphi示例
 
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TUserInfo getUserByMAC(string mac);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern IntPtr getUserByIDex(int userid);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TUserInfo getuserByName(string userName);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TUserInfo getUserByID(int userid);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_SendCmd(string str);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern bool CVN_ConnecttoServer(string url);
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TPeerGroupInfo CVN_AllUserInfo();
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern TPeerGroupInfo[] CVN_GetUserList();
-
-        //以下不知道参数和返回值，胡乱写的
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern bool CVN_testdissconnect();
-
-        [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern string CVN_GetEtherName();
 
         public static string messagestring = "";
 
@@ -246,9 +227,6 @@ namespace WindowsFormsApplication1
 
             GC.KeepAlive(dgcvn);
         }
-
-
-
 
 
         private void button4_Click(object sender, EventArgs e)//注册
@@ -276,7 +254,7 @@ namespace WindowsFormsApplication1
 
         private void button14_Click(object sender, EventArgs e)//加入用户组
         {
-            CVN_ApplyForJoinGroup(1, "8294809");
+            CVN_TryJoinGroup(1, "申请理由");
         }
         private void button10_Click(object sender, EventArgs e)//获取虚拟IP
         {
@@ -309,6 +287,11 @@ namespace WindowsFormsApplication1
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CVN_QueryUserByName(1, textBox4.Text);
         }
     }
 }
