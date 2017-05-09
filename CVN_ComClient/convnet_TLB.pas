@@ -1,138 +1,142 @@
 unit convnet_TLB;
 
 // ************************************************************************ //
-// WARNING                                                                    
-// -------                                                                    
-// The types declared in this file were generated from data read from a       
-// Type Library. If this type library is explicitly or indirectly (via        
-// another type library referring to this type library) re-imported, or the   
-// 'Refresh' command of the Type Library Editor activated while editing the   
-// Type Library, the contents of this file will be regenerated and all        
-// manual modifications will be lost.                                         
+// WARNING
+// -------
+// The types declared in this file were generated from data read from a
+// Type Library. If this type library is explicitly or indirectly (via
+// another type library referring to this type library) re-imported, or the
+// 'Refresh' command of the Type Library Editor activated while editing the
+// Type Library, the contents of this file will be regenerated and all
+// manual modifications will be lost.
 // ************************************************************************ //
 
-// PASTLWTR : 1.2
-// File generated on 2013-11-30 8:50:44 from Type Library described below.
+// $Rev: 52393 $
+// File generated on 2017/4/12 14:26:47 from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: D:\convnet\Convnet Clinet Com Version\convnet.tlb (1)
-// LIBID: {A7819915-E15F-4360-8691-7D51BF2659C7}
+// Type Lib: F:\convnet\CVN_ComClient - 国家的崛起\convnet (1)
+// LIBID: {ED1AFD91-27DB-4AB3-A90F-B13E91AF5ACF}
 // LCID: 0
-// Helpfile: 
-// HelpString: convnet Library
-// DepndLst: 
-//   (1) v2.0 stdole, (C:\WINDOWS\system32\stdole2.tlb)
+// Helpfile:
+// HelpString:
+// DepndLst:
+//   (1) v2.0 stdole, (C:\Windows\SysWOW64\stdole2.tlb)
+// SYS_KIND: SYS_WIN32
 // ************************************************************************ //
-{$TYPEDADDRESS OFF} // Unit must be compiled without type-checked pointers. 
+{$TYPEDADDRESS OFF} // Unit must be compiled without type-checked pointers.
 {$WARN SYMBOL_PLATFORM OFF}
 {$WRITEABLECONST ON}
 {$VARPROPSETTER ON}
+{$ALIGN 4}
+
 interface
 
-uses Windows, ActiveX, Classes, Graphics, StdVCL, Variants;
-  
+uses Winapi.Windows, System.Classes, System.Variants, System.Win.StdVCL, Vcl.Graphics, Vcl.OleServer, Winapi.ActiveX;
+
 
 // *********************************************************************//
-// GUIDS declared in the TypeLibrary. Following prefixes are used:        
-//   Type Libraries     : LIBID_xxxx                                      
-//   CoClasses          : CLASS_xxxx                                      
-//   DISPInterfaces     : DIID_xxxx                                       
-//   Non-DISP interfaces: IID_xxxx                                        
+// GUIDS declared in the TypeLibrary. Following prefixes are used:
+//   Type Libraries     : LIBID_xxxx
+//   CoClasses          : CLASS_xxxx
+//   DISPInterfaces     : DIID_xxxx
+//   Non-DISP interfaces: IID_xxxx
 // *********************************************************************//
 const
   // TypeLibrary Major and minor versions
   convnetMajorVersion = 1;
   convnetMinorVersion = 0;
 
-  LIBID_convnet: TGUID = '{A7819915-E15F-4360-8691-7D51BF2659C7}';
+  LIBID_convnet: TGUID = '{ED1AFD91-27DB-4AB3-A90F-B13E91AF5ACF}';
 
-  IID_IcoConvnet: TGUID = '{2344224D-6FE1-494E-88C8-7A7785B92EF6}';
-  DIID_IcoConvnetEvents: TGUID = '{D4DA9B12-8BC6-4ED7-9FF9-19E13E103DAD}';
-  CLASS_coConvnet: TGUID = '{7B6A5FCC-9F50-4FBC-A68D-C7E6D2F4AD6C}';
+  IID_IconvnetClient: TGUID = '{43846AEE-D810-4136-82BA-354671CEA723}';
+  CLASS_convnetClient: TGUID = '{C0C7E7BB-3FE0-4AD8-851B-AD65C117A9B4}';
 type
 
 // *********************************************************************//
-// Forward declaration of types defined in TypeLibrary                    
+// Forward declaration of types defined in TypeLibrary
 // *********************************************************************//
-  IcoConvnet = interface;
-  IcoConvnetDisp = dispinterface;
-  IcoConvnetEvents = dispinterface;
+  IconvnetClient = interface;
+  IconvnetClientDisp = dispinterface;
 
 // *********************************************************************//
-// Declaration of CoClasses defined in Type Library                       
-// (NOTE: Here we map each CoClass to its Default Interface)              
+// Declaration of CoClasses defined in Type Library
+// (NOTE: Here we map each CoClass to its Default Interface)
 // *********************************************************************//
-  coConvnet = IcoConvnet;
+  convnetClient = IconvnetClient;
 
 
 // *********************************************************************//
-// Interface: IcoConvnet
+// Interface: IconvnetClient
 // Flags:     (4416) Dual OleAutomation Dispatchable
-// GUID:      {2344224D-6FE1-494E-88C8-7A7785B92EF6}
+// GUID:      {43846AEE-D810-4136-82BA-354671CEA723}
 // *********************************************************************//
-  IcoConvnet = interface(IDispatch)
-    ['{2344224D-6FE1-494E-88C8-7A7785B92EF6}']
-    procedure ConnectToServer(const ServerUrl: WideString; const UserName: WideString; 
-                              const PassWord: WideString); safecall;
-    procedure ApplyForJoinGroup(groupid: SYSINT; const applyinfo: WideString); safecall;
-    procedure RegistUser(const ServerUrl: WideString; const UserName: WideString; 
-                         const PassWord: WideString; const nick: WideString; 
-                         const desc: WideString; const email: WideString); safecall;
-    procedure ShowForm; safecall;
-    procedure HiddenForm; safecall;
+  IconvnetClient = interface(IDispatch)
+    ['{43846AEE-D810-4136-82BA-354671CEA723}']
+    procedure Login(const ServerIP: WideString; const Username: WideString;
+                    const Password: WideString); safecall;
+    procedure GetUserStatusByID(const userid: WideString); safecall;
+    procedure JoinGroup(GroupId: Integer; const OrderStrring: WideString); safecall;
+    function Getusers: OleVariant; stdcall;
+    procedure Connected; safecall;
+    procedure Logout; safecall;
+    procedure Close; safecall;
+    procedure ConnectUserByID; safecall;
+    function GetUserIDByName: SYSINT; stdcall;
+    function GetUserNameByID: WideString; stdcall;
+    function GetUserCount: SYSINT; stdcall;
+    procedure GetUserByIndex; safecall;
+    procedure Method1; safecall;
   end;
 
 // *********************************************************************//
-// DispIntf:  IcoConvnetDisp
+// DispIntf:  IconvnetClientDisp
 // Flags:     (4416) Dual OleAutomation Dispatchable
-// GUID:      {2344224D-6FE1-494E-88C8-7A7785B92EF6}
+// GUID:      {43846AEE-D810-4136-82BA-354671CEA723}
 // *********************************************************************//
-  IcoConvnetDisp = dispinterface
-    ['{2344224D-6FE1-494E-88C8-7A7785B92EF6}']
-    procedure ConnectToServer(const ServerUrl: WideString; const UserName: WideString; 
-                              const PassWord: WideString); dispid 201;
-    procedure ApplyForJoinGroup(groupid: SYSINT; const applyinfo: WideString); dispid 202;
-    procedure RegistUser(const ServerUrl: WideString; const UserName: WideString; 
-                         const PassWord: WideString; const nick: WideString; 
-                         const desc: WideString; const email: WideString); dispid 203;
-    procedure ShowForm; dispid 204;
-    procedure HiddenForm; dispid 205;
+  IconvnetClientDisp = dispinterface
+    ['{43846AEE-D810-4136-82BA-354671CEA723}']
+    procedure Login(const ServerIP: WideString; const Username: WideString;
+                    const Password: WideString); dispid 201;
+    procedure GetUserStatusByID(const userid: WideString); dispid 202;
+    procedure JoinGroup(GroupId: Integer; const OrderStrring: WideString); dispid 203;
+    function Getusers: OleVariant; dispid 204;
+    procedure Connected; dispid 205;
+    procedure Logout; dispid 206;
+    procedure Close; dispid 207;
+    procedure ConnectUserByID; dispid 208;
+    function GetUserIDByName: SYSINT; dispid 209;
+    function GetUserNameByID: WideString; dispid 210;
+    function GetUserCount: SYSINT; dispid 211;
+    procedure GetUserByIndex; dispid 212;
+    procedure Method1; dispid 213;
   end;
 
 // *********************************************************************//
-// DispIntf:  IcoConvnetEvents
-// Flags:     (4096) Dispatchable
-// GUID:      {D4DA9B12-8BC6-4ED7-9FF9-19E13E103DAD}
+// The Class CoconvnetClient provides a Create and CreateRemote method to
+// create instances of the default interface IconvnetClient exposed by
+// the CoClass convnetClient. The functions are intended to be used by
+// clients wishing to automate the CoClass objects exposed by the
+// server of this typelibrary.
 // *********************************************************************//
-  IcoConvnetEvents = dispinterface
-    ['{D4DA9B12-8BC6-4ED7-9FF9-19E13E103DAD}']
-    procedure OnCVNMessage(const cvnmessage: WideString; cvnmsgtype: SYSINT); dispid 201;
-  end;
-
-// *********************************************************************//
-// The Class CocoConvnet provides a Create and CreateRemote method to          
-// create instances of the default interface IcoConvnet exposed by              
-// the CoClass coConvnet. The functions are intended to be used by             
-// clients wishing to automate the CoClass objects exposed by the         
-// server of this typelibrary.                                            
-// *********************************************************************//
-  CocoConvnet = class
-    class function Create: IcoConvnet;
-    class function CreateRemote(const MachineName: string): IcoConvnet;
+  CoconvnetClient = class
+    class function Create: IconvnetClient;
+    class function CreateRemote(const MachineName: string): IconvnetClient;
   end;
 
 implementation
 
-uses ComObj;
+uses System.Win.ComObj;
 
-class function CocoConvnet.Create: IcoConvnet;
+class function CoconvnetClient.Create: IconvnetClient;
 begin
-  Result := CreateComObject(CLASS_coConvnet) as IcoConvnet;
+  Result := CreateComObject(CLASS_convnetClient) as IconvnetClient;
 end;
 
-class function CocoConvnet.CreateRemote(const MachineName: string): IcoConvnet;
+class function CoconvnetClient.CreateRemote(const MachineName: string): IconvnetClient;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_coConvnet) as IcoConvnet;
+  Result := CreateRemoteComObject(MachineName, CLASS_convnetClient) as IconvnetClient;
 end;
 
 end.
+

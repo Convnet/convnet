@@ -31,7 +31,11 @@ uses
   CVN_Remotecomm in 'CVN_Remotecomm.pas' {RmComm},
   StrConv in '..\ConvnetCommfile\StrConv.pas',
   CVN_MessageWindow in 'CVN_MessageWindow.pas' {fMSGWIN},
-  CVN_GroupChat in 'CVN_GroupChat.pas' {groupChatForm};
+  CVN_GroupChat in 'CVN_GroupChat.pas' {groupChatForm},
+  convnet_TLB in 'convnet_TLB.pas',
+  Cvn_AutomaicServer in 'Cvn_AutomaicServer.pas' {convnetClient: CoClass};
+
+{$R *.TLB}
 
 {$R *.res}
 {$R UAC.res }

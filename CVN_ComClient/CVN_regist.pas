@@ -77,21 +77,9 @@ begin
   enickname.Text:=FormatUnAllowStr(enickname.Text,40);
   edes.Text:=FormatUnAllowStr(edes.Text,40);
 
-  CVN_ConnecttoServer(pchar(fclientui.eServerIP.text));
-  i:=0;
-  while not CVN_ServerIsConnected do
-  begin
-    inc(i);
-    sleep(1);
-    application.ProcessMessages;
-    if i>6000 then
-      break;
-  end;
+  CVN_RegistUser(pchar(fclientui.eServerIP.text),pchar(eUserName.Text),
+                                pchar(ePassWord.Text),pchar(eNickName.Text),pchar(edes.Text));
 
-  if i<6000 then
-    CVN_SendCmdto(ProtocolToStr(cmdRegistUser)+','+eUserName.Text+','+ePassWord.Text+','+eNickName.Text+',¡¡'+edes.Text+'*')
-  else
-    showmessage('Can''t connect to server');
 end;
 
 procedure TfRegist.FormCloseQuery(Sender: TObject; var CanClose: Boolean);

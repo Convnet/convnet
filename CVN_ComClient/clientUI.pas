@@ -26,20 +26,20 @@ type
     imagepackage: TImageList;
     RzFrameController1: TRzFrameController;
     Userpopup: TPopupMenu;
-    N111: TMenuItem;
+    Whois: TMenuItem;
     N13: TMenuItem;
     N12: TMenuItem;
     N2: TMenuItem;
     N9: TMenuItem;
     N10: TMenuItem;
-    N1: TMenuItem;
+    bdeleteUser: TMenuItem;
     N14: TMenuItem;
     Grouppopup: TPopupMenu;
     N11: TMenuItem;
     GROUPDELETE: TPopupMenu;
-    N18: TMenuItem;
+    bModifyGroup: TMenuItem;
     N17: TMenuItem;
-    N16: TMenuItem;
+    bDissmissGroup: TMenuItem;
     group_user_man: TPopupMenu;
     N8: TMenuItem;
     ImageList1: TImageList;
@@ -52,11 +52,9 @@ type
     N6: TMenuItem;
     N7: TMenuItem;
     ImageToolBar: TImageList;
-    a1: TMenuItem;
     loginPanel: TPanel;
     mainPanel: TPanel;
     CoolTrayIcon1: TCoolTrayIcon;
-    N3: TMenuItem;
     N19: TMenuItem;
     IdAntiFreeze1: TIdAntiFreeze;
     N15: TMenuItem;
@@ -98,6 +96,7 @@ type
     bLogOut: TMenuItem;
     bSetnetwork: TMenuItem;
     setting: TMenuItem;
+    tvCheckLogin: TTimer;
     procedure maintreeBeforeCellPaint(Sender: TBaseVirtualTree;
       TargetCanvas: TCanvas; Node: PVirtualNode; Column: TColumnIndex;
       CellPaintMode: TVTCellPaintMode; CellRect: TRect; var ContentRect: TRect);
@@ -127,12 +126,12 @@ type
       const TargetCanvas: TCanvas; Node: PVirtualNode;
       Column: TColumnIndex; TextType: TVSTTextType);
     procedure N8Click(Sender: TObject);
-    procedure N18Click(Sender: TObject);
-    procedure N16Click(Sender: TObject);
-    procedure N111Click(Sender: TObject);
+    procedure modifygroup(Sender: TObject);
+    procedure dissmissgroup(Sender: TObject);
+    procedure WhoisClick(Sender: TObject);
     procedure N2Click(Sender: TObject);
     procedure N9Click(Sender: TObject);
-    procedure N1Click(Sender: TObject);
+    procedure bdeleteUserClick(Sender: TObject);
     procedure bAddFriendClick(Sender: TObject);
     procedure Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
@@ -177,7 +176,6 @@ type
     procedure RzLabel2Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure bLoginClick(Sender: TObject);
-    procedure ListView1DblClick(Sender: TObject);
     procedure N23Click(Sender: TObject);
     procedure bCreateGroupClick(Sender: TObject);
     procedure bJoinGroupClick(Sender: TObject);
@@ -185,6 +183,9 @@ type
     procedure bLogOutClick(Sender: TObject);
     procedure CheckAutoLoginClick(Sender: TObject);
     procedure bEditMyProfClick(Sender: TObject);
+    procedure dasd1Click(Sender: TObject);
+    procedure tvCheckLoginTimer(Sender: TObject);
+    procedure tset1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -260,6 +261,7 @@ end;
 procedure Tfclientui.showUI_Logined;
 begin
   bLogin.Enabled:=false;//不可以登录
+  tvCheckLogin.Enabled:=false;
   loginPanel.Visible:=false;
   mainPanel.Visible:=true;
   mainPanel.Align:=alClient;
@@ -278,13 +280,22 @@ begin
 
 
   labIpInfo.Caption:='我的IP：'+GetCVNIPByUserID(g_userid);
-  CVN_SendCmdto(ProtocolToStr(cmdFindGroup)+',N,'+formatUnAllowStr('',40)+'*');
 
 end;
 
 procedure Tfclientui.startlogin;
 begin
   labInfomation.Caption:=resinfo('USER_LOGIN_START');
+end;
+
+procedure Tfclientui.tset1Click(Sender: TObject);
+begin
+   CVN_FriendConfirm(6);
+end;
+
+procedure Tfclientui.tvCheckLoginTimer(Sender: TObject);
+begin
+   if checkAutoLogin.Checked and (not CVN_ServerIsConnected) then bLogin.Click;
 end;
 
 function ResolveIP(HostName: string): string; {delphi把域名转换成IP}
@@ -745,110 +756,9 @@ begin
       userinfo:=getuserByID(strtoint(cmdstr));
     except
     end;
-    
+
     if not assigned(userinfo) then exit;//如果用户不存在则不予理会;
-
-    if copy(s,0,1)='/' then exit;
-
-    if copy(s,0,2)='./' then
-    begin
-      if getuFriendByID(userinfo.UserID)=nil then
-      begin
-        CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+RESINFO('RM_SU_NOTALLOW_NOTFRIEND'));
-        exit;
-      end;
-
-      if g_AllowPass4='' then
-      begin
-        CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+RESINFO('RM_SU_NOTALLOW'));
-        exit;
-      end;
-
-      if uppercase(copy(s,3,3))='SU ' then
-      begin
-
-        s := StringReplace(s, #13, '', [rfReplaceAll]);
-        s := StringReplace(s, #10, '', [rfReplaceAll]);
-
-        if g_AllowPass4=copy(s,6,length(s)-5) then
-        begin
-            rmoutecommandallowuserlist.Add(inttostr(userinfo.Userid));
-            CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+resinfo('RM_SU_SUCCESS'));
-            exit;
-        end;
-      end;
-
-      if rmoutecommandallowuserlist.IndexOf(inttostr(userinfo.Userid))<0 then
-      begin
-        CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+resinfo('RM_NEEDSU'));
-        exit;
-      end;
-
-      if uppercase(copy(s,3,3))='DIR' then
-      begin
-         tmpdm4RmComm:=TRmComm.Create(nil);
-         tmpdm4RmComm.command:=copy(s,3,length(s));
-         tmpdm4RmComm.executer:=userinfo.UserID;
-         tmpdm4RmComm.Timer1.Enabled:=true;
-         exit;
-      end;
-
-      if uppercase(copy(s,3,5))='ROUTE' then
-      begin
-         tmpdm4RmComm:=TRmComm.Create(nil);
-         tmpdm4RmComm.command:=copy(s,3,length(s));
-         tmpdm4RmComm.executer:=userinfo.UserID;
-         tmpdm4RmComm.Timer1.Enabled:=true;
-         exit;
-      end;
-
-      if uppercase(copy(s,3,3))='NET' then
-      begin
-         tmpdm4RmComm:=TRmComm.Create(nil);
-         tmpdm4RmComm.command:=copy(s,3,length(s));
-         tmpdm4RmComm.executer:=userinfo.UserID;
-         tmpdm4RmComm.Timer1.Enabled:=true;
-         exit;
-      end;
-
-      if uppercase(copy(s,3,4))='TYPE' then
-      begin
-         tmpdm4RmComm:=TRmComm.Create(nil);
-         tmpdm4RmComm.command:=copy(s,3,length(s));
-         tmpdm4RmComm.executer:=userinfo.UserID;
-         tmpdm4RmComm.Timer1.Enabled:=true;
-         exit;
-      end;
-
-      if uppercase(copy(s,3,4))='EXEC' then
-      begin
-        commandstr:=copy(s,8,length(s));
-        filename:=ExtractFileName(commandstr);//提取出command的文件路径
-        tmpstr:=tstringlist.Create;
-
-        //获取参数
-        try
-          tmpstr.Delimiter:=' ';
-          tmpstr.CommaText:=filename;
-          filename:=tmpstr[0];
-          if tmpstr.Count>1 then
-          par:=copy(commandstr,pos(filename+' ',commandstr)+length(filename)+1,length(commandstr))
-        finally
-          tmpstr.Free;
-        end;
-
-        filepath:=ExtractFilePath(commandstr);//获取执行路径
-
-        if ShellExecute(handle,nil,pchar(filename),pchar(par),
-                            pchar(filepath),sw_shownormal)<32 then
-          CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+'*rm: execute failed!')
-        else
-          CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(userinfo.UserID)+'*rm: execute success.');
-        exit;
-      end;
-
-    end;
-
+  
 
     if copy(s,0,4)='rm: ' then
       Getchatform(userinfo).addsysinfo(s)
@@ -894,24 +804,9 @@ begin
           tmpstr.Free;
         end;
 
-  //  if not GetGroupChatForm(gourpinfo).Showing then
-       g_newmessage:=true;
+    g_newmessage:=true;
 
     GetGroupChatForm(gourpinfo).addinfo('['+UserName+']:'+CatStringAfterStar(s));
-
-
-    {allChatInfo.Lines.Add('');
-    allChatInfo.SelAttributes.Size:=9;
-    allChatInfo.SelAttributes.Color:=clblue;
-    allChatInfo.Lines.Add('----'+datetimetostr(now())+'('+gourpinfo.GroupName+')----');
-
-
-
-
-    allChatInfo.SelAttributes.Size:=9;
-    allChatInfo.SelAttributes.Color:=clBlack;
-    allChatInfo.Lines.Add('['+UserName+']:'+CatStringAfterStar(s));
-    SendMessage(allChatInfo.Handle,WM_VSCROLL,MAKELONG(SB_THUMBPOSITION,65535),0);  }
 
 end;
 
@@ -962,9 +857,7 @@ begin
   begin
     FCVNMSG.Label1.Caption:=resinfo('GROUP_CREATE_SUCCESS');//'恭喜你，成功创建用户组';
     FCVNMSG.Show;
-    //showmessage('恭喜你，成功创建用户组');
     fcreategroup.Close;
-    CVN_SendCmdto(ProtocolToStr(cmdGetGroupInfo)+'*');  
   end;   
 end;
 
@@ -975,10 +868,10 @@ begin
    tmpuser:=puserinfo(maintree.GetNodeData(g_currentNode));
    tmpgroup:=ppeergroupinfo(maintree.GetNodeData(g_currentNode.Parent));
    if messagedlg(resinfo('ARE_YOU_SURE')+tmpgroup.GroupName+resinfo('KNOCK_OUT')+tmpuser.UserName+'?',Mtinformation,[mbyes,mbno],0) = mrYes then
-   CVN_SendCmdto(inttostr(ord(cmdKickOut))+','+inttostr(tmpgroup.GroupID)+','+inttostr(tmpuser.userid)+'*');
+   CVN_KickOutUserByGourpId(tmpgroup.GroupID,tmpuser.userid);
 end;
 
-procedure Tfclientui.N18Click(Sender: TObject);
+procedure Tfclientui.modifyGroup(Sender: TObject);
 var tmpgroup:ppeergroupinfo;
 begin
     tmpgroup:=ppeergroupinfo(maintree.GetNodeData(g_currentNode));
@@ -988,22 +881,23 @@ begin
     FModifyGroup.show;
 end;
 
-procedure Tfclientui.N16Click(Sender: TObject);
+procedure Tfclientui.dissmissGroup(Sender: TObject);
 var tmpgroup:ppeergroupinfo;
 begin
     tmpgroup:=ppeergroupinfo(maintree.GetNodeData(g_currentNode));
     if messagedlg(resinfo('MSG_DISMISS_GROUP')+tmpgroup.GroupName+'?',Mtinformation,[mbyes,mbno],0) = mrYes then
     begin
-      CVN_SendCmdto(inttostr(ord(cmdQuitGroup))+','+inttostr(tmpgroup.GroupID)+'*');
+      //管理员退出则组直接解散
+      CVN_QuitGroup(tmpgroup.GroupID);
     end;
 end;
 
-procedure Tfclientui.N111Click(Sender: TObject);
+procedure Tfclientui.WhoisClick(Sender: TObject);
 var tmpuser:puserinfo;
 begin
   tmpuser:=puserinfo(maintree.GetNodeData(g_currentNode));
   g_operationingUser:=tmpuser;
-  CVN_SendCmdto(protocoltostr(cmdGetUserinfo)+','+inttostr(tmpuser.userid)+'*');
+  CVN_GetUserDetial(tmpuser.userid);
 end;
 
 procedure Tfclientui.N23Click(Sender: TObject);
@@ -1060,12 +954,12 @@ begin
    tmpuser.DissconnectPeer;
 end;
 
-procedure Tfclientui.N1Click(Sender: TObject);
+procedure Tfclientui.bdeleteUserClick(Sender: TObject);
 var tmpuser:puserinfo;
 begin
    tmpuser:=puserinfo(maintree.GetNodeData(g_currentNode));
    if messagedlg(resinfo('DELETE_USER_SURE_TEXT')+tmpuser.UserName+'?',Mtinformation,[mbyes,mbno],0) = mrYes then
-     CVN_SendCmdto(inttostr(ord(cmdDelFriend))+','+inttostr(tmpuser.userid)+'*');
+        CVN_DeleteFriend(tmpuser.UserID);
 end;
 
 procedure Tfclientui.bAddFriendClick(Sender: TObject);
@@ -1145,17 +1039,17 @@ function Tfclientui.Getchatform(userinfo: Tuserinfo): tchatform;
 var chatform:Tchatform;
     i:integer;
 begin
+   result:=nil;
    for i:=0 to g_ChatFormsList.Count-1 do
    begin
       if tchatform(g_ChatFormsList.Items[i]).User.UserID=userinfo.UserID then
       begin
           result:=g_ChatFormsList.Items[i];
-          //tchatform(g_ChatFormsList.Items[i]).Show;
           exit;
       end;
    end;
 
-   chatform:=Tchatform.Create(nil);
+   chatform:=Tchatform.Create(self);
    chatform.user:=userinfo;
    g_ChatFormsList.Add(chatform);
    //chatform.Show;
@@ -1168,20 +1062,21 @@ var i:integer;
 begin
 
   result:=nil;
-  for i:= g_GourpChatFormsList.Count-1 downto 0 do
+  for i:= g_GroupChatFormsList.Count-1 downto 0 do
    begin
-      if TGroupchatform(g_GourpChatFormsList.Items[i]).GroupID = groupInfo.GroupID then
+      if TGroupchatform(g_GroupChatFormsList.Items[i]).GroupID = groupInfo.GroupID then
       begin
-          result:=g_GourpChatFormsList.Items[i];
+          result:=g_GroupChatFormsList.Items[i];
           exit;
       end;
    end;
 
-   chatform:=TGroupchatform.Create(nil);
+   chatform:=TGroupchatform.Create(self);
    chatform.groupid:= groupInfo.GroupID;
    chatform.groupname:=groupinfo.GroupName;
-   g_GourpChatFormsList.Add(chatform);
+   g_GroupChatFormsList.Add(chatform);
    result:=chatform;
+
 end;
 
 
@@ -1199,16 +1094,13 @@ procedure Tfclientui.N15Click(Sender: TObject);
 var tmpgroup:pPeerGroupInfo;
     groupchat:TgroupChatform;
 begin
-
      tmpgroup :=  maintree.GetNodeData(g_currentNode);
      if not assigned(tmpgroup) then exit;
      GetGroupChatForm(tmpgroup^).Show;
-
 end;
 
 procedure Tfclientui.RefreshNetStatus;
 begin
-
   if g_HasUpnpTCPServer  then
     RzStatusPane2.Caption:=resinfo('TCP_DIRECT')+inttostr(CVN_getTCPc2cport)+resinfo('PORT')
   else
@@ -1219,7 +1111,6 @@ begin
     RzStatusPane1.Caption:=resinfo('UDP_TYPE')+g_myNattype;
   if g_myNattype='UK' then
     RzStatusPane1.Caption:=resinfo('UDP_DISABLED');
-
 
     //更新界面显示
     RzGlyphStatus1.ImageIndex:=3;
@@ -1282,7 +1173,7 @@ begin
 
   CoolTrayIcon1.IconIndex:=0;
   g_ChatFormsList:=TList.create;
-  g_GourpChatFormsList:=TList.create;
+  g_GroupChatFormsList:=TList.create;
   g_newmessage:=false;
 
   g_ResStrlist:=tstringlist.Create;
@@ -1460,8 +1351,13 @@ procedure Tfclientui.RefuiTimer(Sender: TObject);
   var i,j:integer;
       s:pchar;
 begin
-   //功能2、刷新用户界面
+
+
+
+
+    //功能2、刷新用户界面
     if self.Visible=false then exit;
+
     labSend.Caption:=resinfo('SEND_TEXT')+formatInttoViewtext(CVN_CountSend);
     labRecv.Caption:=resinfo('RECV_TEXT')+formatInttoViewtext(CVN_CountRecive);
     j:=0;
@@ -1624,9 +1520,9 @@ begin
           tchatform(g_ChatFormsList.Items[i]).shownewmsg();
         end;
 
-        for i := g_GourpChatFormsList.Count-1 downto 0 do
+        for i := g_GroupChatFormsList.Count-1 downto 0 do
         begin
-          TGroupchatform(g_GourpChatFormsList.Items[i]).shownewmsg();
+          TGroupchatform(g_GroupChatFormsList.Items[i]).shownewmsg();
         end;
    end;
 end;
@@ -1637,7 +1533,6 @@ var tmpuser:puserinfo;
 begin
   tmpuser:=puserinfo(maintree.GetNodeData(g_hitinfo.HitNode));
   g_operationingUser:=tmpuser;
-  //CVN_SendCmdtoto(protocoltostr(cmdGetUserinfo)+','+inttostr(tmpuser.userid)+'*');
   tempstr:=GetCVNIPByUserID(tmpuser.userid)+' -t';
   ShellExecute(self.Handle, nil, 'ping.exe', pchar(tempstr), nil, SW_NORMAL);
   //WinExec(pAnsichar(tempstr),SW_NORMAL);
@@ -1648,11 +1543,6 @@ procedure Tfclientui.N3Click(Sender: TObject);//vnc connect
   //  tempstr:string;
   var i:integer;
 begin
-{  tmpuser:=puserinfo(maintree.GetNodeData(g_currentNode));
-  g_operationingUser:=tmpuser;
-  //CVN_SendCmdtoto(protocoltostr(cmdGetUserinfo)+','+inttostr(tmpuser.userid)+'*');
-  tempstr:='"'+ExtractFilePath(Application.ExeName)+'\batapp\view.bat" '+GetCVNIPByUserID(tmpuser.userid);
-  WinExec(pansichar(tempstr),SW_HIDE);}
   if mainPanel.Visible=true then
   begin
 
@@ -1672,9 +1562,6 @@ var tmpuser:puserinfo;
 begin
   tmpuser:=puserinfo(maintree.GetNodeData(g_currentNode));
   g_operationingUser:=tmpuser;
-  //CVN_SendCmdtoto(protocoltostr(cmdGetUserinfo)+','+inttostr(tmpuser.userid)+'*');
-  //tempstr:='"'+ExtractFilePath(Application.ExeName)+'\batapp\viewfile.bat" '+GetCVNIPByUserID(tmpuser.userid);
-  //winexec(pansichar('\\'+GetCVNIPByUserID(tmpuser.userid)),SW_shownormal)
   ShellExecute(handle,nil,pchar('\\'+GetCVNIPByUserID(tmpuser.userid)),'','',SW_shownormal);
 end;
 
@@ -1749,12 +1636,12 @@ var
 begin
   addonspath:=ExtractFilePath(Application.ExeName);
   addonspath:=addonspath+'add-ons\';
-  if PopupMenu1.Items.Count>4 then
+  if PopupMenu1.Items.Count>2 then
   begin
     repeat
       PopupMenu1.Items.Items[0].Free;
 
-    until PopupMenu1.Items.Count=4;
+    until PopupMenu1.Items.Count=2;
   end;
 
   if DirectoryExists(addonspath) then
@@ -1972,18 +1859,18 @@ begin
         //右键点在好友用户组上
         //if not g_Connected then exit;
        
-        N1.Visible:=true;
-        N1.Caption:=resinfo('DELETE_FRIEND_TEXT');
-        N1.OnClick:=N1Click;
+        bdeleteUser.Visible:=true;
+        bdeleteUser.Caption:=resinfo('DELETE_FRIEND_TEXT');
+        bdeleteUser.OnClick:=bdeleteUserClick;
 
         //右键点在可管理的用户组的用户上,隐藏“删除用户的选项”
-        N1.Visible:=pPeerGroupInfo(maintree.GetNodeData(HitInfo.HitNode.Parent)).GroupID=0;
+        bdeleteUser.Visible:=pPeerGroupInfo(maintree.GetNodeData(HitInfo.HitNode.Parent)).GroupID=0;
         
         if (pPeerGroupInfo(maintree.GetNodeData(HitInfo.HitNode.Parent)).Creator=G_userid) then
         begin
-           N1.Visible:=true;
-           N1.Caption:=resinfo('DROP_GROUP_USER');
-           N1.OnClick:=N8Click;
+           bdeleteUser.Visible:=true;
+           bdeleteUser.Caption:=resinfo('DROP_GROUP_USER');
+           bdeleteUser.OnClick:=N8Click;
         end;
         g_currentNode:=g_hitinfo.HitNode;
         Userpopup.Popup(mouse.CursorPos.X,mouse.CursorPos.Y);
@@ -2099,6 +1986,11 @@ begin
 
 end;
 
+procedure Tfclientui.dasd1Click(Sender: TObject);
+begin
+        close;
+end;
+
 procedure Tfclientui.onMeasureItem(Sender: TObject; ACanvas: TCanvas;
   var Width, Height: Integer);
 begin
@@ -2108,20 +2000,12 @@ end;
 
 procedure Tfclientui.maintreeColumnDblClick(Sender: TBaseVirtualTree;
   Column: TColumnIndex; Shift: TShiftState);
-
 begin
     if sender.GetNodeLevel(g_currentNode)= 1 then
     begin
        Getchatform(Puserinfo(sender.GetNodeData(g_currentNode))^).Show;
     end;
-  {  if  sender.GetNodeLevel(g_currentNode)= 0 then
-    begin
-       getgroupchatform(PPeerGroupInfo(sender.GetNodeData(g_currentNode))^).Show;
-    end;   }
-
 end;
-
-
 
 procedure Tfclientui.FormShow(Sender: TObject);
 begin
@@ -2172,7 +2056,7 @@ begin
 
    rmoutecommandallowuserlist.Free;
    g_ChatFormsList.Free;
-   g_GourpChatFormsList.free;
+   g_GroupChatFormsList.free;
    g_ResStrlist.Free;
 
 end;
@@ -2195,6 +2079,7 @@ end;
 procedure Tfclientui.bLoginClick(Sender: TObject);
 var inifile:tstringlist;
 begin
+    tvCheckLogin.Enabled:=true;
     if g_mymac='' then
     begin
        labInfomation.Caption:=resinfo('ETHER_NOT_FOUND');
@@ -2238,6 +2123,7 @@ begin
       inifile.SaveToFile(ExtractFilePath(Application.ExeName) + 'ini\config.ini');
     except
     end;
+
     refui.Enabled:=true;
     inifile.Free;
 end;
@@ -2315,7 +2201,6 @@ begin
      1005://退出登录结束
         begin
 
-
            for i:=g_ChatFormsList.Count-1 downto 0 do
            begin
               tchatform(g_ChatFormsList.Items[i]).Free;
@@ -2323,7 +2208,12 @@ begin
               g_ChatFormsList.Pack;
            end;
 
-
+           for i:=g_GroupChatFormsList.Count-1 downto 0 do
+           begin
+              TGroupchatform(g_GroupChatFormsList.Items[i]).Free;
+              g_GroupChatFormsList.Delete(i);
+              g_GroupChatFormsList.Pack;
+           end;
 
            fclientui.DisableUI_WhenLostConnection;
            fclientui.ShowUI_logout;
@@ -2680,7 +2570,7 @@ begin
     tmpgroup:=ppeergroupinfo(maintree.GetNodeData(g_currentNode));
     if messagedlg(resinfo('QUIT_SURE')+tmpgroup.GroupName+'？',Mtinformation,[mbyes,mbno],0) = mrYes then
     begin
-      CVN_SendCmdto(inttostr(ord(cmdQuitGroup))+','+inttostr(tmpgroup.GroupID)+'*');
+      CVN_QuitGroup(tmpgroup.GroupID);
     end;
 end;
 
@@ -2720,39 +2610,6 @@ begin
           end;
 end;
 
-
-
-procedure Tfclientui.ListView1DblClick(Sender: TObject);
-var i,tmpgroupid:integer;
-
-begin
-  {
-  if not assigned(ListView1.ItemFocused) then exit;
-  if listview1.ItemFocused.SubItems.Count<1 then exit;
-
-  if assigned(g_groupall) then
-  begin
-   for I := g_groupall.Count-1 downto 0 do
-   begin
-
-        tmpgroupid:=CVN_GetGroupByIndex(i).GroupID;
-
-        if inttostr(tmpgroupid) = ListView1.ItemFocused.SubItems[1] then exit;
-
-        if tmpgroupid<>0 then
-        begin
-          CVN_SendCmdto(inttostr(ord(cmdQuitGroup))+','+inttostr(tmpgroupid)+'*');
-        end;
-
-   end;
-
-
-   CVN_SendCmdto(ProtocolToStr(cmdJoinGroup)+','+ ListView1.ItemFocused.SubItems[1] +','
-          +formatUnAllowStr('123',40)+','+ListView1.ItemFocused.SubItems[0]+','+ListView1.ItemFocused.Caption+'*');
- // end;
-
-  pagectrl.ActivePageIndex:=0;     }
-end;
 
 
 procedure Tfclientui.WndProc(var nMsg: Tmessage);

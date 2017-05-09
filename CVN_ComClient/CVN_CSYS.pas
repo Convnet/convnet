@@ -64,13 +64,13 @@ var ServerIP:string;
   
   g_MyPublicIP:string;                                  //我的公网IP
   g_Userid:integer;                                     //我的ID
-  g_userName:string[40];                                //用户名
-  g_NickName:string[40];                                //我的昵称
-  g_common:string[40];                                  //我的备注
-  g_AllowPass1:string[40];                              //允许访问的密码1
-  g_AllowPass2:string[40];                              //允许访问的密码2
-  g_AllowPass3:string[40];                              //允许访问的密码3
-  g_AllowPass4:string[40];                              //允许访问的密码4
+  g_userName:string;                                //用户名
+  g_NickName:string;                                //我的昵称
+  g_common:string;                                  //我的备注
+  g_AllowPass1:string;                              //允许访问的密码1
+  g_AllowPass2:string;                              //允许访问的密码2
+  g_AllowPass3:string;                              //允许访问的密码3
+  g_AllowPass4:string;                              //允许访问的密码4
 
   g_newmessage:boolean;
 
@@ -85,7 +85,7 @@ var ServerIP:string;
  
 
 
-  g_MyPass:string[12];                                  //我的密码
+  g_MyPass:string;                                  //我的密码
   g_quitCause:string;
   g_UDPserverPortA:integer;
   g_UDPserverPortB:integer;
@@ -95,7 +95,7 @@ var ServerIP:string;
 
   g_AllUserInfo:tlist;
   g_ChatFormsList:TList;
-  g_GourpChatFormsList:TList;
+  g_GroupChatFormsList:TList;
   
   g_HasUpnpTCPServer:boolean;
   g_HasUpnpUDPServer:boolean;
@@ -137,7 +137,6 @@ var ServerIP:string;
   function formatInttoViewtext(int:int64):string;
 
   function CVN_GetUserinfo:pansichar;StdCall; external 'cvn_main.dll';
-  procedure CVN_SendCmd(str:pchar);StdCall; external 'cvn_main.dll';
  // procedure CVN_ConnectUser(Userid:integer;password:pchar);stdcall;external 'cvn_main.dll';
   procedure CVN_Login(cvnurl,username,password:pchar);stdcall;external 'cvn_main.dll';
   procedure CVN_Logout;stdcall;external 'cvn_main.dll';
@@ -146,8 +145,9 @@ var ServerIP:string;
   procedure CVN_testdissconnect;stdcall;external 'cvn_main.dll';
   procedure CVN_DisConnectUser(Userid:integer);stdcall;  external 'cvn_main.dll';
   procedure CVN_ConnecttoServer(url:pchar);StdCall; external 'cvn_main.dll';
+  procedure CVN_RegistUser(serverurl,username,password,nick,desc:pchar); StdCall; external 'cvn_main.dll';
+
   function CVN_ServerIsConnected:boolean ;StdCall; external 'cvn_main.dll';
-  //Procedure synapp(App:TApplication);stdcall; external 'Dll/cvn_main.dll';
   Procedure CVN_Message(Aproc:TfarProc);StdCall; external 'cvn_main.dll';
 
 
@@ -159,7 +159,6 @@ var ServerIP:string;
 
   function CVN_getTCPc2cport:integer;stdcall; external 'cvn_main.dll';
   function CVN_getUDPc2cport:integer;stdcall; external 'cvn_main.dll';
-  //function CVN_Getmyinnerip:string;stdcall; external '../cvn_main.dll';
   function CVN_InitEther:boolean;stdcall; external 'cvn_main.dll';
   procedure CVN_FreeRes;stdcall;external 'cvn_main.dll';
 
@@ -178,8 +177,52 @@ var ServerIP:string;
   function CVN_GetVersion:double; stdCall; external 'cvn_main.dll';
 
   procedure CVN_GroupChatMsg(groupid:integer;msg:pchar); StdCall;external 'cvn_main.dll';
+  procedure CVN_ChatMsgToUser(userid:integer;msg:pchar); StdCall;external 'cvn_main.dll';
 
-  procedure CVN_SendCmdto(cmd:string);
+
+
+
+
+
+  //请求加为好友
+  procedure CVN_TryAddFriend(userid:integer;orderstring:pchar);StdCall;external 'cvn_main.dll';
+  //用户确认好友申请
+  procedure CVN_FriendConfirm(userid:integer); StdCall;external 'cvn_main.dll';
+  //拒绝好友申请
+  procedure CVN_FriendRefuse(userid:integer); StdCall;external 'cvn_main.dll';
+  //踢出组用户
+  procedure CVN_KickOutUserByGourpId(groupid:integer;userid:integer);stdcall; external 'cvn_main.dll';
+  //删除好友
+  procedure CVN_DeleteFriend(userid:integer);stdcall;external 'cvn_main.dll';
+  //申请加入组
+  procedure CVN_TryJoinGroup(groupid:integer;orderstring:pchar);StdCall;external 'cvn_main.dll';
+  //拒绝入组申请
+  procedure CVN_RefuseJoinGroup(userid,groupid:integer);StdCall;external 'cvn_main.dll';
+  //查询组，querytype 1、名称查询，2备注查询
+  procedure CVN_QueryGroupByName(querytype:integer;name:pchar);StdCall;external 'cvn_main.dll';
+  //查询好友 querytype 1、昵称，2、用户名，3、备注
+  procedure CVN_QueryUserByName(querytype:integer;name:pchar);StdCall;external 'cvn_main.dll';
+  //退出组
+  procedure CVN_QuitGroup(groupid:integer); StdCall; external 'cvn_main.dll';
+  //确认加入组
+  procedure CVN_ConfirmJoinGroup(userid:integer;groupid:integer); StdCall; external 'cvn_main.dll';
+  //创建组
+  procedure CVN_CreateGroupEx(GroupName,groupdesc,GroupPass:pchar); StdCall;  external 'cvn_main.dll';
+  //修改组信息
+  procedure CVN_ModifyGroupEx(groupid:integer;groupdesc,GroupPass:pchar); StdCall; external 'cvn_main.dll';
+  //获取组描述
+  procedure CVN_GetGroupDesc(groupid:integer); StdCall; external 'cvn_main.dll';
+  //更新我的基本信息
+  procedure CVN_UpdateMyProFile(NickName,MyPass,common,AllowPass1,AllowPass2,AllowPass3,AllowPass4:pchar);stdcall;  external 'cvn_main.dll';
+  //获取用户基本信息
+  procedure CVN_GetUserDetial(userid:integer);StdCall; external 'cvn_main.dll';
+
+
+
+
+
+
+
 
   procedure initDll;
   procedure SetActiveLanguage(form:tform);
@@ -189,10 +232,6 @@ var ServerIP:string;
 implementation
 uses SysUtils, clientUI, IpRtrMib, winsock, IPFunctions;
 
-    procedure CVN_SendCmdto(cmd:string);
-    begin
-         CVN_SendCmd(pchar(cmd));
-    end;
 
     function checkrunning:boolean;
     var    mHandle:hwnd;

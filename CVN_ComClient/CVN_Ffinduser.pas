@@ -52,11 +52,11 @@ uses ClientStruct, CVN_cSYS, CVN_messageWin;
 procedure TfindUser.bFindClick(Sender: TObject);
 begin
     if rFindUserName.Checked then
-      CVN_SendCmdto(ProtocolToStr(cmdFindUser)+',U,'+ formatUnAllowstr(edit1.Text,40) +'*');
+        CVN_QueryUserByName(1,pchar(edit1.Text));
     if rFindUserNickName.Checked then
-      CVN_SendCmdto(ProtocolToStr(cmdFindUser)+',N,'+ formatUnAllowstr(edit2.Text,40) +'*');
+        CVN_QueryUserByName(2,pchar(edit2.Text));
     if rFindUserDesc.Checked then
-      CVN_SendCmdto(ProtocolToStr(cmdFindUser)+',B,'+ formatUnAllowstr(edit3.Text,40) +'*');
+        CVN_QueryUserByName(3,pchar(edit3.Text));
     bFind.Enabled:=false;
     timer1.Enabled:=true;
 end;
@@ -75,7 +75,6 @@ begin
     Close;
     exit;
   end;
-   //ListView1.AddItem(s,nil);
    tmpstrlist:=tstringlist.Create;
    ListView1.Clear;
    Panel2.Visible:=false;
@@ -155,8 +154,7 @@ procedure TfindUser.bOrderAddFriendClick(Sender: TObject);
 //var tmpUserid:integer;
 begin
   // tmpUserid:=strtoint(ListView1.ItemFocused.SubItems[1]);
-
-   CVN_SendCmdto(ProtocolToStr(cmdPeerOrdFriend)+','+ ListView1.ItemFocused.SubItems[1] +','+formatUnAllowStr(edit4.Text,40)+'*');
+   CVN_TryAddFriend(strtoint(ListView1.ItemFocused.SubItems[1]),pchar(edit4.Text));
    Panel2.Visible:=false;
    ListView1.Clear;
     FCVNMSG.Label1.Caption:=resinfo('JOINFRIEND_ORDER_HAS_BEEN_SENT');

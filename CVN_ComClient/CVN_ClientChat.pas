@@ -90,7 +90,8 @@ begin
     chattext.SelAttributes.Size:=11;
     chattext.SelAttributes.Color:=clblack;
     chattext.Lines.Add('   '+edit1.Text);
-  CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(user.UserID)+'*'+edit1.Text);
+
+  CVN_ChatMsgToUser(user.UserID,pchar(edit1.Text));
   edit1.Text:='';
   edit1.SetFocus;
   //将滚动条拖到65535像素处
@@ -179,7 +180,5 @@ begin
 end;
 
 
-
-
-
 end.
+

@@ -66,10 +66,10 @@ begin
       //showmessage('×é±¸×¢±ØÐëÌîÐ´');
       exit;
     end;
-    GroupName.Text:=FormatUnAllowStr(GroupName.Text,40);
     Groupdesc.Text:=FormatUnAllowStr(Groupdesc.Text,40);
     GroupPass.Text:=FormatUnAllowStr(GroupPass.Text,40);
-    CVN_SendCmdto(ProtocolToStr(cmdmodifyGroup)+','+inttostr(groupid)+','+GroupName.Text+','+Groupdesc.Text+','+GroupPass.Text+'*');
+
+    CVN_ModifyGroupEx(groupid,pchar(Groupdesc.Text),pchar(GroupPass.Text));
     FCVNMSG.Close;
     bSure.Enabled:=false;
     close;
@@ -82,7 +82,7 @@ end;
 
 procedure TFModifyGroup.FormShow(Sender: TObject);
 begin
-  CVN_SendCmdto(ProtocolToStr(cmdGetGroupDesc)+','+inttostr(groupid)+'*');
+  CVN_GetGroupDesc(groupid);
 end;
 
 procedure TFModifyGroup.GroupdescChange(Sender: TObject);

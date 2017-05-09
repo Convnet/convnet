@@ -73,16 +73,10 @@ begin
     g_AllowPass2:=formatUnAllowstr(allowPass2.Text,40);
     g_AllowPass3:=formatUnAllowstr(allowPass3.Text,40);
     g_AllowPass4:=formatUnAllowstr(allowPass4.Text,40);
-    {if not CheckBox1.Checked then
-    begin
-      g_AllowPass1:='';
-      g_AllowPass2:='';
-      g_AllowPass3:='';
-      g_AllowPass4:='';
-    end;  }
-    
-    CVN_SendCmdto(protocoltostr(cmdrenewmyinfo)+','+g_NickName+','+g_MyPass+','+g_common+
-    ','+g_AllowPass1+','+g_AllowPass2+','+g_AllowPass3+','+g_AllowPass4+'*');
+
+   CVN_UpdateMyProFile(pchar(g_NickName),pchar(g_MyPass),
+                        pchar(g_common),pchar(g_AllowPass1),
+                        pchar(g_AllowPass2),pchar(g_AllowPass3),pchar(g_AllowPass4));
 
     close;  
 end;

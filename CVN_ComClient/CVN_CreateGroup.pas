@@ -57,7 +57,9 @@ begin
     GroupName.Text:=FormatUnAllowStr(GroupName.Text,40);
     GroupDesc.Text:=FormatUnAllowStr(GroupDesc.Text,40);
     GroupPass.Text:=FormatUnAllowStr(GroupPass.Text,40);
-    CVN_SendCmdto(ProtocolToStr(cmdCreateGroup)+','+GroupName.Text+','+groupdesc.Text+','+GroupPass.Text+'*');
+
+    CVN_CreateGroupEx(pchar(GroupName.Text),pchar(GroupDesc.Text),pchar(GroupPass.Text));
+
     bSure.Enabled:=false;
 end;
 

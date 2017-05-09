@@ -69,12 +69,13 @@ begin
   if tmpmsg.msgType=1 then
   begin
    tmpmsg.msgType:=2;  //同意加入好友
-   CVN_SendCmdto(ProtocolToStr(cmdPeerSureFriend)+','+inttostr(tmpmsg.senderid)+'*');
+   CVN_FriendConfirm(tmpmsg.senderid);
+
   end;
   if tmpmsg.msgType=4 then
   begin
     tmpmsg.msgType:=5;  //同意加入组
-    CVN_SendCmdto(ProtocolToStr(cmdPeerSureJoinGroup)+',T,'+inttostr(tmpmsg.senderid)+','+inttostr(tmpmsg.targetGroupid)+'*');
+    CVN_ConfirmJoinGroup(tmpmsg.senderid,tmpmsg.targetGroupid);
   end;
    if not getLastConfimMSGinfo then close;
 end;
@@ -84,12 +85,14 @@ begin
   if tmpmsg.msgType=1 then
   begin
    tmpmsg.msgType:=3;  //拒绝加入好友
-   CVN_SendCmdto(ProtocolToStr(cmdPeerRefusedFriend)+','+inttostr(tmpmsg.senderid)+'*');
+   CVN_FriendRefuse(tmpmsg.senderid);
+
   end;
   if tmpmsg.msgType=4 then
   begin
    tmpmsg.msgType:=6;  //拒绝加组
-   CVN_SendCmdto(ProtocolToStr(cmdPeerSureJoinGroup)+',F,'+inttostr(tmpmsg.senderid)+','+inttostr(tmpmsg.targetGroupid)+'*');
+   CVN_RefuseJoinGroup(tmpmsg.senderid,tmpmsg.targetGroupid);
+
   end;
   if not getLastConfimMSGinfo then close;
 end;
@@ -107,12 +110,12 @@ begin
     if tmpmsg.msgType=1 then
     begin
      tmpmsg.msgType:=3;  //拒绝加入好友
-     CVN_SendCmdto(ProtocolToStr(cmdPeerRefusedFriend)+','+inttostr(tmpmsg.senderid)+'*');
+     CVN_FriendRefuse(tmpmsg.senderid);
     end;
     if tmpmsg.msgType=4 then
     begin
      tmpmsg.msgType:=6;  //拒绝加组
-     CVN_SendCmdto(ProtocolToStr(cmdPeerSureJoinGroup)+',F,'+inttostr(tmpmsg.senderid)+','+inttostr(tmpmsg.targetGroupid)+'*');
+     CVN_RefuseJoinGroup(tmpmsg.senderid,tmpmsg.targetGroupid);
     end;
     if getLastConfimMSGinfo then canclose:=false;
   end;

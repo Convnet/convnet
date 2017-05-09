@@ -43,7 +43,6 @@ end;
 
 procedure TRmComm.output(sender: TObject; st: string);
 begin
-  CVN_SendCmdto(ProtocolToStr(cmdSendMsgtoID)+','+inttostr(executer)+'*rm: '+st);
 end;
 
 procedure TRmComm.Timer1Timer(Sender: TObject);

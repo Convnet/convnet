@@ -86,3 +86,6 @@ F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplica
 F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 F:\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\uu\Documents\GitHub\convnet\demo\C#CVN\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\uu\Documents\GitHub\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\uu\Documents\GitHub\convnet\demo\C#CVN\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb

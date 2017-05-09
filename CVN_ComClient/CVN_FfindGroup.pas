@@ -70,9 +70,10 @@ end;
 procedure TfindGroup.bFindClick(Sender: TObject);
 begin
     if rFindGroupByDesc.Checked then
-      CVN_SendCmdto(ProtocolToStr(cmdFindGroup)+',B,'+formatUnAllowStr(edit3.Text,40)+'*')
+       CVN_QueryGroupByName(1,pchar(edit3.Text))
     else
-      CVN_SendCmdto(ProtocolToStr(cmdFindGroup)+',N,'+formatUnAllowStr(edit1.Text,40)+'*');
+       CVN_QueryGroupByName(2,pchar(edit1.Text));
+
     bFind.Enabled:=false;
     timer1.Enabled:=true;
 end;
@@ -138,16 +139,13 @@ end;
 
 procedure TfindGroup.bJoinGroupClick(Sender: TObject);
 begin
-  // tmpUserid:=strtoint(ListView1.ItemFocused.SubItems[1]);
-        //                  cmd                 groupid
-   CVN_SendCmdto(ProtocolToStr(cmdJoinGroup)+','+ ListView1.ItemFocused.SubItems[1] +','
-              //              desc                      createid                          groupname
-          +formatUnAllowStr(edit4.Text,40)+','+ListView1.ItemFocused.SubItems[0]+','+ListView1.ItemFocused.Caption+'*');
-   panel2.Visible:=false;
 
+   CVN_TryJoinGroup(strtoint(ListView1.ItemFocused.SubItems[1]),pchar(edit4.Text));
+   panel2.Visible:=false;
    FCVNMSG.Label1.Caption:=resinfo('JOINGROUP_ORDER_HAS_BEEN_SENT');
    FCVNMSG.Show;
    close;
+
 end;
 
 procedure TfindGroup.Edit1KeyPress(Sender: TObject; var Key: Char);
